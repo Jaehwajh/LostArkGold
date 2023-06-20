@@ -3,19 +3,14 @@ const mongoose = require("mongoose");
 const CharacterDataSchema = new mongoose.Schema({
     characterName: {
         type: String,
-        require: true
+        required: true
     },
     characterClass: {
-        type: ObjectId,
-        require: true
+        type: {type: String},
     },
     itemLevel: {
         type: Number,
-        require: true
-    },
-    account: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Account Data"
+        required: true
     },
 })
 
