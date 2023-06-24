@@ -8,6 +8,7 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const dashboardRouter = require("./routes/dashboard");
+const { MongoClient } = require("mongodb");
 
 require("dotenv").config({ path: "./config/.env"});
 
@@ -19,14 +20,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger("dev"));
 app.use(methodOverride("_method"));
+
 app.use(
     session({
         secret: "LightofSalvation",
         resave: false,
         saveUninitialized: false,
-        store: MongoStore.create({ mongoUrl: mongoose.connection }),
+        store: new MongoStore({ clientPromise: MongoClient.connection}),
     })
 );
+
 app.use(flash());
 app.listen(process.env.PORT, () => {
     console.log("Test build online")
