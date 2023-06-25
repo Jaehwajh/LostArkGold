@@ -19,6 +19,6 @@ const dbOptions = {
     useUnifiedTopology: true,
 }
 
-const connectDB = mongoose.connect(process.env.DB_STING, dbOptions)
+const connectDB = mongoose.connect(process.env.DB_STING, dbOptions).then(m => m.connection.getClient());
 
-module.exports = connectDB;
+module.exports = connectDB; 
