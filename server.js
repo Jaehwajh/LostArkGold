@@ -35,5 +35,18 @@ app.listen(process.env.PORT, () => {
     console.log("Test build online")
 });
 
+// Database
+const client = new MongoClient(process.env.DB_STRING);
+
+const connectDB = async() => {
+    try{
+        await client.connect();
+        console.log(`MongoDB Connected!`);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+};
+
 // route setup
 app.use("/dashboard", dashboardRouter);
