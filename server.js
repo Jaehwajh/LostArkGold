@@ -9,20 +9,22 @@ const logger = require("morgan");
 const { MongoClient } = require("mongodb");
 const dashboardRouter = require("./routes/dashboard");
 
+
+
 // Database
-const client = new MongoClient(process.env.DB_STRING);
+// const client = new MongoClient(process.env.DB_STRING);
 
-const connectDB = async() => {
-    try{
-        await client.connect();
-        console.log(`MongoDB Connected!`);
-    }catch(err){
-        console.log(err);
-        process.exit(1);
-    }
-};
+// const connectDB = async() => {
+//     try{
+//         await client.connect();
+//         console.log(`MongoDB Connected!`);
+//     }catch(err){
+//         console.log(err);
+//         process.exit(1);
+//     }
+// };
 
-connectDB();
+// connectDB();
 
 // Dot env config
 require("dotenv").config({ path: "./config/.env"});
@@ -35,19 +37,19 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(methodOverride("_method"));
 
-app.use(
-    session({
-        secret: "LightofSalvation",
-        resave: false,
-        saveUninitialized: false,
-        store: new MongoStore({ clientPromise: MongoClient.connection}),
-    })  
-);
+// app.use(
+//     session({
+//         secret: "LightofSalvation",
+//         resave: false,
+//         saveUninitialized: false,
+//         store: new MongoStore({ clientPromise: MongoClient.connection}),
+//     })  
+// );
 
-app.use(flash());
+// app.use(flash());
 app.listen(process.env.PORT, () => {
     console.log("Test build online")
 });
 
 // route setup
-app.use("/dashboard", dashboardRouter);
+app.use("/", dashboardRouter);
