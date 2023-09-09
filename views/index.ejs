@@ -5,11 +5,11 @@
     <%# }); %>
  </ul> -->
 
- <form action="" method="POST">
+ <form action="/dashboard/createCharacter" method="POST">
     <label for="characterName">Character Name</label>
     <input type="text" name="characterName" id="characterName" placeholder="Character Name">
 
-    <label for="Class">Class</label>
+    <label for="loaClass">Class</label>
     <select name="selectedOptions" id="dropdown">
         <% loaClass.forEach(element => { %>
             <option value="<%- element %>"><%- element %></option>
@@ -17,7 +17,7 @@
     </select>
 
     <label for="itemLevel">Item Level</label>
-    <input type="text" name="itermLevel" id="itemLevel" placeholder="Item Level">
+    <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
 
     <button type="submit"></button>
  </form>

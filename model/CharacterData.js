@@ -6,7 +6,7 @@ const characterSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Class: {
+    loaClass: {
         selectedOption: String,
         required: true
     },
