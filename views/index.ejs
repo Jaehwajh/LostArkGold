@@ -9,7 +9,12 @@
     <label for="characterName">Character Name</label>
     <input type="text" name="characterName" id="characterName" placeholder="Character Name">
 
-
+    <label for="loaClass">Class</label>
+    <select name="loaClass" id="loaClass">
+        <% loaClass.forEach(element => { %>
+            <option value="<%- element %>"><%- element %></option>
+        <% }); %>
+    </select>
 
     <label for="itemLevel">Item Level</label>
     <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">

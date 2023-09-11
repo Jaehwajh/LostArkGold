@@ -6,7 +6,10 @@ const characterSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
+    loaClass: {
+        type: String,
+        required: true
+    },
     itemLevel: {
         type: Number,
         required: true

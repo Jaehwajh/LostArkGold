@@ -1,3 +1,4 @@
+
 const character = require("../model/CharacterData");
 
 module.exports = {
@@ -5,7 +6,7 @@ module.exports = {
         try{
             await character.create({
                 characterName: req.body.characterName,
-
+                loaClass: req.body.loaClass,
                 itemLevel: req.body.itemLevel
             });
             console.log("Character information saved.")
