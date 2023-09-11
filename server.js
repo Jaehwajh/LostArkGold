@@ -6,28 +6,11 @@ const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
-const { MongoClient } = require("mongodb");
 const dashboardRouter = require("./routes/dashboard");
-
-
-
-// Database
-// const client = new MongoClient(process.env.DB_STRING);
-
-// const connectDB = async() => {
-//     try{
-//         await client.connect();
-//         console.log(`MongoDB Connected!`);
-//     }catch(err){
-//         console.log(err);
-//         process.exit(1);
-//     }
-// };
-
-// connectDB();
+const mainRouter = require("./routes/main")
 
 // Dot env config
-require("dotenv").config({ path: "./config/.env"});
+require('dotenv').config();
 
 //App view 
 app.set("view engine", "ejs");
@@ -46,10 +29,29 @@ app.use(methodOverride("_method"));
 //     })  
 // );
 
+// Database
+const database = process.env.DB;
+
+const connectDB = async() => {
+    try{
+        await mongoose.connect(database, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log(`MongoDB Connected!`);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+};
+
+connectDB();
+
 // app.use(flash());
 app.listen(process.env.PORT, () => {
     console.log("Test build online")
 });
 
 // route setup
-app.use("/", dashboardRouter);
+app.use("/", mainRouter);
+app.use("/dashboard", dashboardRouter);
