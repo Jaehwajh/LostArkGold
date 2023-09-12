@@ -7,7 +7,7 @@ module.exports = {
             await character.create({
                 characterName: req.body.characterName,
                 loaClass: req.body.loaClass,
-                itemLevel: req.body.itemLevel
+                itemLevel: req.body.itemLevel,
             });
             console.log("Character information saved.")
             res.redirect("/")

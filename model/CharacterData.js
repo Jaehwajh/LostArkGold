@@ -13,7 +13,12 @@ const characterSchema = new mongoose.Schema({
     itemLevel: {
         type: Number,
         required: true
+    },
+    roster: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Roster"
     }
+    
 });
 
 module.exports = mongoose.model("CharacterData", characterSchema);

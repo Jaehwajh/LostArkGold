@@ -5,19 +5,30 @@
     <%# }); %>
  </ul> -->
 
- <form action="/dashboard/createCharacter" method="POST">
-    <label for="characterName">Character Name</label>
-    <input type="text" name="characterName" id="characterName" placeholder="Character Name">
+ <div>
+    <div>
+        <% characters.forEach(element => { %>
+            <h1><%- element.characterName %></h1>
+        <% })  %>
+    </div>
 
-    <label for="loaClass">Class</label>
-    <select name="loaClass" id="loaClass">
-        <% loaClass.forEach(element => { %>
-            <option value="<%- element %>"><%- element %></option>
-        <% }); %>
-    </select>
 
-    <label for="itemLevel">Item Level</label>
-    <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
-
-    <button type="submit">Add</button>
- </form>
+    <div>
+        <form action="/dashboard/createCharacter" method="POST">
+            <label for="characterName">Character Name</label>
+            <input type="text" name="characterName" id="characterName" placeholder="Character Name">
+    
+            <label for="loaClass">Class</label>
+            <select name="loaClass" id="loaClass">
+                <% loaClass.forEach(element => { %>
+                    <option value="<%- element %>"><%- element %></option>
+                <% }); %>
+            </select>
+    
+            <label for="itemLevel">Item Level</label>
+            <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
+    
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>
