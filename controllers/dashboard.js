@@ -1,5 +1,6 @@
 
 const character = require("../model/CharacterData");
+const roster = require("../model/roster");
 
 module.exports = {
     createCharacter: async(req, res) => {
