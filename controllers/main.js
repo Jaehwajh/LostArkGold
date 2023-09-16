@@ -1,13 +1,14 @@
-const loaClass = require("../config/class");
-const character = require("../model/CharacterData");
+const roster = require("../model/roster");
 
 module.exports = {
-    getDashboard: async (req, res) => {
-        try{
-                
-            res.render("dashboard.ejs", {loaClass})
-        }catch(err){
-            console.log(err);
+    getMainpage: (req, res) => {
+            res.render("main.ejs")
         }
     },
-}   
+    createRoster: async(req, res) => {
+        try{
+            await roster.create({
+                
+            })
+        }
+    }

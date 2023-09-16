@@ -1,8 +1,15 @@
-
 const character = require("../model/CharacterData");
+const loaClass = require("../config/class");
 const roster = require("../model/roster");
 
 module.exports = {
+    getDashboard: async(req, res) => {
+        try{
+
+        }catch(err) {
+
+        }
+    },
     createCharacter: async(req, res) => {
         try{
             await character.create({
