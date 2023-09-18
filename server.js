@@ -53,5 +53,5 @@ app.listen(process.env.PORT, () => {
 });
 
 // route setup
-app.use("/", mainRouter);
+app.use("/roster", mainRouter);
 app.use("/dashboard", dashboardRouter);
