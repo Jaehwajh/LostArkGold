@@ -1,13 +1,13 @@
 const character = require("../model/CharacterData");
 const loaClass = require("../config/class");
-const roster = require("../model/roster");
 
 module.exports = {
     getDashboard: async(req, res) => {
         try{
-
+            const account = await character.find({ roster: roster.req.id  });
+            res.render("dashboard.ejs", {loaClass, roster: req.roster, account: account});
         }catch(err) {
-
+            console.log(err)
         }
     },
     createCharacter: async(req, res) => {
