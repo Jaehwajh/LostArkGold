@@ -1,17 +1,28 @@
-const roster = require("../model/roster");
+const {Main} = require("../model/roster");
+const {Alt} = require("../model/roster")
 
 module.exports = {
     getMainpage: (req, res) => {
             res.render("main.ejs")
         },
 
-    createRoster: async(req, res) => {
+    createMainRoster: async(req, res) => {
         try{
-            await roster.create({
-                rosterType: req.body.roster
+            await Main.create({
+                roster: req.body.roster
             });
         }catch(err){
-            console.log(err);
+            console.log(err)
         }
     },
-}
+
+    createAltRoster: async(req, res) => {
+        try{
+            await Alt.create({
+                roster: req.body.roster
+            });
+        }catch(err){
+            console.log(err)
+        }
+    },
+}   

@@ -3,7 +3,8 @@ const router = express.Router();
 const dashboardController = require("../controllers/dashboard");
 const mainController = require("../controllers/main");
 
-router.post("/createRoster", mainController.createRoster)
+router.post("/createMainRoster", mainController.createMainRoster);
+router.post("/createAltRoster", mainController.createAltRoster);
 
 router.post("/createCharacter", dashboardController.createCharacter);
 
