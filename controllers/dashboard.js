@@ -2,13 +2,8 @@ const character = require("../model/CharacterData");
 const loaClass = require("../config/class");
 
 module.exports = {
-    getDashboard: async(req, res) => {
-        try{
-            const account = await character.find({ roster: roster.req.id  });
-            res.render("dashboard.ejs", {loaClass, roster: req.roster, account: account});
-        }catch(err) {
-            console.log(err)
-        }
+    getDashboard: (req, res) => {
+        res.render("dashboard.ejs", {loaClass})
     },
     createCharacter: async(req, res) => {
         try{
@@ -18,9 +13,9 @@ module.exports = {
                 itemLevel: req.body.itemLevel,
             });
             console.log("Character information saved.")
-            res.redirect("/")
+            res.redirect("/dashboard")
         }catch(err) {
             console.log(err)
         }
     },
-}; 
+};

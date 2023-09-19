@@ -6,7 +6,7 @@ const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
-const mainRouter = require("./routes/main")
+const pageRouter = require("./routes/page")
 const dashboardRouter = require("./routes/dashboard");
 
 
@@ -54,5 +54,5 @@ app.listen(process.env.PORT, () => {
 });
 
 // route setup
-app.use("/", mainRouter);
+app.use("/", pageRouter);
 app.use("/dashboard", dashboardRouter);

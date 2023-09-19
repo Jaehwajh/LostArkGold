@@ -11,6 +11,8 @@ module.exports = {
             await Main.create({
                 roster: req.body.roster
             });
+            console.log("Main roster created!")
+            res.redirect("/dashboard")
         }catch(err){
             console.log(err)
         }
@@ -21,8 +23,10 @@ module.exports = {
             await Alt.create({
                 roster: req.body.roster
             });
+            console.log("Alt roster created!")
+            res.redirect("/dashboard")
         }catch(err){
             console.log(err)
         }
     },
-}   
+}  
