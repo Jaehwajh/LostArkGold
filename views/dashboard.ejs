@@ -6,27 +6,33 @@
  </ul> -->
 
  <div>
+    <!-- Main Roster Creation -->
     <div>
+        <section>
+                <div>
+                    <form action="/dashboard/createCharacter" method="POST">
+                        <label for="characterName">Character Name</label>
+                        <input type="text" name="characterName" id="characterName" placeholder="Character Name">
+                
+                        <label for="loaClass">Class</label>
+                        <select name="loaClass" id="loaClass">
+                            <% loaClass.forEach(element => { %>
+                                <option value="<%- element %>"><%- element %></option>
+                            <% }); %>
+                        </select>
+                
+                        <label for="itemLevel">Item Level</label>
+                        <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
+                
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
 
+                <div>
+                    
+                </div>
+        </section>
     </div>
 
-
-    <div>
-        <form action="/dashboard/createCharacter" method="POST">
-            <label for="characterName">Character Name</label>
-            <input type="text" name="characterName" id="characterName" placeholder="Character Name">
-    
-            <label for="loaClass">Class</label>
-            <select name="loaClass" id="loaClass">
-                <% loaClass.forEach(element => { %>
-                    <option value="<%- element %>"><%- element %></option>
-                <% }); %>
-            </select>
-    
-            <label for="itemLevel">Item Level</label>
-            <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
-    
-            <button type="submit">Add</button>
-        </form>
-    </div>
+    <!-- Alt Roster Creation -->
 </div>
