@@ -12,5 +12,4 @@ const hardVykas = {
     chest: [500,650]
 };
 
-module.exports = normalVykas;
-module.exports = hardVykas;
+module.exports = {normalVykas, hardVykas}

@@ -12,5 +12,4 @@ const hardKayangel = {
     chest: [700,900,1100]
 };
 
-module.exports = normalKayangel;
-module.exports = hardKayangel;
+module.exports = {normalKayangel, hardKayangel};

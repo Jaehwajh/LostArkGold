@@ -12,5 +12,4 @@ const hardBrelshaza = {
     chest: [700,900,1100,1800]
 };
 
-module.exports = normalBrelshaza;
-module.exports = hardBrelshaza;
+module.exports = {normalBrelshaza, hardBrelshaza};

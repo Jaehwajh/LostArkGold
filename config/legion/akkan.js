@@ -1,7 +1,7 @@
 const normalAkkan = {
     itemLevel: 1580,
     gate: [1,2,3],
-    gold: [1500,2000,3000],
+    gold: [1500,2000,4000],
     chest: [900,1100,1500]
 };
 
@@ -12,5 +12,4 @@ const hardAkkan = {
     chest: [1200,1400,1900]
 }; 
 
-module.exports = normalAkkan;
-module.exports = hardAkkan;
+module.exports = {normalAkkan, hardAkkan};

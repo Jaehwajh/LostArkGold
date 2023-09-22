@@ -34,14 +34,59 @@
                     </form>
                 </div>
 
+                <!-- roster information -->
                 <div>
-                    <% characters.forEach(element => { %>
-                        <div>
-                            <h3><%= element.characterName %></h3>
-                            <p><%= element.loaClass %></p>
-                            <p><%= element.itemLevel %></p>
-                        </div>
-                    <% }) %>
+                    <div>
+                    <!-- character information -->
+                        <% characters.forEach(element => { %>
+                            <div>
+                                <h3><%= element.characterName %></h3>
+                                <p><%= element.loaClass %></p>
+                                <p><%= element.itemLevel %></p>
+                            </div>
+
+                            <!-- Raid information -->
+                            <div>
+                                <!-- Valtan -->
+                                <div>
+                                    <% if(element.itemLevel > valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
+                                        <div>
+                                            <h1>Valtan</h1>
+                                        </div>
+                                    <% } %>
+                                </div>
+        
+                                <!-- Vykas -->
+                                <div>
+                                    <% if(element.itemLevel > vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
+                                        <div>
+                                            <h1>Vykas</h1>
+                                        </div>
+                                    <% } %>
+                                </div>
+        
+                                <!-- Kakul Saydon -->
+                                <div>
+        
+                                </div>
+        
+                                <!-- Brelshaza -->
+                                <div>
+        
+                                </div>
+        
+                                <!-- Kayangel -->
+                                <div>
+        
+                                </div>
+        
+                                <!-- Akkan -->
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
                 </div>
         </section>
     </div>

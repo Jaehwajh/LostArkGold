@@ -12,5 +12,4 @@ const hardValtan = {
     chest: [450,600]
 };
 
-module.exports = normalValtan;
-module.exports = hardValtan;
+module.exports = {normalValtan, hardValtan}
