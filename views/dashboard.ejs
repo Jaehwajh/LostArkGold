@@ -23,13 +23,25 @@
                 
                         <label for="itemLevel">Item Level</label>
                         <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
+
+                        <label for="roster">Roster</label>
+                        <select name="roster" id="roster">
+                            <option value="Main">Main</option>
+                            <option value="Alt">Alt</option>
+                        </select>
                 
                         <button type="submit">Add</button>
                     </form>
                 </div>
 
                 <div>
-                    
+                    <% characters.forEach(element => { %>
+                        <div>
+                            <h3><%= element.characterName %></h3>
+                            <p><%= element.loaClass %></p>
+                            <p><%= element.itemLevel %></p>
+                        </div>
+                    <% }) %>
                 </div>
         </section>
     </div>

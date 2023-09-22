@@ -15,10 +15,11 @@ const characterSchema = new mongoose.Schema({
         required: true
     },
     roster: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Roster"
+        type: String,
+        required: true,
+        enum: ["Main", "Alt"]
     }
-    
 });
+
 
 module.exports = mongoose.model("CharacterData", characterSchema);
