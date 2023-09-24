@@ -49,40 +49,72 @@
                             <div>
                                 <!-- Valtan -->
                                 <div>
-                                    <% if(element.itemLevel > valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
+                                    <% if(element.itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
                                         <div>
-                                            <h1>Valtan</h1>
+                                            <h1>Hard Valtan</h1>
+                                        </div>
+                                    <% }else{ %>
+                                        <div>
+                                            <h1>Normal Valtan</h1>
                                         </div>
                                     <% } %>
                                 </div>
         
                                 <!-- Vykas -->
                                 <div>
-                                    <% if(element.itemLevel > vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
+                                    <% if(element.itemLevel >= vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
                                         <div>
-                                            <h1>Vykas</h1>
+                                            <h1>Hard Vykas</h1>
+                                        </div>
+                                    <% }else{ %>
+                                        <div>
+                                            <h1>Normal Vykas</h1>
                                         </div>
                                     <% } %>
                                 </div>
         
                                 <!-- Kakul Saydon -->
-                                <div>
-        
+                                <div>   
+                                    <% if(element.itemLevel >= kakulSaydon.itemLevel){ %>
+                                        <div>
+                                            <h1>Normal Kakul-Saydon</h1>
+                                        </div>
+                                    <% } %>
                                 </div>
         
                                 <!-- Brelshaza -->
                                 <div>
-        
+                                    <% if(element.itemLevel >= brel.normalBrelshaza.itemLevel[2]) { %>
+                                        <div>
+                                            <h1>Normal Brelshaza</h1>
+                                        </div>
+                                    <% } %>
                                 </div>
         
                                 <!-- Kayangel -->
                                 <div>
-        
+                                    <% if(element.itemLevel >= kayangel.hardKayangel.itemLevel){ %>
+                                        <div>
+                                            <h1>Hard Kayangel</h1>
+                                        </div>
+                                    <% }else if(element.itemLevel < kayangel.hardKayangel.itemLevel && element.itemLevel >= kayangel.normalKayangel.itemLevel){ %>
+                                        <div>
+                                            <h1>Normal Kayangel</h1>
+                                        </div>
+                                    <% } %>
                                 </div>
         
                                 <!-- Akkan -->
                                 <div>
-                                    
+                                    <% if(element.itemLevel >= akkan.hardAkkan.itemLevel){ %>
+                                        <div>
+                                            <h1>Hard Akkan</h1>
+                                        </div>
+                                    <% }else if(element.itemLevel < akkan.hardAkkan.itemLevel && element.itemLevel >= akkan.normalAkkan.itemLevel){ %>
+                                        <div>
+                                            <h1>Normal Akkan</h1>
+                                        </div>
+                                    <% } %>
                                 </div>
                             </div>
                         <% }) %>

@@ -12,12 +12,12 @@ module.exports = {
         try{
             const valtan = { normalValtan, hardValtan };
             const vykas = { normalVykas, hardVykas };
-            const brelshaza = { normalBrelshaza, hardBrelshaza };
+            const brel = { normalBrelshaza, hardBrelshaza };
             const akkan = { normalAkkan, hardAkkan };
             const kayangel = { normalKayangel, hardKayangel };
 
             const characters = await character.find();
-            res.render("dashboard.ejs", {loaClass, valtan, vykas, kakulSaydon, brelshaza, kayangel, akkan, characters});
+            res.render("dashboard.ejs", {loaClass, valtan, vykas, kakulSaydon, brel, kayangel, akkan, characters});
         }catch(err){
             console.log(err);
         }
