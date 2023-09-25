@@ -1,16 +1,34 @@
-body .container{
+/* body{
     width: 100%;
     height: 100vh;
     font-size: 62.5%;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(51, 51, 51);
+}; */
+
+.container{
+    display: flex;
 }
 
-.roster-container{
+.roster-info{
+    height: 9rem;
+    width: 11rem;
+}
+
+.raid{
     display: flex;
+    flex-direction: row;
     width: 100%;
 }
 
-.hidden {
-    display: none;
+.raid-card{
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.raid-info{
+    display: flex;
+    justify-content: space-evenly;
 }

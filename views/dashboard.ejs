@@ -1,4 +1,4 @@
-
+<%- include("partials/header") -%>
  <!-- <ul>
     <%# loaClass.forEach(element => { %>
         <li><%#- element %></li>
@@ -35,93 +35,227 @@
                 </div>
 
                 <!-- roster information -->
-                <div>
                     <div>
                     <!-- character information -->
                         <% characters.forEach(element => { %>
-                            <div>
-                                <h3><%= element.characterName %></h3>
-                                <p><%= element.loaClass %></p>
-                                <p><%= element.itemLevel %></p>
-                            </div>
+                            <div class="container">
+                                <div class="roster-info">
+                                    <h3><%= element.characterName %></h3>
+                                    <p><%= element.loaClass %></p>
+                                    <p><%= element.itemLevel %></p>
+                                </div>
 
-                            <!-- Raid information -->
-                            <div>
-                                <!-- Valtan -->
-                                <div>
-                                    <% if(element.itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
-                                        <div>
-                                            <h1>Hard Valtan</h1>
-                                        </div>
-                                    <% }else{ %>
-                                        <div>
-                                            <h1>Normal Valtan</h1>
-                                        </div>
-                                    <% } %>
-                                </div>
-        
-                                <!-- Vykas -->
-                                <div>
-                                    <% if(element.itemLevel >= vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
-                                        <div>
-                                            <h1>Hard Vykas</h1>
-                                        </div>
-                                    <% }else{ %>
-                                        <div>
-                                            <h1>Normal Vykas</h1>
-                                        </div>
-                                    <% } %>
-                                </div>
-        
-                                <!-- Kakul Saydon -->
-                                <div>   
-                                    <% if(element.itemLevel >= kakulSaydon.itemLevel){ %>
-                                        <div>
-                                            <h1>Normal Kakul-Saydon</h1>
-                                        </div>
-                                    <% } %>
-                                </div>
-        
-                                <!-- Brelshaza -->
-                                <div>
-                                    <% if(element.itemLevel >= brel.normalBrelshaza.itemLevel[2]) { %>
-                                        <div>
-                                            <h1>Normal Brelshaza</h1>
-                                        </div>
-                                    <% } %>
-                                </div>
-        
-                                <!-- Kayangel -->
-                                <div>
-                                    <% if(element.itemLevel >= kayangel.hardKayangel.itemLevel){ %>
-                                        <div>
-                                            <h1>Hard Kayangel</h1>
-                                        </div>
-                                    <% }else if(element.itemLevel < kayangel.hardKayangel.itemLevel && element.itemLevel >= kayangel.normalKayangel.itemLevel){ %>
-                                        <div>
-                                            <h1>Normal Kayangel</h1>
-                                        </div>
-                                    <% } %>
-                                </div>
-        
-                                <!-- Akkan -->
-                                <div>
-                                    <% if(element.itemLevel >= akkan.hardAkkan.itemLevel){ %>
-                                        <div>
-                                            <h1>Hard Akkan</h1>
-                                        </div>
-                                    <% }else if(element.itemLevel < akkan.hardAkkan.itemLevel && element.itemLevel >= akkan.normalAkkan.itemLevel){ %>
-                                        <div>
-                                            <h1>Normal Akkan</h1>
-                                        </div>
-                                    <% } %>
+                                <div class="raid">
+                                      <!-- Raid information -->
+                                    <!-- Valtan -->
+                                    <div class="raid-card">
+                                        <% if(element.itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
+                                            <div class="valtan">
+                                                <h1>Hard Valtan</h1>
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= valtan.hardValtan.gate[0] %></p>
+                                                        <p><%= valtan.hardValtan.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= valtan.hardValtan.gate[1] %></p>
+                                                        <p><%= valtan.hardValtan.gold[1] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }else{ %>
+                                            <div class="valtan">
+                                                <h1>Normal Valtan</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= valtan.normalValtan.gate[0] %></p>
+                                                        <p><%= valtan.normalValtan.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= valtan.normalValtan.gate[1] %></p>
+                                                        <p><%= valtan.normalValtan.gold[1] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+            
+                                    <!-- Vykas -->
+                                    <div class="raid-card">
+                                        <% if(element.itemLevel >= vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
+                                            <div class="vykas">
+                                                <h1>Hard Vykas</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= vykas.hardVykas.gate[0] %></p>
+                                                        <p><%= vykas.hardVykas.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= vykas.hardVykas.gate[1] %></p>
+                                                        <p><%= vykas.hardVykas.gold[1] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }else{ %>
+                                            <div class="vykas">
+                                                <h1>Normal Vykas</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= vykas.normalVykas.gate[0] %></p>
+                                                        <p><%= vykas.normalVykas.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= vykas.normalVykas.gate[1] %></p>
+                                                        <p><%= vykas.normalVykas.gold[1] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+            
+                                    <!-- Kakul Saydon -->
+                                    <div class="raid-card">   
+                                        <% if(element.itemLevel >= kakulSaydon.itemLevel){ %>
+                                            <div class="kakulSaydon">
+                                                <h1>Normal Kakul-Saydon</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= kakulSaydon.gate[0] %></p>
+                                                        <p><%= kakulSaydon.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= kakulSaydon.gate[1] %></p>
+                                                        <p><%= kakulSaydon.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= kakulSaydon.gate[2] %></p>
+                                                        <p><%= kakulSaydon.gold[2] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+            
+                                    <!-- Brelshaza -->
+                                    <div class="raid-card">
+                                        <% if(element.itemLevel >= brel.normalBrelshaza.itemLevel[2]) { %>
+                                            <div>
+                                                <h1>Normal Brelshaza</h1>
+                                            </div>
+                                        <% } %>
+                                    </div>
+            
+                                    <!-- Kayangel -->
+                                    <div class="raid-card">
+                                        <% if(element.itemLevel >= kayangel.hardKayangel.itemLevel){ %>
+                                            <div class="kayangel">
+                                                <h1>Hard Kayangel</h1>
+                                                
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= kayangel.hardKayangel.gate[0] %></p>
+                                                        <p><%= kayangel.hardKayangel.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= kayangel.hardKayangel.gate[1] %></p>
+                                                        <p><%= kayangel.hardKayangel.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= kayangel.hardKayangel.gate[2] %></p>
+                                                        <p><%= kayangel.hardKayangel.gold[2] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }else if(element.itemLevel < kayangel.hardKayangel.itemLevel && element.itemLevel >= kayangel.normalKayangel.itemLevel){ %>
+                                            <div class="kayangel">
+                                                <h1>Normal Kayangel</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= kayangel.normalKayangel.gate[0] %></p>
+                                                        <p><%= kayangel.normalKayangel.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= kayangel.normalKayangel.gate[1] %></p>
+                                                        <p><%= kayangel.normalKayangel.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= kayangel.normalKayangel.gate[2] %></p>
+                                                        <p><%= kayangel.normalKayangel.gold[2] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+            
+                                    <!-- Akkan -->
+                                    <div class="raid-card">
+                                        <% if(element.itemLevel >= akkan.hardAkkan.itemLevel){ %>
+                                            <div class="akkan">
+                                                <h1>Hard Akkan</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= akkan.hardAkkan.gate[0] %></p>
+                                                        <p><%= akkan.hardAkkan.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= akkan.hardAkkan.gate[1] %></p>
+                                                        <p><%= akkan.hardAkkan.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= akkan.hardAkkan.gate[2] %></p>
+                                                        <p><%= akkan.hardAkkan.gold[2] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }else if(element.itemLevel < akkan.hardAkkan.itemLevel && element.itemLevel >= akkan.normalAkkan.itemLevel){ %>
+                                            <div class="akkan">
+                                                <h1>Normal Akkan</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= akkan.normalAkkan.gate[0] %></p>
+                                                        <p><%= akkan.normalAkkan.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= akkan.normalAkkan.gate[1] %></p>
+                                                        <p><%= akkan.normalAkkan.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= akkan.normalAkkan.gate[2] %></p>
+                                                        <p><%= akkan.normalAkkan.gold[2] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
                                 </div>
                             </div>
                         <% }) %>
                     </div>
-                </div>
         </section>
     </div>
 
     <!-- Alt Roster Creation -->
 </div>
+
+<%- include("partials/footer") -%>
