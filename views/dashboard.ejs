@@ -63,6 +63,8 @@
                                                         <p><%= valtan.hardValtan.gold[1] %></p>
                                                     </div>
                                                 </div>
+                                                
+                                                <p><%= valtan.hardValtan.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% }else{ %>
                                             <div class="valtan">
@@ -79,6 +81,8 @@
                                                         <p><%= valtan.normalValtan.gold[1] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= valtan.normalValtan.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% } %>
                                     </div>
@@ -100,6 +104,8 @@
                                                         <p><%= vykas.hardVykas.gold[1] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= vykas.hardVykas.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% }else{ %>
                                             <div class="vykas">
@@ -116,6 +122,8 @@
                                                         <p><%= vykas.normalVykas.gold[1] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= vykas.normalVykas.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% } %>
                                     </div>
@@ -142,15 +150,17 @@
                                                         <p><%= kakulSaydon.gold[2] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= kakulSaydon.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% } %>
                                     </div>
             
                                     <!-- Brelshaza -->
                                     <div class="raid-card">
-                                        <% if(element.itemLevel >= brel.normalBrelshaza.itemLevel[2]) { %>
+                                        <% if(element.itemLevel >= brel.hardBrelshaza.itemLevel[2]) { %>
                                             <div>
-                                                <h1>Normal Brelshaza</h1>
+                                                <h1>Hard Brelshaza</h1>
                                             </div>
                                         <% } %>
                                     </div>
@@ -177,6 +187,8 @@
                                                         <p><%= kayangel.hardKayangel.gold[2] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= kayangel.hardKayangel.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% }else if(element.itemLevel < kayangel.hardKayangel.itemLevel && element.itemLevel >= kayangel.normalKayangel.itemLevel){ %>
                                             <div class="kayangel">
@@ -198,6 +210,8 @@
                                                         <p><%= kayangel.normalKayangel.gold[2] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= kayangel.normalKayangel.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% } %>
                                     </div>
@@ -224,6 +238,8 @@
                                                         <p><%= akkan.hardAkkan.gold[2] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= akkan.hardAkkan.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% }else if(element.itemLevel < akkan.hardAkkan.itemLevel && element.itemLevel >= akkan.normalAkkan.itemLevel){ %>
                                             <div class="akkan">
@@ -245,6 +261,8 @@
                                                         <p><%= akkan.normalAkkan.gold[2] %></p>
                                                     </div>
                                                 </div>
+
+                                                <p><%= akkan.normalAkkan.gold.reduce((a,b) => a + b) %></p>
                                             </div>
                                         <% } %>
                                     </div>
