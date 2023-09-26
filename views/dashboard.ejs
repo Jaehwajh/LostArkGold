@@ -160,9 +160,148 @@
                                     <div class="raid-card">
                                         <% if(element.itemLevel >= brel.hardBrelshaza.itemLevel[2]) { %>
                                             <div>
-                                                <h1>Hard Brelshaza</h1>
+                                                <h1>Hard Brelshaza 1-4</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= brel.hardBrelshaza.gate[0] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= brel.hardBrelshaza.gate[1] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.hardBrelshaza.gate[2] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[2] %></p>
+                                                    </div>
+
+                                                    <div class="gate4">
+                                                        <p><%= brel.hardBrelshaza.gate[3] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[3] %></p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        <% }else if(element.itemLevel >= brel.hardBrelshaza.itemLevel[1] && element.itemLevel < brel.hardBrelshaza.itemLevel[2] ){ %>
+                                            <div>
+                                                <h1>Hard Brelshaza 1-3 <br> Normal Brelshaza 4</h1>
+                                                
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= brel.hardBrelshaza.gate[0] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= brel.hardBrelshaza.gate[1] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.hardBrelshaza.gate[2] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[2] %></p>
+                                                    </div>
+
+                                                    <div class="gate4">
+                                                        <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[3] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }else if(element.itemLevel >= brel.hardBrelshaza.itemLevel[0] && element.itemLevel < brel.hardBrelshaza.itemLevel[1]){ %>
+                                            <div>
+                                                <h1>Hard Brelshaza 1-2 <br> Normal Brelshaza 3-4</h1>
+       
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= brel.hardBrelshaza.gate[0] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= brel.hardBrelshaza.gate[1] %></p>
+                                                        <p><%= brel.hardBrelshaza.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[2] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[3] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } else if(element.itemLevel >= brel.normalBrelshaza.itemLevel[2] && element.itemLevel < brel.hardBrelshaza.itemLevel[0]){ %>
+                                            <div>
+                                                <h1>Normal Brelshaza 1-4</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[2] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[3] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }else if(element.itemLevel >= brel.normalBrelshaza.itemLevel[1] && element.itemLevel < brel.normalBrelshaza.itemLevel[2]){ %>
+                                            <div>
+                                                <h1>Normal Brelshaza 1-3</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[1] %></p>
+                                                    </div>
+
+                                                    <div class="gate3">
+                                                        <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[2] %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% } else{ %>
+                                            <div>
+                                                <h1>Normal Brelshaza 1-2</h1>
+
+                                                <div class="raid-info">
+                                                    <div class="gate1">
+                                                        <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[0] %></p>
+                                                    </div>
+    
+                                                    <div class="gate2">
+                                                        <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                        <p><%= brel.normalBrelshaza.gold[1] %></p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         <% } %>
+                                        
                                     </div>
             
                                     <!-- Kayangel -->
