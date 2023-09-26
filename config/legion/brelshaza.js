@@ -14,5 +14,12 @@ const hardBrelshaza = {
 
 const nmBrelGold = normalBrelshaza.gold.reduce((a,b) => a + b);
 const hmBrelGold = hardBrelshaza.gold.reduce((a,b) => a + b);
+const hm13nm4 = hardBrelshaza.gold.slice(0,3).reduce((a,b) => a + b) + normalBrelshaza.gold[3];
+const hm12nm34 = hardBrelshaza.gold.slice(0,2).reduce((a,b) => a + b) + normalBrelshaza.gold.slice(-2).reduce((a,b) => a + b);
+const nm13 = normalBrelshaza.gold.slice(0,3).reduce((a,b) => a + b);
+const nm12 = normalBrelshaza.gold.slice(0,2).reduce((a,b) => a + b);
 
-module.exports = {normalBrelshaza, hardBrelshaza};
+const brelGold = {nmBrelGold, hmBrelGold, hm13nm4, hm12nm34, nm13, nm12};
+
+
+module.exports = {normalBrelshaza, hardBrelshaza, brelGold};

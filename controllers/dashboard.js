@@ -1,9 +1,13 @@
 const character = require("../model/characterData");
+
+// Lost Ark Class Config
 const loaClass = require("../config/class");
+
+// Legion Raids Config
 const {normalValtan, hardValtan} = require("../config/legion/valtan");
 const {normalVykas, hardVykas} = require("../config/legion/vykas");
 const kakulSaydon = require("../config/legion/kakul-saydon");
-const {normalBrelshaza, hardBrelshaza} = require("../config/legion/brelshaza");
+const {normalBrelshaza, hardBrelshaza, brelGold} = require("../config/legion/brelshaza");
 const {normalAkkan, hardAkkan} = require("../config/legion/akkan");
 const {normalKayangel, hardKayangel} = require("../config/abyss/kayangel");
 
@@ -17,7 +21,7 @@ module.exports = {
             const kayangel = { normalKayangel, hardKayangel };
 
             const characters = await character.find();
-            res.render("dashboard.ejs", {loaClass, valtan, vykas, kakulSaydon, brel, kayangel, akkan, characters});
+            res.render("dashboard.ejs", {loaClass, valtan, vykas, kakulSaydon, brel, kayangel, akkan, characters, brelGold});
         }catch(err){
             console.log(err);
         }
