@@ -1,18 +1,23 @@
-/* body{
+.body{
+    margin: 0
+}
+
+.main-container{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     font-size: 62.5%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(51, 51, 51);
-}; */
+    color: whitesmoke;
+}
 
 .container{
     display: flex;
 }
 
 .roster-info{
-    height: 9rem;
+    height: 10rem;
     width: 11rem;
 }
 
@@ -24,11 +29,44 @@
 
 .raid-card{
     width: 100%;
-    border: 1px solid black;
     text-align: center;
 }
 
 .raid-info{
     display: flex;
     justify-content: space-evenly;
+}
+
+/* Legion Raids */
+
+#valtan{
+    background-image: url(/images/Valtan_Card_Portrait.webp);
+}
+
+#vykas{
+    background-image: url(/images/Vykas_Card_Portrait.webp);
+}
+
+#kakulSaydon{
+    background-image: url(/images/Kakul-Saydon_Card_Portrait.webp);
+}
+
+#brelshaza{
+    background-image: url(/images/Brelshaza_Card_Portrait.webp);
+}
+
+#akkan{
+    background-image: url(/images/Akkan_Card_Portrait.webp);
+}
+
+#kayangel{
+    background-image: url(/images/kyangel.webp);
+}
+
+.card{
+    background-size: cover;
+    background-position: 50% 35%;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 5px;
 }
