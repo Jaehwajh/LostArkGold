@@ -38,7 +38,7 @@
                     <div class="dashboard">
                     <!-- character information -->
                         <% characters.forEach(element => { %>
-                            <div class="container" id="gold-earner">
+                            <div class="container" id="element_<%= element._id %>">
                                 <div class="roster-info">
                                     <h3><%= element.characterName %></h3>
                                     <p><%= element.loaClass %></p>
@@ -48,11 +48,11 @@
                                 <div class="raid">
                                       <!-- Raid information -->
                                     <!-- Valtan -->
-                                    <div class="raid-card raid-select" >
+                                    <div id="raid-select" class="raid-card">
                                         <% if(element.itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
                                             <div id="valtan" class="card">
-                                                <h1>Hard Valtan</h1>
-                                                <div class="raid-info">
+                                                <h1>Valtan</h1>
+                                                <div id="raid" class="raid-info hidden">
                                                     <div class="gate1">
                                                         <p><%= valtan.hardValtan.gate[0] %></p>
                                                         <p><%= valtan.hardValtan.gold[0] %>g</p>
@@ -64,11 +64,11 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <p><%= valtan.hardValtan.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# valtan.hardValtan.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else{ %>
                                             <div id="valtan">
-                                                <h1>Normal Valtan</h1>
+                                                <h1>Valtan</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -82,7 +82,7 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= valtan.normalValtan.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# valtan.normalValtan.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% } %>
                                     </div>
@@ -91,7 +91,7 @@
                                     <div class="raid-card raid-select">
                                         <% if(element.itemLevel >= vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
                                             <div id="vykas" class="card">
-                                                <h1>Hard Vykas</h1>
+                                                <h1>Vykas</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -105,11 +105,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= vykas.hardVykas.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# vykas.hardVykas.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else{ %>
                                             <div id="vykas" class="card">
-                                                <h1>Normal Vykas</h1>
+                                                <h1>Vykas</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -123,7 +123,7 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= vykas.normalVykas.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# vykas.normalVykas.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% } %>
                                     </div>
@@ -132,7 +132,7 @@
                                     <div class="raid-card raid-select">   
                                         <% if(element.itemLevel >= kakulSaydon.itemLevel){ %>
                                             <div id="kakulSaydon" class="card">
-                                                <h1>Normal Kakul-Saydon</h1>
+                                                <h1>Kakul-Saydon</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -151,7 +151,7 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= kakulSaydon.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# kakulSaydon.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% } %>
                                     </div>
@@ -160,7 +160,7 @@
                                     <div class="raid-card raid-select">
                                         <% if(element.itemLevel >= brel.hardBrelshaza.itemLevel[2]) { %>
                                             <div id="brelshaza" class="card">
-                                                <h1>Hard Brelshaza 1-4</h1>
+                                                <h1>Brelshaza</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -184,12 +184,12 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= brelGold.hmBrelGold %>g</p>
+                                                <!-- <p><%# brelGold.hmBrelGold %>g</p> -->
 
                                             </div>
                                         <% }else if(element.itemLevel >= brel.hardBrelshaza.itemLevel[1] && element.itemLevel < brel.hardBrelshaza.itemLevel[2] ){ %>
                                             <div id="brelshaza" class="card">
-                                                <h1>Hard Brelshaza 1-3 <br> Normal Brelshaza 4</h1>
+                                                <h1>Brelshaza</h1>
                                                 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -213,11 +213,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= brelGold.hm13nm4 %>g</p>
+                                                <!-- <p><%# brelGold.hm13nm4 %>g</p> -->
                                             </div>
                                         <% }else if(element.itemLevel >= brel.hardBrelshaza.itemLevel[0] && element.itemLevel < brel.hardBrelshaza.itemLevel[1]){ %>
                                             <div id="brelshaza" class="card">
-                                                <h1>Hard Brelshaza 1-2 <br> Normal Brelshaza 3-4</h1>
+                                                <h1>Brelshaza</h1>
        
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -241,11 +241,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= brelGold.hm12nm34 %>g</p>
+                                                <!-- <p><%# brelGold.hm12nm34 %>g</p> -->
                                             </div>
                                         <% } else if(element.itemLevel >= brel.normalBrelshaza.itemLevel[2] && element.itemLevel < brel.hardBrelshaza.itemLevel[0]){ %>
                                             <div id="brelshaza" class="card">
-                                                <h1>Normal Brelshaza 1-4</h1>
+                                                <h1>Brelshaza</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -269,11 +269,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= brelGold.nmBrelGold %>g</p>
+                                                <!-- <p><%# brelGold.nmBrelGold %>g</p> -->
                                             </div>
                                         <% }else if(element.itemLevel >= brel.normalBrelshaza.itemLevel[1] && element.itemLevel < brel.normalBrelshaza.itemLevel[2]){ %>
                                             <div id="brelshaza" class="card">
-                                                <h1>Normal Brelshaza 1-3</h1>
+                                                <h1>Brelshaza</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -292,11 +292,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= brelGold.nm13 %>g</p>
+                                                <!-- <p><%# brelGold.nm13 %>g</p> -->
                                             </div>g
                                         <% } else{ %>
                                             <div id="brelshaza" class="card">
-                                                <h1>Normal Brelshaza 1-2</h1>
+                                                <h1>Brelshaza</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -310,7 +310,7 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= brelGold.nm12 %>g</p>
+                                                <!-- <p><%# brelGold.nm12 %>g</p> -->
                                             </div>
                                         <% } %>
                                         
@@ -320,7 +320,7 @@
                                     <div class="raid-card raid-select">
                                         <% if(element.itemLevel >= kayangel.hardKayangel.itemLevel){ %>
                                             <div id="kayangel" class="card">
-                                                <h1>Hard Kayangel</h1>
+                                                <h1>Kayangel</h1>
                                                 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -339,11 +339,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= kayangel.hardKayangel.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# kayangel.hardKayangel.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else if(element.itemLevel < kayangel.hardKayangel.itemLevel && element.itemLevel >= kayangel.normalKayangel.itemLevel){ %>
                                             <div id="kayangel" class="card">
-                                                <h1>Normal Kayangel</h1>
+                                                <h1>Kayangel</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -362,7 +362,7 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= kayangel.normalKayangel.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# kayangel.normalKayangel.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% } %>
                                     </div>
@@ -371,7 +371,7 @@
                                     <div class="raid-card raid-select">
                                         <% if(element.itemLevel >= akkan.hardAkkan.itemLevel){ %>
                                             <div id="akkan" class="card">
-                                                <h1>Hard Akkan</h1>
+                                                <h1>Akkan</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -390,11 +390,11 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= akkan.hardAkkan.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# akkan.hardAkkan.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else if(element.itemLevel < akkan.hardAkkan.itemLevel && element.itemLevel >= akkan.normalAkkan.itemLevel){ %>
                                             <div id="akkan" class="card">
-                                                <h1>Normal Akkan</h1>
+                                                <h1>Akkan</h1>
 
                                                 <div class="raid-info">
                                                     <div class="gate1">
@@ -413,7 +413,7 @@
                                                     </div>
                                                 </div>
 
-                                                <p><%= akkan.normalAkkan.gold.reduce((a,b) => a + b) %>g</p>
+                                                <!-- <p><%# akkan.normalAkkan.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% } %>
                                     </div>
