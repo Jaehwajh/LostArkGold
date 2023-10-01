@@ -44,13 +44,13 @@
                                     <p><%= characters[i].itemLevel %></p>
                                 </div>
 
-                                <div class="raid">
+                                <div class="raidList">
                                      <!-- Valtan -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
                                             <div id="valtan" class="card">
                                                 <h1>Valtan</h1>
-                                                <div id="raid" class="raid-info hidden">
+                                                <div class="raid-info more-info">
                                                     <div class="gate1">
                                                         <p><%= valtan.hardValtan.gate[0] %></p>
                                                         <p><%= valtan.hardValtan.gold[0] %>g</p>

@@ -27,7 +27,7 @@
     width: 11rem;
 }
 
-.raid{
+.raidList{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -40,8 +40,12 @@
 }
 
 .raid-info{
-    display: flex;
+    display: none;
     justify-content: space-evenly;
+}
+
+.show{
+    display: flex !important;
 }
 
 /* Legion Raids */
