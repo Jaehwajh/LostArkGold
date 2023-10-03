@@ -23,7 +23,7 @@
 }
 
 .roster-info{
-    height: 12rem;
+    height: 10rem;
     width: 11rem;
 }
 
@@ -41,11 +41,16 @@
 
 .raid-info{
     display: none;
-    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .show{
     display: flex !important;
+}  
+
+.hm, .nm{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /* Legion Raids */
