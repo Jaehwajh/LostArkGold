@@ -7,7 +7,7 @@
     height: 100%;
     font-size: 62.5%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Sofia Sans Condensed', Arial, Helvetica, sans-serif;
     background-color: rgb(51, 51, 51);
     color: whitesmoke;
 }
@@ -23,20 +23,27 @@
 }
 
 .roster-info{
-    height: 10rem;
+    height: 14rem;
     width: 11rem;
+    font-size: 2em;
+}
+
+.raid-title{
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .raidList{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    gap: 10px;
+    width: 100%;    
 }
 
 .raid-card{
     width: 100%;
     text-align: center;
+    position: relative;
 }
 
 .raid-info{
@@ -85,4 +92,34 @@
     overflow: hidden;
     height: 100%;
     border-radius: 5px;
+    position: relative;
+}
+
+/* Legion Raid Gates */
+.gate1, .gate2, .gate3, .gate4{
+    width: 30%;
+    font-size: 1.5em;
+}
+
+.hm > h2{
+    width: 30%;
+}
+
+.nm > h2{
+    width: 30%;
+}
+
+/* Stylize */
+
+.more{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
