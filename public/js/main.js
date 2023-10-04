@@ -1,16 +1,5 @@
 // Onclick
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const raidCards = document.querySelectorAll('.raid-card');
-  
-//     raidCards.forEach((raidCard) => {
-//       raidCard.addEventListener('click', (event) => {
-//         const raidInfo = raidCard.querySelector('.raid-info');
-//         raidInfo.classList.toggle('show');
-//       });
-//     });
-//   });
-
 // More Info
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -23,3 +12,30 @@
       });
     });
   });   
+
+
+// Raid Select
+
+
+let selectedRaidIds = [];
+const maxRaids = 3; 
+
+function raidSelect(raidId, containerIndex) {
+    if (!selectedRaidIds[containerIndex]) {
+        selectedRaidIds[containerIndex] = [];
+    }
+
+    // Check if the maximum limit has been reached
+    if (selectedRaidIds[containerIndex].length < maxRaids) {
+        // Check if the raidId already exists in the array
+        if (selectedRaidIds[containerIndex].indexOf(raidId) === -1) {
+            selectedRaidIds[containerIndex].push(raidId);
+            console.log('Selected Raid IDs for container ' + containerIndex + ':', selectedRaidIds[containerIndex]);
+        } else {
+            console.log('Raid ID already exists in the array for container ' + containerIndex + '.');
+        }
+    } else {
+        console.log('Maximum limit reached for container ' + containerIndex + '.');
+    }
+}
+
