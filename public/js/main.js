@@ -25,11 +25,10 @@ function raidSelect(raidId, containerIndex) {
         selectedRaidIds[containerIndex] = [];
     }
 
-    // Check if the maximum limit has been reached
     if (selectedRaidIds[containerIndex].length < maxRaids) {
-        // Check if the raidId already exists in the array
         if (selectedRaidIds[containerIndex].indexOf(raidId) === -1) {
             selectedRaidIds[containerIndex].push(raidId);
+            toggleVisibility(raidId, true);
             console.log('Selected Raid IDs for container ' + containerIndex + ':', selectedRaidIds[containerIndex]);
         } else {
             console.log('Raid ID already exists in the array for container ' + containerIndex + '.');
@@ -39,3 +38,7 @@ function raidSelect(raidId, containerIndex) {
     }
 }
 
+function toggleVisibility(raidId, isVisible) {
+    var raidElement = document.getElementById(raidId);
+    raidElement.style.display = isVisible ? 'block' : 'none';
+}
