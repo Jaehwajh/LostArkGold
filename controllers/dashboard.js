@@ -42,12 +42,21 @@ module.exports = {
     },
     deleteCharacter: async(req, res) => {
         try{
-            await character.findByIdAndRemove({ _id: req.params.id });
+            await character.findByIdAndDelete({ _id: req.params.id });
             console.log("Character information deleted.");
             res.redirect("/");
         }catch(err){
             res.redirect("/")
         }
     },
+    editItemLevel: async(req, res) => {
+        try{
+            await character.findByIdAndUpdate({ _id: req.params.id, itemLevel: req.body.itemLevel }, {new: true});
+            console.log("Edits saved!");
+            res.redirect("/")
+        }catch(err){
+            res.redirect("/")
+        }
+    }
 };  
 

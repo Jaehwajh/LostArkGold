@@ -17,28 +17,56 @@
 // Raid Select
 
 
-let selectedRaidIds = [];
-const maxRaids = 3; 
+// let selectedRaidIds = [];
+// const maxRaids = 3; 
 
-function raidSelect(raidId, containerIndex) {
-    if (!selectedRaidIds[containerIndex]) {
-        selectedRaidIds[containerIndex] = [];
-    }
+// function raidSelect(raidId, containerIndex) {
+//     if (!selectedRaidIds[containerIndex]) {
+//         selectedRaidIds[containerIndex] = [];
+//     }
 
-    if (selectedRaidIds[containerIndex].length < maxRaids) {
-        if (selectedRaidIds[containerIndex].indexOf(raidId) === -1) {
-            selectedRaidIds[containerIndex].push(raidId);
-            toggleVisibility(raidId, true);
-            console.log('Selected Raid IDs for container ' + containerIndex + ':', selectedRaidIds[containerIndex]);
-        } else {
-            console.log('Raid ID already exists in the array for container ' + containerIndex + '.');
-        }
+//     if (selectedRaidIds[containerIndex].length < maxRaids) {
+//         // Check if the raidId already exists in the array
+//         if (selectedRaidIds[containerIndex].indexOf(raidId) === -1) {
+//             selectedRaidIds[containerIndex].push(raidId);
+//             console.log('Selected Raid IDs for container ' + containerIndex + ':', selectedRaidIds[containerIndex]);
+//         } else {
+//             console.log('Raid ID already exists in the array for container ' + containerIndex + '.');
+//         }
+//     } else {
+//         console.log('Maximum limit reached for container ' + containerIndex + '.');
+//     }
+// }
+
+
+// Modal
+
+let modal = document.getElementById("modal");
+function modalHandler(val) {
+    if (val) {
+        fadeIn(modal);
     } else {
-        console.log('Maximum limit reached for container ' + containerIndex + '.');
+        fadeOut(modal);
     }
 }
-
-function toggleVisibility(raidId, isVisible) {
-    var raidElement = document.getElementById(raidId);
-    raidElement.style.display = isVisible ? 'block' : 'none';
+function fadeOut(el) {
+    el.style.opacity = 1;
+    (function fade() {
+        if ((el.style.opacity -= 0.1) < 0) {
+            el.style.display = "none";
+        } else {
+            requestAnimationFrame(fade);
+        }
+    })();
+}
+function fadeIn(el, display) {
+    el.style.opacity = 0;
+    el.style.display = display || "flex";
+    (function fade() {
+        let val = parseFloat(el.style.opacity);
+        if (!((val += 0.2) > 1)) {
+            el.style.opacity = val;
+            requestAnimationFrame(fade);
+        }
+    })();
 }

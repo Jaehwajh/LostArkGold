@@ -41,14 +41,34 @@
                                 <div class="roster-info">
                                     <h3><%= characters[i].characterName %></h3>
                                     <p><%= characters[i].loaClass %></p>
-                                    <p><%= characters[i].itemLevel %></p>
+                                    <div class="row">
+                                        <p><%= characters[i].itemLevel %></p>
+                                        <button onclick="modalHandler(true)">Edit</button>
+                                    </div>
+                                    <div id="modal">
+                                        <div class="modal-container">
+                                            <form class="modal-form" action="/dashboard/editItemLevel/<%= characters[i]._id %>?_method=PUT" method="POST">
+                                    
+                                                <label for="itemLevel">Item Level</label>
+                                                <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">                     
+                                        
+                                                <button type="submit">Save</button>
+                                            </form>
+
+                                            <button onclick="modalHandler()">Close</button>
+                                        </div>
+                                    </div>
+                                    <form action="/dashboard/deleteCharacter/<%= characters[i]._id %>?_method=DELETE" method="POST">
+                                        <button type="submit">Delete</button>
+                                    </form>
                                 </div>
+                            
 
                                 <div class="raidList">
                                      <!-- Valtan -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
-                                            <div id="valtan" class="card" onclick="raidSelect('valtan', <%= i %>)">
+                                            <div id="valtan" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Valtan</h1>
                                                 </div>
@@ -87,7 +107,7 @@
                                                 <!-- <p><%# valtan.hardValtan.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else{ %>
-                                            <div id="valtan" class="card" onclick="raidSelect('valtan', <%= i %>)">
+                                            <div id="valtan" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Valtan</h1>
                                                 </div>
@@ -117,7 +137,7 @@
                                     <!-- Vykas -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
-                                            <div id="vykas" class="card" onclick="raidSelect('vykas', <%= i %>)">
+                                            <div id="vykas" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Vykas</h1>
                                                 </div>
@@ -155,7 +175,7 @@
                                                 <!-- <p><%# vykas.hardVykas.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else{ %>
-                                            <div id="vykas" class="card" onclick="raidSelect('vykas', <%= i %>)">
+                                            <div id="vykas" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Vykas</h1>
                                                 </div>
@@ -184,7 +204,7 @@
                                     <!-- Kakul Saydon -->
                                     <div id="raid-select<%= i %>" class="raid-card">   
                                         <% if(characters[i].itemLevel >= kakulSaydon.itemLevel){ %>
-                                            <div id="kakulSaydon" class="card" onclick="raidSelect('kakul-saydon', <%= i %>)">
+                                            <div id="kakulSaydon" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Kakul-Saydon</h1>
                                                 </div>
@@ -220,7 +240,7 @@
                                     <!-- Brelshaza -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= brel.hardBrelshaza.itemLevel[2]) { %>
-                                            <div id="brelshaza" class="card" onclick="raidSelect('brelshaza', <%= i %>)">
+                                            <div id="brelshaza" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Brelshaza</h1>
                                                 </div>
@@ -279,7 +299,7 @@
 
                                             </div>
                                         <% }else if(characters[i].itemLevel >= brel.hardBrelshaza.itemLevel[1] && characters[i].itemLevel < brel.hardBrelshaza.itemLevel[2] ){ %>
-                                            <div id="brelshaza" class="card" onclick="raidSelect('brelshaza', <%= i %>)">
+                                            <div id="brelshaza" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Brelshaza</h1>
                                                 </div>
@@ -332,7 +352,7 @@
                                                 <!-- <p><%# brelGold.hm13nm4 %>g</p> -->
                                             </div>
                                         <% }else if(characters[i].itemLevel >= brel.hardBrelshaza.itemLevel[0] && characters[i].itemLevel < brel.hardBrelshaza.itemLevel[1]){ %>
-                                            <div id="brelshaza" class="card" onclick="raidSelect('brelshaza', <%= i %>)">
+                                            <div id="brelshaza" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Brelshaza</h1>
                                                 </div>
@@ -380,7 +400,7 @@
                                                 <!-- <p><%# brelGold.hm12nm34 %>g</p> -->
                                             </div>
                                         <% } else if(characters[i].itemLevel >= brel.normalBrelshaza.itemLevel[2] && characters[i].itemLevel < brel.hardBrelshaza.itemLevel[0]){ %>
-                                            <div id="brelshaza" class="card" onclick="raidSelect('brelshaza', <%= i %>)">
+                                            <div id="brelshaza" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Brelshaza</h1>
                                                 </div>
@@ -415,7 +435,7 @@
                                                 <!-- <p><%# brelGold.nmBrelGold %>g</p> -->
                                             </div>
                                         <% }else if(characters[i].itemLevel >= brel.normalBrelshaza.itemLevel[1] && characters[i].itemLevel < brel.normalBrelshaza.itemLevel[2]){ %>
-                                            <div id="brelshaza" class="card" onclick="raidSelect('brelshaza', <%= i %>)">
+                                            <div id="brelshaza" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Brelshaza</h1>
                                                 </div>
@@ -445,7 +465,7 @@
                                                 <!-- <p><%# brelGold.nm13 %>g</p> -->
                                             </div>
                                         <% } else{ %>
-                                            <div id="brelshaza" class="card" onclick="raidSelect('brelshaza', <%= i %>)">
+                                            <div id="brelshaza" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Brelshaza</h1>
                                                 </div>
@@ -476,7 +496,7 @@
                                     <!-- Kayangel -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= kayangel.hardKayangel.itemLevel){ %>
-                                            <div id="kayangel" class="card" onclick="raidSelect('kayangel', <%= i %>)">
+                                            <div id="kayangel" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Kayangel</h1>
                                                 </div>
@@ -524,7 +544,7 @@
                                                 <!-- <p><%# kayangel.hardKayangel.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else if(characters[i].itemLevel < kayangel.hardKayangel.itemLevel && characters[i].itemLevel >= kayangel.normalKayangel.itemLevel){ %>
-                                            <div id="kayangel" class="card" onclick="raidSelect('kayangel', <%= i %>)">
+                                            <div id="kayangel" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Kayangel</h1>
                                                 </div>
@@ -559,7 +579,7 @@
                                     <!-- Akkan -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= akkan.hardAkkan.itemLevel){ %>
-                                            <div id="akkan" class="card" onclick="raidSelect('akkan', <%= i %>)">
+                                            <div id="akkan" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Akkan</h1>
                                                 </div>
@@ -607,7 +627,7 @@
                                                 <!-- <p><%# akkan.hardAkkan.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% }else if(characters[i].itemLevel < akkan.hardAkkan.itemLevel && characters[i].itemLevel >= akkan.normalAkkan.itemLevel){ %>
-                                            <div id="akkan" class="card" onclick="raidSelect('akkan', <%= i %>)">
+                                            <div id="akkan" class="card">
                                                 <div class="raid-title">
                                                     <h1 class="title">Akkan</h1>
                                                 </div>
@@ -638,15 +658,15 @@
                                             </div>
                                         <% } %>
                                     </div>
-
                                 </div>
                             </div>
                         <% } %>
                     </div>
-        </section>
+            </section>
     </div>
+</div>
 
     <!-- Alt Roster Creation -->
-</div>
+
 
 <%- include("partials/footer") -%>

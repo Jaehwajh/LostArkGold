@@ -8,4 +8,8 @@ const dashboardController = require("../controllers/dashboard");
 
 router.post("/createCharacter", dashboardController.createCharacter);
 
+router.delete("/deleteCharacter/:id", dashboardController.deleteCharacter);
+
+router.put("/editItemLevel/:id", dashboardController.editItemLevel);
+
 module.exports = router;
