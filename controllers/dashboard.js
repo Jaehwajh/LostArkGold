@@ -51,7 +51,7 @@ module.exports = {
     },
     editItemLevel: async(req, res) => {
         try{
-            await character.findByIdAndUpdate({ _id: req.params.id, itemLevel: req.body.itemLevel }, {new: true});
+            await character.findByIdAndUpdate( req.params.id , {itemLevel: req.body.itemLevel}, {new: true});
             console.log("Edits saved!");
             res.redirect("/")
         }catch(err){
