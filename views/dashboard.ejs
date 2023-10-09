@@ -39,13 +39,14 @@
                         <% for(let i = 0; i < characters.length; i++){ %>
                             <div class="container" id="char<%= i %>">
                                 <div class="roster-info">
-                                    <h3><%= characters[i].characterName %></h3>
-                                    <p><%= characters[i].loaClass %></p>
+                                    <h3 class="ros"><%= characters[i].characterName %></h3>
+                                    <p class="ros"><%= characters[i].loaClass %></p>
                                     <div class="row">
                                         <p><%= characters[i].itemLevel %></p>
-                                        <button onclick="modalHandler(true)">Edit</button>
+                                        <button onclick="modalHandler('<%= characters[i]._id %>', true)">Edit</button>
                                     </div>
-                                    <div id="modal">
+
+                                    <div id="modal-<%= characters[i]._id %>" class="modal">
                                         <div class="modal-container">
                                             <form class="modal-form" action="/dashboard/editItemLevel/<%= characters[i]._id %>?_method=PUT" method="POST">
                                     
@@ -55,9 +56,10 @@
                                                 <button type="submit">Save</button>
                                             </form>
 
-                                            <button onclick="modalHandler()">Close</button>
+                                            <button onclick="modalHandler('<%= characters[i]._id %>')">Close</button>
                                         </div>
                                     </div>
+                                    
                                     <form action="/dashboard/deleteCharacter/<%= characters[i]._id %>?_method=DELETE" method="POST">
                                         <button type="submit">Delete</button>
                                     </form>

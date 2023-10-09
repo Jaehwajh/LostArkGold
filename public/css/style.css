@@ -1,5 +1,6 @@
 .body{
-    margin: 0
+    margin: 0;
+    background-color: rgb(51, 51, 51);
 }
 
 .main-container{
@@ -14,18 +15,21 @@
 
 .dashboard{
     display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    flex-direction: row;
 }
 
 .container{
     display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .roster-info{
-    height: 14rem;
-    width: 11rem;
     font-size: 2em;
+}
+
+.ros{
+    margin: 0;
 }
 
 .raid-title{
@@ -36,7 +40,7 @@
 
 .raidList{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;    
 }
 
@@ -49,6 +53,7 @@
 .raid-info{
     display: none;
     flex-direction: column;
+    height: 12rem;
 }
 
 .show{
@@ -136,7 +141,7 @@
 
 /* Modal */
 
-#modal{
+.modal{
     display: none;
     z-index: 999;
     top: 0;

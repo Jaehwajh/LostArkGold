@@ -41,14 +41,15 @@
 
 // Modal
 
-let modal = document.getElementById("modal");
-function modalHandler(val) {
+function modalHandler(id, val) {
+    let modal = document.getElementById(`modal-${id}`);
     if (val) {
         fadeIn(modal);
     } else {
         fadeOut(modal);
     }
 }
+
 function fadeOut(el) {
     el.style.opacity = 1;
     (function fade() {
@@ -59,6 +60,7 @@ function fadeOut(el) {
         }
     })();
 }
+
 function fadeIn(el, display) {
     el.style.opacity = 0;
     el.style.display = display || "flex";
