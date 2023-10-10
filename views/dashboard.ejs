@@ -8,7 +8,6 @@
  <div class="main-container">
     <!-- Main Roster Creation -->
     <div>
-        <section>
                 <div>
                     <form action="/dashboard/createCharacter" method="POST">
                         <label for="characterName">Character Name</label>
@@ -79,29 +78,35 @@
 
                                                 <div class="raid-info more-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= valtan.hardValtan.gate[0] %></p>
-                                                            <p><%= valtan.hardValtan.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= valtan.hardValtan.gate[1] %></p>
-                                                            <p><%= valtan.hardValtan.gold[1] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= valtan.hardValtan.gate[0] %></p>
+                                                                <p><%= valtan.hardValtan.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= valtan.hardValtan.gate[1] %></p>
+                                                                <p><%= valtan.hardValtan.gold[1] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= valtan.normalValtan.gate[0] %></p>
-                                                            <p><%= valtan.normalValtan.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= valtan.normalValtan.gate[1] %></p>
-                                                            <p><%= valtan.normalValtan.gold[1] %>g</p>
-                                                        </div>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= valtan.normalValtan.gate[0] %></p>
+                                                                <p><%= valtan.normalValtan.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= valtan.normalValtan.gate[1] %></p>
+                                                                <p><%= valtan.normalValtan.gold[1] %>g</p>
+                                                            </div>
+                                                        </div>                 
                                                     </div>
                                                     
                                                 </div>
@@ -118,16 +123,19 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= valtan.normalValtan.gate[0] %></p>
-                                                            <p><%= valtan.normalValtan.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= valtan.normalValtan.gate[1] %></p>
-                                                            <p><%= valtan.normalValtan.gold[1] %>g</p>
-                                                        </div>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= valtan.normalValtan.gate[0] %></p>
+                                                                <p><%= valtan.normalValtan.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= valtan.normalValtan.gate[1] %></p>
+                                                                <p><%= valtan.normalValtan.gold[1] %>g</p>
+                                                            </div>
+                                                        </div>                 
                                                     </div>
                                                 </div>
 
@@ -148,28 +156,34 @@
 
                                                 <div class="raid-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= vykas.hardVykas.gate[0] %></p>
-                                                            <p><%= vykas.hardVykas.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= vykas.hardVykas.gate[1] %></p>
-                                                            <p><%= vykas.hardVykas.gold[1] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= vykas.hardVykas.gate[0] %></p>
+                                                                <p><%= vykas.hardVykas.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= vykas.hardVykas.gate[1] %></p>
+                                                                <p><%= vykas.hardVykas.gold[1] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= vykas.normalVykas.gate[0] %></p>
-                                                            <p><%= vykas.normalVykas.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= vykas.normalVykas.gate[1] %></p>
-                                                            <p><%= vykas.normalVykas.gold[1] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= vykas.normalVykas.gate[0] %></p>
+                                                                <p><%= vykas.normalVykas.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= vykas.normalVykas.gate[1] %></p>
+                                                                <p><%= vykas.normalVykas.gold[1] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,15 +199,18 @@
                                                 <button class="more">...</button>
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= vykas.normalVykas.gate[0] %></p>
-                                                            <p><%= vykas.normalVykas.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2"> 
-                                                            <p><%= vykas.normalVykas.gate[1] %></p>
-                                                            <p><%= vykas.normalVykas.gold[1] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= vykas.normalVykas.gate[0] %></p>
+                                                                <p><%= vykas.normalVykas.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= vykas.normalVykas.gate[1] %></p>
+                                                                <p><%= vykas.normalVykas.gold[1] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -216,20 +233,23 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= kakulSaydon.gate[0] %></p>
-                                                            <p><%= kakulSaydon.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= kakulSaydon.gate[1] %></p>
-                                                            <p><%= kakulSaydon.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= kakulSaydon.gate[2] %></p>
-                                                            <p><%= kakulSaydon.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= kakulSaydon.gate[0] %></p>
+                                                                <p><%= kakulSaydon.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= kakulSaydon.gate[1] %></p>
+                                                                <p><%= kakulSaydon.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= kakulSaydon.gate[2] %></p>
+                                                                <p><%= kakulSaydon.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -251,48 +271,54 @@
 
                                                 <div class="raid-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.hardBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.hardBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.hardBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[2] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate4">
-                                                            <p><%= brel.hardBrelshaza.gate[3] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[3] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[2] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate4">
+                                                                <p><%= brel.hardBrelshaza.gate[3] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[3] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[2] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -310,43 +336,49 @@
                                                 
                                                 <div class="raid-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.hardBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.hardBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.hardBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[2] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -363,38 +395,44 @@
 
                                                 <div class="raid-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.hardBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.hardBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[2] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -411,25 +449,28 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[2] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -446,20 +487,23 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -476,15 +520,18 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                            <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
+                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -507,38 +554,44 @@
                                                 
                                                 <div class="raid-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= kayangel.hardKayangel.gate[0] %></p>
-                                                            <p><%= kayangel.hardKayangel.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= kayangel.hardKayangel.gate[1] %></p>
-                                                            <p><%= kayangel.hardKayangel.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= kayangel.hardKayangel.gate[2] %></p>
-                                                            <p><%= kayangel.hardKayangel.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= kayangel.hardKayangel.gate[0] %></p>
+                                                                <p><%= kayangel.hardKayangel.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= kayangel.hardKayangel.gate[1] %></p>
+                                                                <p><%= kayangel.hardKayangel.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= kayangel.hardKayangel.gate[2] %></p>
+                                                                <p><%= kayangel.hardKayangel.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= kayangel.normalKayangel.gate[0] %></p>
-                                                            <p><%= kayangel.normalKayangel.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= kayangel.normalKayangel.gate[1] %></p>
-                                                            <p><%= kayangel.normalKayangel.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= kayangel.normalKayangel.gate[2] %></p>
-                                                            <p><%= kayangel.normalKayangel.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= kayangel.normalKayangel.gate[0] %></p>
+                                                                <p><%= kayangel.normalKayangel.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= kayangel.normalKayangel.gate[1] %></p>
+                                                                <p><%= kayangel.normalKayangel.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= kayangel.normalKayangel.gate[2] %></p>
+                                                                <p><%= kayangel.normalKayangel.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -555,20 +608,23 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= kayangel.normalKayangel.gate[0] %></p>
-                                                            <p><%= kayangel.normalKayangel.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= kayangel.normalKayangel.gate[1] %></p>
-                                                            <p><%= kayangel.normalKayangel.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= kayangel.normalKayangel.gate[2] %></p>
-                                                            <p><%= kayangel.normalKayangel.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= kayangel.normalKayangel.gate[0] %></p>
+                                                                <p><%= kayangel.normalKayangel.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= kayangel.normalKayangel.gate[1] %></p>
+                                                                <p><%= kayangel.normalKayangel.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= kayangel.normalKayangel.gate[2] %></p>
+                                                                <p><%= kayangel.normalKayangel.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -590,38 +646,44 @@
 
                                                 <div class="raid-info">
                                                     <div class="hm">
-                                                        <h2>Hard</h2>
-                                                        <div class="gate1">
-                                                            <p><%= akkan.hardAkkan.gate[0] %></p>
-                                                            <p><%= akkan.hardAkkan.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= akkan.hardAkkan.gate[1] %></p>
-                                                            <p><%= akkan.hardAkkan.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= akkan.hardAkkan.gate[2] %></p>
-                                                            <p><%= akkan.hardAkkan.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Hard</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= akkan.hardAkkan.gate[0] %></p>
+                                                                <p><%= akkan.hardAkkan.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= akkan.hardAkkan.gate[1] %></p>
+                                                                <p><%= akkan.hardAkkan.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= akkan.hardAkkan.gate[2] %></p>
+                                                                <p><%= akkan.hardAkkan.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= akkan.normalAkkan.gate[0] %></p>
-                                                            <p><%= akkan.normalAkkan.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= akkan.normalAkkan.gate[1] %></p>
-                                                            <p><%= akkan.normalAkkan.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= akkan.normalAkkan.gate[2] %></p>
-                                                            <p><%= akkan.normalAkkan.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= akkan.normalAkkan.gate[0] %></p>
+                                                                <p><%= akkan.normalAkkan.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= akkan.normalAkkan.gate[1] %></p>
+                                                                <p><%= akkan.normalAkkan.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= akkan.normalAkkan.gate[2] %></p>
+                                                                <p><%= akkan.normalAkkan.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -638,20 +700,23 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2>Normal</h2>
-                                                        <div class="gate1">
-                                                            <p><%= akkan.normalAkkan.gate[0] %></p>
-                                                            <p><%= akkan.normalAkkan.gold[0] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate2">
-                                                            <p><%= akkan.normalAkkan.gate[1] %></p>
-                                                            <p><%= akkan.normalAkkan.gold[1] %>g</p>
-                                                        </div>
-    
-                                                        <div class="gate3">
-                                                            <p><%= akkan.normalAkkan.gate[2] %></p>
-                                                            <p><%= akkan.normalAkkan.gold[2] %>g</p>
+                                                        <h2 class="difficulty">Normal</h2>
+                                                        
+                                                        <div class="flex-row">
+                                                            <div class="gate1">
+                                                                <p><%= akkan.normalAkkan.gate[0] %></p>
+                                                                <p><%= akkan.normalAkkan.gold[0] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate2">
+                                                                <p><%= akkan.normalAkkan.gate[1] %></p>
+                                                                <p><%= akkan.normalAkkan.gold[1] %>g</p>
+                                                            </div>
+        
+                                                            <div class="gate3">
+                                                                <p><%= akkan.normalAkkan.gate[2] %></p>
+                                                                <p><%= akkan.normalAkkan.gold[2] %>g</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -664,7 +729,11 @@
                             </div>
                         <% } %>
                     </div>
-            </section>
+            <!-- Total Gold -->
+            <div class="total-gold">
+                <h1>Total Gold Earned:</h1>
+                
+            </div>
     </div>
 </div>
 
