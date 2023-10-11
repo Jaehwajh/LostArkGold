@@ -72,3 +72,22 @@ function fadeIn(el, display) {
         }
     })();
 }
+
+
+// Valtan Gold
+let valtanGoldSelector = [];  
+
+function getValue(element){
+    const goldValue = parseInt(element.dataset.value);
+
+    const chestId = element.dataset.target;
+    const bonusChest = document.getElementById(chestId);
+    bonusChest.classList.toggle("show");
+
+    valtanGoldSelector.push(goldValue);
+
+    const valtanTotal = valtanGoldSelector.reduce((a,b) => a+b);
+    const valtanGold = document.getElementById("valtan-gold");
+    valtanGold.innerHTML = valtanTotal + "g";
+};  
+

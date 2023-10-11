@@ -46,13 +46,14 @@
 .raid-card{
     width: 100%;
     text-align: center;
-    position: relative;
+    position: relative; 
 }
 
 .raid-info{
     display: none;
     flex-direction: column;
-    height: 13rem;
+    justify-content: space-evenly;
+    height: 22rem;
 }
 
 .show{
@@ -123,6 +124,16 @@
     width: 30%;
 }
 
+.bonus-chest{
+    display: none;
+    justify-content: center;
+}
+
+.gateNum:hover{
+    cursor: pointer;
+    color: #ff7d36;
+}
+
 /* Stylize */
 
 .more{
@@ -152,6 +163,7 @@
 .row > p{
     margin: 0;
 }
+
 
 /* Modal */
 

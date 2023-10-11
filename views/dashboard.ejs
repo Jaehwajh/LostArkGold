@@ -78,37 +78,48 @@
 
                                                 <div class="raid-info more-info">
                                                     <div class="hm">
-                                                        <h2 class="difficulty">Hard</h2>
+                                                        <h1 class="difficulty">Hard</h1>
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= valtan.hardValtan.gate[0] %></p>
-                                                                <p><%= valtan.hardValtan.gold[0] %>g</p>
+                                                                <h4 class="gateNum" data-target="vhmg1Chest" data-value="<%= valtan.hardValtan.gold[0] %>" onclick="getValue(this)">G<%= valtan.hardValtan.gate[0] %></h4>
+                                                                
+                                                                <div id="vhmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vhmg1Chest" name="vhmg1Chest">
+                                                                    <label for="vhmg1Chest">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= valtan.hardValtan.gate[1] %></p>
-                                                                <p><%= valtan.hardValtan.gold[1] %>g</p>
+                                                                <h4 class="gateNum" data-target="vhmg2Chest" data-value="<%= valtan.hardValtan.gold[1] %>" onclick="getValue(this)">G<%= valtan.hardValtan.gate[1] %></h4>
+                                                                
+                                                                <div id="vhmg2Chest" class="bonus-chest ">
+                                                                    <input type="checkbox" id="vhmg2Chest" name="vhmg2Chest">
+                                                                    <label for="vhmg2Chest">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="nm">
-                                                        <h2 class="difficulty">Normal</h2>
+                                                        <h1 class="difficulty">Normal</h1>
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= valtan.normalValtan.gate[0] %></p>
+                                                                <p>G<%= valtan.normalValtan.gate[0] %></p>
                                                                 <p><%= valtan.normalValtan.gold[0] %>g</p>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= valtan.normalValtan.gate[1] %></p>
+                                                                <p>G<%= valtan.normalValtan.gate[1] %></p>
                                                                 <p><%= valtan.normalValtan.gold[1] %>g</p>
                                                             </div>
                                                         </div>                 
-                                                    </div>
+                                                    </div>         
                                                     
+                                                    <div class="">
+                                                        <h2 id="valtan-gold"></h2>
+                                                    </div>
                                                 </div>
                                                 
                                                 <!-- <p><%# valtan.hardValtan.gold.reduce((a,b) => a + b) %>g</p> -->
@@ -732,7 +743,7 @@
             <!-- Total Gold -->
             <div class="total-gold">
                 <h1>Total Gold Earned:</h1>
-                
+
             </div>
     </div>
 </div>
