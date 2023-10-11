@@ -13,32 +13,6 @@
     });
   });   
 
-
-// Raid Select
-
-
-// let selectedRaidIds = [];
-// const maxRaids = 3; 
-
-// function raidSelect(raidId, containerIndex) {
-//     if (!selectedRaidIds[containerIndex]) {
-//         selectedRaidIds[containerIndex] = [];
-//     }
-
-//     if (selectedRaidIds[containerIndex].length < maxRaids) {
-//         // Check if the raidId already exists in the array
-//         if (selectedRaidIds[containerIndex].indexOf(raidId) === -1) {
-//             selectedRaidIds[containerIndex].push(raidId);
-//             console.log('Selected Raid IDs for container ' + containerIndex + ':', selectedRaidIds[containerIndex]);
-//         } else {
-//             console.log('Raid ID already exists in the array for container ' + containerIndex + '.');
-//         }
-//     } else {
-//         console.log('Maximum limit reached for container ' + containerIndex + '.');
-//     }
-// }
-
-
 // Modal
 
 function modalHandler(id, val) {
@@ -75,19 +49,67 @@ function fadeIn(el, display) {
 
 
 // Valtan Gold
-let valtanGoldSelector = [];  
+let valtanGoldSelector = []; 
+let valClick = 0
 
-function getValue(element){
-    const goldValue = parseInt(element.dataset.value);
+function getValtanGold(element){
+    if(valClick < 2){
+        const goldValue = parseInt(element.dataset.value);
 
-    const chestId = element.dataset.target;
-    const bonusChest = document.getElementById(chestId);
-    bonusChest.classList.toggle("show");
+        const chestId = element.dataset.target;
+        const bonusChest = document.getElementById(chestId);
+        bonusChest.classList.toggle("show");
+    
+        valtanGoldSelector.push(goldValue);
+    
+        const valtanTotal = valtanGoldSelector.reduce((a,b) => a+b);
+        const valtanGold = document.getElementById("valtan-gold");
+        valtanGold.innerHTML = valtanTotal + "g";
 
-    valtanGoldSelector.push(goldValue);
+        element.style.pointerEvents = 'none';
 
-    const valtanTotal = valtanGoldSelector.reduce((a,b) => a+b);
-    const valtanGold = document.getElementById("valtan-gold");
-    valtanGold.innerHTML = valtanTotal + "g";
-};  
+        valClick++;
 
+        if (valClick === 2) {
+            // Disable all clickable elements
+            const clickableElements = document.querySelectorAll('.valGate');
+            clickableElements.forEach(element => {
+                element.style.pointerEvents = 'none';
+            });
+        };
+    };  
+};
+
+// Vykas Gold
+
+let vykasGoldSelector = [];
+let vyClick = 0;
+
+function getVykasGold(element){
+    if(vyClick < 2){
+        const goldValue = parseInt(element.dataset.value);
+
+        const chestId = element.dataset.target;
+        const bonusChest = document.getElementById(chestId);
+        bonusChest.classList.toggle("show")
+
+        vykasGoldSelector.push(goldValue);
+        console.log(vykasGoldSelector);
+
+        const vykasTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const vykasGold = document.getElementById("vykas-gold");
+        vykasGold.innerHTML = vykasTotal + "g";
+
+        element.style.pointerEvents = 'none';
+
+        vyClick++;
+
+        if (vyClick === 2) {
+            // Disable all clickable elements
+            const clickableElements = document.querySelectorAll('.vyGate');
+            clickableElements.forEach(element => {
+                element.style.pointerEvents = 'none';
+            });
+        };
+    };
+};

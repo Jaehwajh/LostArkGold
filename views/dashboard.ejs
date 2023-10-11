@@ -82,20 +82,20 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <h4 class="gateNum" data-target="vhmg1Chest" data-value="<%= valtan.hardValtan.gold[0] %>" onclick="getValue(this)">G<%= valtan.hardValtan.gate[0] %></h4>
+                                                                <h4 class="gateNum valGate" data-target="valhmg1Chest" data-value="<%= valtan.hardValtan.gold[0] %>" onclick="getValtanGold(this)">G<%= valtan.hardValtan.gate[0] %></h4>
                                                                 
-                                                                <div id="vhmg1Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="vhmg1Chest" name="vhmg1Chest">
-                                                                    <label for="vhmg1Chest">Chest</label>
+                                                                <div id="valhmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="valhmg1Chest" name="valhmg1Chest">
+                                                                    <label for="valhmg1Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <h4 class="gateNum" data-target="vhmg2Chest" data-value="<%= valtan.hardValtan.gold[1] %>" onclick="getValue(this)">G<%= valtan.hardValtan.gate[1] %></h4>
+                                                                <h4 class="gateNum valGate" data-target="valhmg2Chest" data-value="<%= valtan.hardValtan.gold[1] %>" onclick="getValtanGold(this)">G<%= valtan.hardValtan.gate[1] %></h4>
                                                                 
-                                                                <div id="vhmg2Chest" class="bonus-chest ">
-                                                                    <input type="checkbox" id="vhmg2Chest" name="vhmg2Chest">
-                                                                    <label for="vhmg2Chest">Chest</label>
+                                                                <div id="valhmg2Chest" class="bonus-chest ">
+                                                                    <input type="checkbox" id="valhmg2Chest" name="valhmg2Chest">
+                                                                    <label for="valhmg2Chest">Chest</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -106,13 +106,21 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p>G<%= valtan.normalValtan.gate[0] %></p>
-                                                                <p><%= valtan.normalValtan.gold[0] %>g</p>
+                                                                <h4 class="gateNum valGate" data-target="valnmg1Chest" data-value="<%= valtan.normalValtan.gold[0] %>" onclick="getValtanGold(this)">G<%= valtan.normalValtan.gate[0] %></h4>
+                                                                
+                                                                <div id="valnmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="valnmg1Chest" name="valnmg1Chest">
+                                                                    <label for="valnmg1Chest">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p>G<%= valtan.normalValtan.gate[1] %></p>
-                                                                <p><%= valtan.normalValtan.gold[1] %>g</p>
+                                                                <h4 class="gateNum valGate" data-target="valnmg2Chest" data-value="<%= valtan.normalValtan.gold[1] %>" onclick="getValtanGold(this)">G<%= valtan.normalValtan.gate[1] %></h4>
+                                                                
+                                                                <div id="valnmg2Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="valnmg2Chest" name="valnmg2Chest">
+                                                                    <label for="valnmg2Chest">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>                 
                                                     </div>         
@@ -134,19 +142,31 @@
 
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h2 class="difficulty">Normal</h2>
+                                                        <h1 class="difficulty">Normal</h1>
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= valtan.normalValtan.gate[0] %></p>
-                                                                <p><%= valtan.normalValtan.gold[0] %>g</p>
+                                                                <h4 class="gateNum valGate" data-target="valnmg1Chest" data-value="<%= valtan.normalValtan.gold[0] %>" onclick="getValtanGold(this)">G<%= valtan.normalValtan.gate[0] %></h4>
+                                                                
+                                                                <div id="valnmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="valnmg1Chest" name="valnmg1Chest">
+                                                                    <label for="valnmg1Chest">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= valtan.normalValtan.gate[1] %></p>
-                                                                <p><%= valtan.normalValtan.gold[1] %>g</p>
+                                                                <h4 class="gateNum valGate" data-target="valnmg2Chest" data-value="<%= valtan.normalValtan.gold[1] %>" onclick="getValtanGold(this)">G<%= valtan.normalValtan.gate[1] %></h4>
+                                                                
+                                                                <div id="valnmg2Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="valnmg2Chest" name="valnmg2Chest">
+                                                                    <label for="valnmg2Chest">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>                 
+                                                    </div>         
+                                                    
+                                                    <div class="">
+                                                        <h2 id="valtan-gold"></h2>
                                                     </div>
                                                 </div>
 
@@ -171,13 +191,21 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= vykas.hardVykas.gate[0] %></p>
-                                                                <p><%= vykas.hardVykas.gold[0] %>g</p>
+                                                                <h4 class="gateNum vyGate" data-target="vyhmg1Chest" data-value="<%= vykas.hardVykas.gold[0] %>" onclick="getVykasGold(this)">G<%= vykas.hardVykas.gate[0] %></h4>
+
+                                                                <div id="vyhmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vyhmg1Chest" name="vyhmg1Chest">
+                                                                    <label for="vyhmg1Chest">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= vykas.hardVykas.gate[1] %></p>
-                                                                <p><%= vykas.hardVykas.gold[1] %>g</p>
+                                                                <h4 class="gateNum vyGate" data-target="vyhmg2Chest" data-value="<%= vykas.hardVykas.gold[1] %>" onclick="getVykasGold(this)">G<%= vykas.hardVykas.gate[1] %></h4>
+                                                                
+                                                                <div id="vyhmg2Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vyhmg2Chest" name="vyhmg2Chest">
+                                                                    <label for="vyhmg2Chest">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -187,15 +215,27 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= vykas.normalVykas.gate[0] %></p>
-                                                                <p><%= vykas.normalVykas.gold[0] %>g</p>
+                                                                <h4 class="gateNum vyGate" data-target="vynmg1Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="getVykasGold(this)">G<%= vykas.normalVykas.gate[0] %></h4>
+                                                                
+                                                                <div id="vynmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vynmg1Chest" name="vynmg1Chest">
+                                                                    <label for="vynmg1Chest">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= vykas.normalVykas.gate[1] %></p>
-                                                                <p><%= vykas.normalVykas.gold[1] %>g</p>
+                                                                <h4 class="gateNum vyGate" data-target="vynmg2Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="getVykasGold(this)">G<%= vykas.normalVykas.gate[1] %></h4>
+                                                                
+                                                                <div id="vynmg2Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vynmg2Chest" name="vynmg2Chest">
+                                                                    <label for="vynmg2Chest">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <div class="">
+                                                        <h2 id="vykas-gold"></h2>
                                                     </div>
                                                 </div>
 
@@ -214,15 +254,27 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= vykas.normalVykas.gate[0] %></p>
-                                                                <p><%= vykas.normalVykas.gold[0] %>g</p>
+                                                                <h4 class="gateNum vyGate" data-target="vynmg1Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="getVykasGold(this)">G<%= vykas.normalVykas.gate[0] %></h4>
+                                                                
+                                                                <div id="vynmg1Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vynmg1Chest" name="vynmg1Chest">
+                                                                    <label for="vynmg1Chest">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= vykas.normalVykas.gate[1] %></p>
-                                                                <p><%= vykas.normalVykas.gold[1] %>g</p>
+                                                                <h4 class="gateNum vyGate" data-target="vynmg2Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="getVykasGold(this)">G<%= vykas.normalVykas.gate[1] %></h4>
+                                                                
+                                                                <div id="vynmg2Chest" class="bonus-chest">
+                                                                    <input type="checkbox" id="vynmg2Chest" name="vynmg2Chest">
+                                                                    <label for="vynmg2Chest">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <div class="">
+                                                        <h2 id="vykas-gold"></h2>
                                                     </div>
                                                 </div>
 
@@ -248,18 +300,30 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= kakulSaydon.gate[0] %></p>
-                                                                <p><%= kakulSaydon.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= kakulSaydon.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= kakulSaydon.gate[1] %></p>
-                                                                <p><%= kakulSaydon.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= kakulSaydon.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= kakulSaydon.gate[2] %></p>
-                                                                <p><%= kakulSaydon.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= kakulSaydon.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -286,23 +350,39 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.hardBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.hardBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.hardBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate4">
-                                                                <p><%= brel.hardBrelshaza.gate[3] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[3] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[3] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -312,23 +392,39 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
-                                                            <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            <div class="gate4">
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[3] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -351,18 +447,30 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.hardBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.hardBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.hardBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -372,23 +480,39 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
-                                                            <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            <div class="gate4">
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[3] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -410,15 +534,22 @@
 
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.hardBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.hardBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.hardBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
-                                                        </div>
                                                     </div>
 
                                                     <div class="nm">
@@ -426,23 +557,39 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
-                                                            <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            <div class="gate4">
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[3] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -464,23 +611,39 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
-                                                            <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[3] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[3] %>g</p>
+                                                            <div class="gate4">
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[3] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -502,18 +665,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= brel.normalBrelshaza.gate[2] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -535,13 +710,21 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= brel.normalBrelshaza.gate[0] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= brel.normalBrelshaza.gate[1] %></p>
-                                                                <p><%= brel.normalBrelshaza.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -569,18 +752,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= kayangel.hardKayangel.gate[0] %></p>
-                                                                <p><%= kayangel.hardKayangel.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= kayangel.hardKayangel.gate[1] %></p>
-                                                                <p><%= kayangel.hardKayangel.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= kayangel.hardKayangel.gate[2] %></p>
-                                                                <p><%= kayangel.hardKayangel.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -590,18 +785,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= kayangel.normalKayangel.gate[0] %></p>
-                                                                <p><%= kayangel.normalKayangel.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= kayangel.normalKayangel.gate[1] %></p>
-                                                                <p><%= kayangel.normalKayangel.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= kayangel.normalKayangel.gate[2] %></p>
-                                                                <p><%= kayangel.normalKayangel.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -623,18 +830,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= kayangel.normalKayangel.gate[0] %></p>
-                                                                <p><%= kayangel.normalKayangel.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= kayangel.normalKayangel.gate[1] %></p>
-                                                                <p><%= kayangel.normalKayangel.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= kayangel.normalKayangel.gate[2] %></p>
-                                                                <p><%= kayangel.normalKayangel.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -661,18 +880,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= akkan.hardAkkan.gate[0] %></p>
-                                                                <p><%= akkan.hardAkkan.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= akkan.hardAkkan.gate[1] %></p>
-                                                                <p><%= akkan.hardAkkan.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= akkan.hardAkkan.gate[2] %></p>
-                                                                <p><%= akkan.hardAkkan.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -682,18 +913,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= akkan.normalAkkan.gate[0] %></p>
-                                                                <p><%= akkan.normalAkkan.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= akkan.normalAkkan.gate[1] %></p>
-                                                                <p><%= akkan.normalAkkan.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= akkan.normalAkkan.gate[2] %></p>
-                                                                <p><%= akkan.normalAkkan.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -715,18 +958,30 @@
                                                         
                                                         <div class="flex-row">
                                                             <div class="gate1">
-                                                                <p><%= akkan.normalAkkan.gate[0] %></p>
-                                                                <p><%= akkan.normalAkkan.gold[0] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[0] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <p><%= akkan.normalAkkan.gate[1] %></p>
-                                                                <p><%= akkan.normalAkkan.gold[1] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[1] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <p><%= akkan.normalAkkan.gate[2] %></p>
-                                                                <p><%= akkan.normalAkkan.gold[2] %>g</p>
+                                                                <p class="gateNum " data-target="" data-value="<%= %>" onclick=""><%= brel.hardBrelshaza.gate[2] %></p>
+                                                                
+                                                                <div id="" class="bonus-chest">
+                                                                    <input type="checkbox" id="" name="">
+                                                                    <label for="">Chest</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
