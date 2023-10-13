@@ -113,3 +113,45 @@ function getVykasGold(element){
         };
     };
 };
+
+// Kakul-Saydon Gold
+
+let clownGoldSelector = [];
+let clownClick = 0;
+
+function getClownGold(element){
+    if(clownClick < 3){
+
+    }
+}
+
+// Brelshaza Gold
+let brelGoldSelector = [];
+let brelClick = 0;
+
+function getBrelGold(element){
+    if(brelClick < 4){
+
+    }
+}
+
+
+// Kayangel Gold
+let kayangelGoldSelector = [];
+let kayaClick = 0;
+
+function getKayangelGold(element){
+    if(kayaClick < 3){
+
+    }
+}
+
+// Akkan Gold
+let akkanGoldSelector = [];
+let akkanClick = 0;
+
+function getAkkanGold(element){
+    if(akkanClick < 3){
+        
+    }
+}
