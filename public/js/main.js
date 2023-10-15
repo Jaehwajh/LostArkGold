@@ -121,7 +121,30 @@ let clownClick = 0;
 
 function getClownGold(element){
     if(clownClick < 3){
+        const goldValue = parseInt(element.dataset.value);
 
+        const chestId = element.dataset.target;
+        const bonusChest = document.getElementById(chestId);
+        bonusChest.classList.toggle("show")
+
+        clownGoldSelector.push(goldValue);
+        console.log(clownGoldSelector);
+
+        const clownTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const clownGold = document.getElementById("clown-gold");
+        clownGold.innerHTML = clownTotal + "g";
+
+        element.style.pointerEvents = 'none';
+
+        clownClick++;
+
+        if (clownClick === 2) {
+            // Disable all clickable elements
+            const clickableElements = document.querySelectorAll('.clownGate');
+            clickableElements.forEach(element => {
+                element.style.pointerEvents = 'none';
+            });
+        };
     }
 }
 
@@ -131,7 +154,30 @@ let brelClick = 0;
 
 function getBrelGold(element){
     if(brelClick < 4){
+        const goldValue = parseInt(element.dataset.value);
 
+        const chestId = element.dataset.target;
+        const bonusChest = document.getElementById(chestId);
+        bonusChest.classList.toggle("show")
+
+        brelGoldSelector.push(goldValue);
+        console.log(brelGoldSelector);
+
+        const brelTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const brelGold = document.getElementById("brel-gold");
+        brelGold.innerHTML = brelTotal + "g";
+
+        element.style.pointerEvents = 'none';
+
+        brelClick++;
+
+        if (brelClick === 2) {
+            // Disable all clickable elements
+            const clickableElements = document.querySelectorAll('.brelGate');
+            clickableElements.forEach(element => {
+                element.style.pointerEvents = 'none';
+            });
+        };
     }
 }
 
@@ -142,16 +188,61 @@ let kayaClick = 0;
 
 function getKayangelGold(element){
     if(kayaClick < 3){
+        const goldValue = parseInt(element.dataset.value);
 
+        const chestId = element.dataset.target;
+        const bonusChest = document.getElementById(chestId);
+        bonusChest.classList.toggle("show")
+
+        kayangelGoldSelector.push(goldValue);
+        console.log(kayangelGoldSelector);
+
+        const kayaTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const kayaGold = document.getElementById("kaya-gold");
+        kayaGold.innerHTML = kayaTotal + "g";
+
+        element.style.pointerEvents = 'none';
+
+        kayaClick++;
+
+        if (vyClick === 2) {
+            // Disable all clickable elements
+            const clickableElements = document.querySelectorAll('.kayaGate');
+            clickableElements.forEach(element => {
+                element.style.pointerEvents = 'none';
+            });
+        };
     }
 }
 
 // Akkan Gold
 let akkanGoldSelector = [];
-let akkanClick = 0;
-
+let akkanClick akkan
 function getAkkanGold(element){
     if(akkanClick < 3){
-        
+        const goldValue = parseInt(element.dataset.value);
+
+        const chestId = element.dataset.target;
+        const bonusChest = document.getElementById(chestId);
+        bonusChest.classList.toggle("show")
+
+        akkanGoldSelector.push(goldValue);
+        console.log(akkanGoldSelector);
+
+        const akkanTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const akkanGold = document.getElementById("akkan-gold");
+        akkanGold.innerHTML = akkanTotal + "g";
+
+        element.style.pointerEvents = 'none';
+
+        akkanClick++;
+
+        if (akkanClick === 2) {
+            // Disable all clickable elements
+            const clickableElements = document.querySelectorAll('.akkanGate');
+            clickableElements.forEach(element => {
+                element.style.pointerEvents = 'none';
+            });
+        };
     }
 }
