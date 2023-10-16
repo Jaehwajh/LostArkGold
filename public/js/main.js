@@ -130,7 +130,7 @@ function getClownGold(element){
         clownGoldSelector.push(goldValue);
         console.log(clownGoldSelector);
 
-        const clownTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const clownTotal = clownGoldSelector.reduce((a,b) => a+b);
         const clownGold = document.getElementById("clown-gold");
         clownGold.innerHTML = clownTotal + "g";
 
@@ -138,7 +138,7 @@ function getClownGold(element){
 
         clownClick++;
 
-        if (clownClick === 2) {
+        if (clownClick === 3) {
             // Disable all clickable elements
             const clickableElements = document.querySelectorAll('.clownGate');
             clickableElements.forEach(element => {
@@ -163,7 +163,7 @@ function getBrelGold(element){
         brelGoldSelector.push(goldValue);
         console.log(brelGoldSelector);
 
-        const brelTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const brelTotal = brelGoldSelector.reduce((a,b) => a+b);
         const brelGold = document.getElementById("brel-gold");
         brelGold.innerHTML = brelTotal + "g";
 
@@ -171,7 +171,7 @@ function getBrelGold(element){
 
         brelClick++;
 
-        if (brelClick === 2) {
+        if (brelClick === 4) {
             // Disable all clickable elements
             const clickableElements = document.querySelectorAll('.brelGate');
             clickableElements.forEach(element => {
@@ -197,7 +197,7 @@ function getKayangelGold(element){
         kayangelGoldSelector.push(goldValue);
         console.log(kayangelGoldSelector);
 
-        const kayaTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const kayaTotal = kayangelGoldSelector.reduce((a,b) => a+b);
         const kayaGold = document.getElementById("kaya-gold");
         kayaGold.innerHTML = kayaTotal + "g";
 
@@ -205,7 +205,7 @@ function getKayangelGold(element){
 
         kayaClick++;
 
-        if (vyClick === 2) {
+        if (vyClick === 3) {
             // Disable all clickable elements
             const clickableElements = document.querySelectorAll('.kayaGate');
             clickableElements.forEach(element => {
@@ -217,7 +217,7 @@ function getKayangelGold(element){
 
 // Akkan Gold
 let akkanGoldSelector = [];
-let akkanClick akkan
+let akkanClick = 0;
 function getAkkanGold(element){
     if(akkanClick < 3){
         const goldValue = parseInt(element.dataset.value);
@@ -229,7 +229,7 @@ function getAkkanGold(element){
         akkanGoldSelector.push(goldValue);
         console.log(akkanGoldSelector);
 
-        const akkanTotal = vykasGoldSelector.reduce((a,b) => a+b);
+        const akkanTotal = akkanGoldSelector.reduce((a,b) => a+b);
         const akkanGold = document.getElementById("akkan-gold");
         akkanGold.innerHTML = akkanTotal + "g";
 
@@ -237,7 +237,7 @@ function getAkkanGold(element){
 
         akkanClick++;
 
-        if (akkanClick === 2) {
+        if (akkanClick === 4) {
             // Disable all clickable elements
             const clickableElements = document.querySelectorAll('.akkanGate');
             clickableElements.forEach(element => {
