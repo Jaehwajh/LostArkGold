@@ -8,7 +8,14 @@
     moreButtons.forEach((button) => {
       button.addEventListener('click', (event) => {
         const raidInfo = event.target.nextElementSibling;
-        raidInfo.classList.toggle('show');
+        
+        document.querySelectorAll('.raid-info').forEach((info) => {
+            if (info !== raidInfo && info.classList.contains('show')) {
+              info.classList.remove('show');
+            }
+          });
+
+          raidInfo.classList.toggle('show');
       });
     });
   });   
@@ -47,202 +54,60 @@ function fadeIn(el, display) {
     })();
 }
 
+// Raid Gold
 
-// Valtan Gold
-let valtanGoldSelector = []; 
-let valClick = 0
+function handleGoldClick(selector, clickCounter, maxClicks, gateClass, totalGoldId) {
+    return function(element) {
+        if (clickCounter < maxClicks) {
+            const goldValue = parseInt(element.dataset.value);
 
-function getValtanGold(element){
-    if(valClick < 2){
-        const goldValue = parseInt(element.dataset.value);
+            const chestId = element.dataset.target;
+            const bonusChest = document.getElementById(chestId);
+            bonusChest.classList.toggle("show");
 
-        const chestId = element.dataset.target;
-        const bonusChest = document.getElementById(chestId);
-        bonusChest.classList.toggle("show");
-    
-        valtanGoldSelector.push(goldValue);
-    
-        const valtanTotal = valtanGoldSelector.reduce((a,b) => a+b);
-        const valtanGold = document.getElementById("valtan-gold");
-        valtanGold.innerHTML = valtanTotal + "g";
+            selector.push(goldValue);
 
-        element.style.pointerEvents = 'none';
+            const total = selector.reduce((a, b) => a + b);
+            const totalGold = document.getElementById(totalGoldId);
+            totalGold.innerHTML = total + "g";
 
-        valClick++;
+            element.style.pointerEvents = 'none';
 
-        if (valClick === 2) {
-            // Disable all clickable elements
-            const clickableElements = document.querySelectorAll('.valGate');
-            clickableElements.forEach(element => {
-                element.style.pointerEvents = 'none';
-            });
-        };
-    };  
-};
+            clickCounter++;
 
-// Vykas Gold
+            if (clickCounter === maxClicks) {
+                // Disable all clickable elements
+                const clickableElements = document.querySelectorAll(`.${gateClass}`);
+                clickableElements.forEach(element => {
+                    element.style.pointerEvents = 'none';
+                });
+            };
+        }
+    };
+}
+
+let valtanGoldSelector = [];
+let valClick = 0;
+const getValtanGold = handleGoldClick(valtanGoldSelector, valClick, 2, 'valGate', 'valtan-gold');
 
 let vykasGoldSelector = [];
 let vyClick = 0;
-
-function getVykasGold(element){
-    if(vyClick < 2){
-        const goldValue = parseInt(element.dataset.value);
-
-        const chestId = element.dataset.target;
-        const bonusChest = document.getElementById(chestId);
-        bonusChest.classList.toggle("show")
-
-        vykasGoldSelector.push(goldValue);
-        console.log(vykasGoldSelector);
-
-        const vykasTotal = vykasGoldSelector.reduce((a,b) => a+b);
-        const vykasGold = document.getElementById("vykas-gold");
-        vykasGold.innerHTML = vykasTotal + "g";
-
-        element.style.pointerEvents = 'none';
-
-        vyClick++;
-
-        if (vyClick === 2) {
-            // Disable all clickable elements
-            const clickableElements = document.querySelectorAll('.vyGate');
-            clickableElements.forEach(element => {
-                element.style.pointerEvents = 'none';
-            });
-        };
-    };
-};
-
-// Kakul-Saydon Gold
+const getVykasGold = handleGoldClick(vykasGoldSelector, vyClick, 2, 'vyGate', 'vykas-gold');
 
 let clownGoldSelector = [];
 let clownClick = 0;
+const getClownGold = handleGoldClick(clownGoldSelector, clownClick, 3, 'clownGate', 'clown-gold');
 
-function getClownGold(element){
-    if(clownClick < 3){
-        const goldValue = parseInt(element.dataset.value);
-
-        const chestId = element.dataset.target;
-        const bonusChest = document.getElementById(chestId);
-        bonusChest.classList.toggle("show")
-
-        clownGoldSelector.push(goldValue);
-        console.log(clownGoldSelector);
-
-        const clownTotal = clownGoldSelector.reduce((a,b) => a+b);
-        const clownGold = document.getElementById("clown-gold");
-        clownGold.innerHTML = clownTotal + "g";
-
-        element.style.pointerEvents = 'none';
-
-        clownClick++;
-
-        if (clownClick === 3) {
-            // Disable all clickable elements
-            const clickableElements = document.querySelectorAll('.clownGate');
-            clickableElements.forEach(element => {
-                element.style.pointerEvents = 'none';
-            });
-        };
-    }
-}
-
-// Brelshaza Gold
 let brelGoldSelector = [];
 let brelClick = 0;
+const getBrelGold = handleGoldClick(brelGoldSelector, brelClick, 4, 'brelGate', 'brel-gold');
 
-function getBrelGold(element){
-    if(brelClick < 4){
-        const goldValue = parseInt(element.dataset.value);
-
-        const chestId = element.dataset.target;
-        const bonusChest = document.getElementById(chestId);
-        bonusChest.classList.toggle("show")
-
-        brelGoldSelector.push(goldValue);
-        console.log(brelGoldSelector);
-
-        const brelTotal = brelGoldSelector.reduce((a,b) => a+b);
-        const brelGold = document.getElementById("brel-gold");
-        brelGold.innerHTML = brelTotal + "g";
-
-        element.style.pointerEvents = 'none';
-
-        brelClick++;
-
-        if (brelClick === 4) {
-            // Disable all clickable elements
-            const clickableElements = document.querySelectorAll('.brelGate');
-            clickableElements.forEach(element => {
-                element.style.pointerEvents = 'none';
-            });
-        };
-    }
-}
-
-
-// Kayangel Gold
 let kayangelGoldSelector = [];
 let kayaClick = 0;
+const getKayangelGold = handleGoldClick(kayangelGoldSelector, kayaClick, 3, 'kayaGate', 'kaya-gold');
 
-function getKayangelGold(element){
-    if(kayaClick < 3){
-        const goldValue = parseInt(element.dataset.value);
-
-        const chestId = element.dataset.target;
-        const bonusChest = document.getElementById(chestId);
-        bonusChest.classList.toggle("show")
-
-        kayangelGoldSelector.push(goldValue);
-        console.log(kayangelGoldSelector);
-
-        const kayaTotal = kayangelGoldSelector.reduce((a,b) => a+b);
-        const kayaGold = document.getElementById("kaya-gold");
-        kayaGold.innerHTML = kayaTotal + "g";
-
-        element.style.pointerEvents = 'none';
-
-        kayaClick++;
-
-        if (vyClick === 3) {
-            // Disable all clickable elements
-            const clickableElements = document.querySelectorAll('.kayaGate');
-            clickableElements.forEach(element => {
-                element.style.pointerEvents = 'none';
-            });
-        };
-    }
-}
-
-// Akkan Gold
 let akkanGoldSelector = [];
 let akkanClick = 0;
-function getAkkanGold(element){
-    if(akkanClick < 3){
-        const goldValue = parseInt(element.dataset.value);
+const getAkkanGold = handleGoldClick(akkanGoldSelector, akkanClick, 4, 'akkanGate', 'akkan-gold');
 
-        const chestId = element.dataset.target;
-        const bonusChest = document.getElementById(chestId);
-        bonusChest.classList.toggle("show")
-
-        akkanGoldSelector.push(goldValue);
-        console.log(akkanGoldSelector);
-
-        const akkanTotal = akkanGoldSelector.reduce((a,b) => a+b);
-        const akkanGold = document.getElementById("akkan-gold");
-        akkanGold.innerHTML = akkanTotal + "g";
-
-        element.style.pointerEvents = 'none';
-
-        akkanClick++;
-
-        if (akkanClick === 4) {
-            // Disable all clickable elements
-            const clickableElements = document.querySelectorAll('.akkanGate');
-            clickableElements.forEach(element => {
-                element.style.pointerEvents = 'none';
-            });
-        };
-    }
-}
+let charGold = [];
