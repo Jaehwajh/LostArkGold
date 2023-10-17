@@ -44,16 +44,16 @@
 }
 
 .raid-card{
+    margin-bottom: 2px;
     width: 100%;
     text-align: center;
-    position: relative; 
 }
 
 .raid-info{
     display: none;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 22rem;
+    height: 23rem;
 }
 
 .show{
