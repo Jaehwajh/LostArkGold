@@ -56,7 +56,7 @@ function fadeIn(el, display) {
 
 // Raid Gold
 
-function handleGoldClick(selector, clickCounter, maxClicks, gateClass, totalGoldId) {
+function handleGoldClick(gold ,selector, clickCounter, maxClicks, gateClass, totalGoldId) {
     return function(element) {
         if (clickCounter < maxClicks) {
             const goldValue = parseInt(element.dataset.value);
@@ -70,6 +70,11 @@ function handleGoldClick(selector, clickCounter, maxClicks, gateClass, totalGold
             const total = selector.reduce((a, b) => a + b);
             const totalGold = document.getElementById(totalGoldId);
             totalGold.innerHTML = total + "g";
+
+            gold.push(goldValue);
+            const charTotalGold = gold.reduce((a, b) => a + b);
+            const rosterTotalGold = document.getElementById("rosterGold");
+            rosterTotalGold.innerHTML = " " + charTotalGold + "g";
 
             element.style.pointerEvents = 'none';
 
@@ -85,29 +90,28 @@ function handleGoldClick(selector, clickCounter, maxClicks, gateClass, totalGold
         }
     };
 }
+let charGold = [];
 
 let valtanGoldSelector = [];
 let valClick = 0;
-const getValtanGold = handleGoldClick(valtanGoldSelector, valClick, 2, 'valGate', 'valtan-gold');
+const getValtanGold = handleGoldClick(charGold, valtanGoldSelector, valClick, 2, 'valGate', 'valtan-gold');
 
 let vykasGoldSelector = [];
 let vyClick = 0;
-const getVykasGold = handleGoldClick(vykasGoldSelector, vyClick, 2, 'vyGate', 'vykas-gold');
+const getVykasGold = handleGoldClick(charGold, vykasGoldSelector, vyClick, 2, 'vyGate', 'vykas-gold');
 
 let clownGoldSelector = [];
 let clownClick = 0;
-const getClownGold = handleGoldClick(clownGoldSelector, clownClick, 3, 'clownGate', 'clown-gold');
+const getClownGold = handleGoldClick(charGold, clownGoldSelector, clownClick, 3, 'clownGate', 'clown-gold');
 
 let brelGoldSelector = [];
 let brelClick = 0;
-const getBrelGold = handleGoldClick(brelGoldSelector, brelClick, 4, 'brelGate', 'brel-gold');
+const getBrelGold = handleGoldClick(charGold, brelGoldSelector, brelClick, 4, 'brelGate', 'brel-gold');
 
 let kayangelGoldSelector = [];
 let kayaClick = 0;
-const getKayangelGold = handleGoldClick(kayangelGoldSelector, kayaClick, 3, 'kayaGate', 'kaya-gold');
+const getKayangelGold = handleGoldClick(charGold, kayangelGoldSelector, kayaClick, 3, 'kayaGate', 'kaya-gold');
 
 let akkanGoldSelector = [];
 let akkanClick = 0;
-const getAkkanGold = handleGoldClick(akkanGoldSelector, akkanClick, 4, 'akkanGate', 'akkan-gold');
-
-let charGold = [];
+const getAkkanGold = handleGoldClick(charGold, akkanGoldSelector, akkanClick, 4, 'akkanGate', 'akkan-gold');

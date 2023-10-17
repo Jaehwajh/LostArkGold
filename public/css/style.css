@@ -201,4 +201,6 @@
     background-color: rgb(15, 15, 15);
     bottom: 0;
     position: absolute;
+    display: flex;
+    gap: 1em;
 }
