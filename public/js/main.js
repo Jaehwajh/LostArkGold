@@ -199,32 +199,32 @@ document.getElementById('brelnmg3Chest').addEventListener('change', handleBrelNo
 document.getElementById('brelnmg4Chest').addEventListener('change', handleBrelNormalCheckBox4);
 
 // Kayangel
-const handleKayangel
-const handleKayangel
-const handleKayangel
-const handleKayangel
-const handleKayangel
-const handleKayangel
+const handleKayangelHardCheckbox = handleCheckboxClick(charGold, 'kayahmg1Chest', 'kaya-gold');
+const handleKayangelHardCheckbox2 = handleCheckboxClick(charGold, 'kayahmg2Chest', 'kaya-gold');
+const handleKayangelHardCheckbox3 = handleCheckboxClick(charGold, 'kayahmg3Chest', 'kaya-gold');
+const handleKayangelNormalCheckbox = handleCheckboxClick(charGold, 'kayanmg1Chest', 'kaya-gold');
+const handleKayangelNormalCheckbox2 = handleCheckboxClick(charGold, 'kayanmg2Chest', 'kaya-gold');
+const handleKayangelNormalCheckbox3 = handleCheckboxClick(charGold, 'kayanmg3Chest', 'kaya-gold');
 
-document.getElementById()
-document.getElementById()
-document.getElementById()
-document.getElementById()
-document.getElementById()
-document.getElementById()
+document.getElementById('kayahmg1Chest').addEventListener('change', handleKayangelHardCheckbox);
+document.getElementById('kayahmg2Chest').addEventListener('change', handleKayangelHardCheckbox2);
+document.getElementById('kayahmg3Chest').addEventListener('change', handleKayangelHardCheckbox3);
+document.getElementById('kayanmg1Chest').addEventListener('change', handleKayangelNormalCheckbox);
+document.getElementById('kayanmg2Chest').addEventListener('change', handleKayangelNormalCheckbox2);
+document.getElementById('kayanmg3Chest').addEventListener('change', handleKayangelNormalCheckbox3);
 
 // Akkan
 
-const handleAkkan
-const handleAkkan
-const handleAkkan
-const handleAkkan
-const handleAkkan
-const handleAkkan
+const handleAkkanHardCheckbox = handleCheckboxClick(charGold, 'akkanhmg1Chest', 'akkan-gold');
+const handleAkkanHardCheckbox2 = handleCheckboxClick(charGold, 'akkanhmg2Chest', 'akkan-gold');
+const handleAkkanHardCheckbox3 = handleCheckboxClick(charGold, 'akkanhmg3Chest', 'akkan-gold');
+const handleAkkanNormalCheckbox = handleCheckboxClick(charGold, 'akkannmg1Chest', 'akkan-gold');
+const handleAkkanNormalCheckbox2 = handleCheckboxClick(charGold, 'akkannmg2Chest', 'akkan-gold');
+const handleAkkanNormalCheckbox3 = handleCheckboxClick(charGold, 'akkannmg3Chest', 'akkan-gold');
 
-document.getElementById()
-document.getElementById()
-document.getElementById()
-document.getElementById()
-document.getElementById()
-document.getElementById()
+document.getElementById('akkanhmg1Chest').addEventListener('change', handleAkkanHardCheckbox);
+document.getElementById('akkanhmg2Chest').addEventListener('change', handleAkkanHardCheckbox2);
+document.getElementById('akkanhmg3Chest').addEventListener('change', handleAkkanHardCheckbox3);
+document.getElementById('akkannmg1Chest').addEventListener('change', handleAkkanNormalCheckbox);
+document.getElementById('akkannmg2Chest').addEventListener('change', handleAkkanNormalCheckbox2);
+document.getElementById('akkannmg3Chest').addEventListener('change', handleAkkanNormalCheckbox3);
