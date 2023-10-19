@@ -65,7 +65,7 @@
                                 </div>
                             
 
-                                <div class="raidList">
+                                <div id="raid-<%= characters[i]._id %>" class="raidList">
                                      <!-- Valtan -->
                                     <div id="raid-select<%= i %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
@@ -823,18 +823,18 @@
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <h4 class="gateNum kayaGate" data-target="kayanngelmg2Chest" data-value="<%= kayangel.normalKayangel.gold[1] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[1] %></h4>
+                                                                <h4 class="gateNum kayaGate" data-target="kayangelmg2Chest" data-value="<%= kayangel.normalKayangel.gold[1] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[1] %></h4>
                                                                 
-                                                                <div id="kayanngelmg2Chest" class="bonus-chest">
+                                                                <div id="kayangelmg2Chest" class="bonus-chest">
                                                                     <input type="checkbox" id="kayanmg2Chest" name="kayanmg2Chest" data-value="<%= kayangel.normalKayangel.chest[1] %>">
                                                                     <label for="kayanmg2Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <h4 class="gateNum kayaGate" data-target="kayanngelmg3Chest" data-value="<%= kayangel.normalKayangel.gold[2] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[2] %></h4>
+                                                                <h4 class="gateNum kayaGate" data-target="kayangelmg3Chest" data-value="<%= kayangel.normalKayangel.gold[2] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[2] %></h4>
                                                                 
-                                                                <div id="kayanngelmg3Chest" class="bonus-chest">
+                                                                <div id="kayangelmg3Chest" class="bonus-chest">
                                                                     <input type="checkbox" id="kayanmg3Chest" name="kayanmg3Chest" data-value="<%= kayangel.normalKayangel.chest[2] %>">
                                                                     <label for="kayanmg3Chest">Chest</label>
                                                                 </div>
@@ -872,18 +872,18 @@
                                                             </div>
         
                                                             <div class="gate2">
-                                                                <h4 class="gateNum kayaGate" data-target="kayanngelmg2Chest" data-value="<%= kayangel.normalKayangel.gold[1] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[1] %></h4>
+                                                                <h4 class="gateNum kayaGate" data-target="kayangelmg2Chest" data-value="<%= kayangel.normalKayangel.gold[1] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[1] %></h4>
                                                                 
-                                                                <div id="kayanngelmg2Chest" class="bonus-chest">
+                                                                <div id="kayangelmg2Chest" class="bonus-chest">
                                                                     <input type="checkbox" id="kayanmg2Chest" name="kayanmg2Chest" data-value="<%= kayangel.normalKayangel.chest[1] %>">
                                                                     <label for="kayanmg2Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
                                                             <div class="gate3">
-                                                                <h4 class="gateNum kayaGate" data-target="kayanngelmg3Chest" data-value="<%= kayangel.normalKayangel.gold[2] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[2] %></h4>
+                                                                <h4 class="gateNum kayaGate" data-target="kayangelmg3Chest" data-value="<%= kayangel.normalKayangel.gold[2] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[2] %></h4>
                                                                 
-                                                                <div id="kayanngelmg3Chest" class="bonus-chest">
+                                                                <div id="kayangelmg3Chest" class="bonus-chest">
                                                                     <input type="checkbox" id="kayanmg3Chest" name="kayanmg3Chest" data-value="<%= kayangel.normalKayangel.chest[2] %>">
                                                                     <label for="kayanmg3Chest">Chest</label>
                                                                 </div>
@@ -920,8 +920,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkanhmg1Chest" data-value="<%= akkan.hardAkkan.gold[0] %>" onclick="getAkkanGold(this)"><%= akkan.hardAkkan.gate[0] %></h4>
                                                                 
                                                                 <div id="akkanhmg1Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akkhmg1Chest" name="akkanhmg1Chest" data-value="<%= akkan.hardAkkan.chest[0] %>">
-                                                                    <label for="akkanhmg1Chest">Chest</label>
+                                                                    <input type="checkbox" id="akhmg1Chest" name="akhmg1Chest" data-value="<%= akkan.hardAkkan.chest[0] %>">
+                                                                    <label for="akhmg1Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
@@ -929,8 +929,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkanhmg2Chest" data-value="<%= akkan.hardAkkan.gold[1] %>" onclick="getAkkanGold(this)"><%= akkan.hardAkkan.gate[1] %></h4>
                                                                 
                                                                 <div id="akkanhmg2Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akkhmg2Chest" name="akkanhmg2Chest" data-value="<%= akkan.hardAkkan.chest[1] %>">
-                                                                    <label for="akkanhmg2Chest">Chest</label>
+                                                                    <input type="checkbox" id="akhmg2Chest" name="akhmg2Chest" data-value="<%= akkan.hardAkkan.chest[1] %>">
+                                                                    <label for="akhmg2Chestt">Chest</label>
                                                                 </div>
                                                             </div>
         
@@ -938,8 +938,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkanhmg3Chest" data-value="<%= akkan.hardAkkan.gold[2] %>" onclick="getAkkanGold(this)"><%= akkan.hardAkkan.gate[2] %></h4>
                                                                 
                                                                 <div id="akkanhmg3Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akkhmg3Chest" name="akkanhmg3Chest" data-value="<%= akkan.hardAkkan.chest[2] %>">
-                                                                    <label for="akkanhmg3Chest">Chest</label>
+                                                                    <input type="checkbox" id="akhmg3Chest" name="akhmg3Chest" data-value="<%= akkan.hardAkkan.chest[2] %>">
+                                                                    <label for="akhmg3Chest">Chest</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -953,8 +953,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkannmg1Chest" data-value="<%= akkan.normalAkkan.gold[0] %>" onclick="getAkkanGold(this)"><%= akkan.normalAkkan.gate[0] %></h4>
                                                                 
                                                                 <div id="akkannmg1Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akknmg1Chest" name="akkannmg1Chest" data-value="<%= akkan.normalAkkan.chest[0] %>">
-                                                                    <label for="akkannmg1Chest">Chest</label>
+                                                                    <input type="checkbox" id="aknmg1Chest" name="aknmg1Chest" data-value="<%= akkan.normalAkkan.chest[0] %>">
+                                                                    <label for="aknmg1Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
@@ -962,8 +962,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkannmg2Chest" data-value="<%= akkan.normalAkkan.gold[1] %>" onclick="getAkkanGold(this)"><%= akkan.normalAkkan.gate[1] %></h4>
                                                                 
                                                                 <div id="akkannmg2Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akknmg2Chest" name="akkannmg2Chest" data-value="<%= akkan.normalAkkan.chest[1] %>">
-                                                                    <label for="akkannmg2Chest">Chest</label>
+                                                                    <input type="checkbox" id="aknmg2Chest" name="aknmg2Chest" data-value="<%= akkan.normalAkkan.chest[1] %>">
+                                                                    <label for="aknmg2Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
@@ -971,8 +971,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkannmg3Chest" data-value="<%= akkan.normalAkkan.gold[2] %>" onclick="getAkkanGold(this)"><%= akkan.normalAkkan.gate[2] %></h4>
                                                                 
                                                                 <div id="akkannmg3Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akk nmg3Chest" name="akkannmg3Chest" data-value="<%= akkan.normalAkkan.chest[2] %>">
-                                                                    <label for="akkannmg3Chest">Chest</label>
+                                                                    <input type="checkbox" id="aknmg3Chest" name="aknmg3Chest" data-value="<%= akkan.normalAkkan.chest[2] %>">
+                                                                    <label for="aknmg3Chest">Chest</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1002,8 +1002,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkannmg1Chest" data-value="<%= akkan.normalAkkan.gold[0] %>" onclick="getAkkanGold(this)"><%= akkan.normalAkkan.gate[0] %></h4>
                                                                 
                                                                 <div id="akkannmg1Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akknmg1Chest" name="akkannmg1Chest" data-value="<%= akkan.normalAkkan.chest[0] %>">
-                                                                    <label for="akkannmg1Chest">Chest</label>
+                                                                    <input type="checkbox" id="aknmg1Chest" name="aknmg1Chest" data-value="<%= akkan.normalAkkan.chest[0] %>">
+                                                                    <label for="aknmg1Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
@@ -1011,8 +1011,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkannmg2Chest" data-value="<%= akkan.normalAkkan.gold[1] %>" onclick="getAkkanGold(this)"><%= akkan.normalAkkan.gate[1] %></h4>
                                                                 
                                                                 <div id="akkannmg2Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akknmg2Chest" name="akkannmg2Chest" data-value="<%= akkan.normalAkkan.chest[1] %>">
-                                                                    <label for="akkannmg2Chest">Chest</label>
+                                                                    <input type="checkbox" id="aknmg2Chest" name="aknmg2Chest" data-value="<%= akkan.normalAkkan.chest[1] %>">
+                                                                    <label for="aknmg2Chest">Chest</label>
                                                                 </div>
                                                             </div>
         
@@ -1020,8 +1020,8 @@
                                                                 <h4 class="gateNum akkanGate" data-target="akkannmg3Chest" data-value="<%= akkan.normalAkkan.gold[2] %>" onclick="getAkkanGold(this)"><%= akkan.normalAkkan.gate[2] %></h4>
                                                                 
                                                                 <div id="akkannmg3Chest" class="bonus-chest">
-                                                                    <input type="checkbox" id="akk nmg3Chest" name="akkannmg3Chest" data-value="<%= akkan.normalAkkan.chest[2] %>">
-                                                                    <label for="akkannmg3Chest">Chest</label>
+                                                                    <input type="checkbox" id="aknmg3Chest" name="aknmg3Chest" data-value="<%= akkan.normalAkkan.chest[2] %>">
+                                                                    <label for="aknmg3Chest">Chest</label>
                                                                 </div>
                                                             </div>
                                                         </div>

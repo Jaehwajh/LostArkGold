@@ -100,42 +100,20 @@ function handleGoldClick(gold, selector, clickCounter, maxClicks, gateClass, tot
     };
 }
 
-let charGold = [];
-
-let valtanGoldSelector = [];
-let valClick = 0;
-const getValtanGold = handleGoldClick(charGold, valtanGoldSelector, valClick, 2, 'valGate', 'valtan-gold', 'valtan');
-
-let vykasGoldSelector = [];
-let vyClick = 0;
-const getVykasGold = handleGoldClick(charGold, vykasGoldSelector, vyClick, 2, 'vyGate', 'vykas-gold', 'vykas');
-
-let clownGoldSelector = [];
-let clownClick = 0;
-const getClownGold = handleGoldClick(charGold, clownGoldSelector, clownClick, 3, 'clownGate', 'clown-gold', 'kakulSaydon');
-
-let brelGoldSelector = [];
-let brelClick = 0;
-const getBrelGold = handleGoldClick(charGold, brelGoldSelector, brelClick, 4, 'brelGate', 'brel-gold', 'brelshaza');
-
-let kayangelGoldSelector = [];
-let kayaClick = 0;
-const getKayangelGold = handleGoldClick(charGold, kayangelGoldSelector, kayaClick, 3, 'kayaGate', 'kaya-gold', 'kayangel');
-
-let akkanGoldSelector = [];
-let akkanClick = 0;
-const getAkkanGold = handleGoldClick(charGold, akkanGoldSelector, akkanClick, 4, 'akkanGate', 'akkan-gold', 'akkan');
-
-
-function handleCheckboxClick(gold, checkboxId, totalGoldId) {
+function handleCheckboxClick(gold ,selector, checkboxId, totalGoldId) {
     return function(element) {
         const checkbox = document.getElementById(checkboxId);
         const goldValue = parseInt(checkbox.dataset.value);
-        const valueToAdd = checkbox.checked ? -goldValue : goldValue;
 
-        gold.push(valueToAdd);
+        if (checkbox.checked) {
+            selector.push(-goldValue) // Subtract gold value
+            gold.push(-goldValue)
+        } else {
+            selector.push(goldValue) // Add gold value back
+            gold.push(goldValue)
+        }
 
-        const total = gold.reduce((a, b) => a + b);
+        const total = selector.reduce((a, b) => a + b);
 
         // Update Raid Gold Output
         const totalGold = document.getElementById(totalGoldId);
@@ -148,83 +126,97 @@ function handleCheckboxClick(gold, checkboxId, totalGoldId) {
     };
 }
 
-// Valtan
-const handleValtanHardCheckbox = handleCheckboxClick(charGold, 'valhmg1Chest', 'valtan-gold');
-const handleValtanHardCheckbox2 = handleCheckboxClick(charGold, 'valhmg2Chest', 'valtan-gold');
-const handleValtanNormalCheckbox = handleCheckboxClick(charGold, 'valnmg1Chest', 'valtan-gold');
-const handleValtanNormalCheckbox2 = handleCheckboxClick(charGold, 'valnmg2Chest', 'valtan-gold');
+let charGold = [];
 
-document.getElementById('valhmg1Chest').addEventListener('change', handleValtanHardCheckbox);
-document.getElementById('valhmg2Chest').addEventListener('change', handleValtanHardCheckbox2);
+let valtanGoldSelector = [];
+let valClick = 0;
+const getValtanGold = handleGoldClick(charGold, valtanGoldSelector, valClick, 2, 'valGate', 'valtan-gold', 'valtan');
+const handleValtanNormalCheckbox = handleCheckboxClick(charGold, valtanGoldSelector, 'valnmg1Chest', 'valtan-gold');
+const handleValtanNormalCheckbox2 = handleCheckboxClick(charGold, valtanGoldSelector, 'valnmg2Chest', 'valtan-gold');
+const handleValtanHardCheckbox = handleCheckboxClick(charGold, valtanGoldSelector, 'valhmg1Chest', 'valtan-gold');
+const handleValtanHardCheckbox2 = handleCheckboxClick(charGold, valtanGoldSelector, 'valhmg2Chest', 'valtan-gold');
+
 document.getElementById('valnmg1Chest').addEventListener('change', handleValtanNormalCheckbox);
 document.getElementById('valnmg2Chest').addEventListener('change', handleValtanNormalCheckbox2);
+document.getElementById('valhmg1Chest').addEventListener('change', handleValtanHardCheckbox);
+document.getElementById('valhmg2Chest').addEventListener('change', handleValtanHardCheckbox2);
 
-// Vykas
-const handleVykasHardCheckbox = handleCheckboxClick(charGold, 'vyhmg1Chest', 'vykas-gold');
-const handleVykasHardCheckbox2 = handleCheckboxClick(charGold, 'vyhmg2Chest', 'vykas-gold');
-const handleVykasNormalCheckbox = handleCheckboxClick(charGold, 'vynmg1Chest', 'vykas-gold');
-const handleVykasNormalCheckbox2 = handleCheckboxClick(charGold, 'vynmg2Chest', 'vykas-gold');
+let vykasGoldSelector = [];
+let vyClick = 0;
+const getVykasGold = handleGoldClick(charGold, vykasGoldSelector, vyClick, 2, 'vyGate', 'vykas-gold', 'vykas');
+const handleVykasNormalCheckbox = handleCheckboxClick(charGold, vykasGoldSelector, 'vynmg1Chest', 'vykas-gold');
+const handleVykasNormalCheckbox2 = handleCheckboxClick(charGold, vykasGoldSelector, 'vynmg2Chest', 'vykas-gold');
+const handleVykasHardCheckbox = handleCheckboxClick(charGold, vykasGoldSelector, 'vyhmg1Chest', 'vykas-gold');
+const handleVykasHardCheckbox2 = handleCheckboxClick(charGold, vykasGoldSelector, 'vyhmg2Chest', 'vykas-gold');
 
-document.getElementById('vyhmg1Chest').addEventListener('change', handleVykasHardCheckbox);
-document.getElementById('vyhmg2Chest').addEventListener('change', handleVykasHardCheckbox2);
 document.getElementById('vynmg1Chest').addEventListener('change', handleVykasNormalCheckbox);
 document.getElementById('vynmg2Chest').addEventListener('change', handleVykasNormalCheckbox2);
+document.getElementById('vyhmg1Chest').addEventListener('change', handleVykasHardCheckbox);
+document.getElementById('vyhmg2Chest').addEventListener('change', handleVykasHardCheckbox2);
 
-// Clown
-const handleClownNormalCheckbox = handleCheckboxClick(charGold, 'ksnmg1Chest', 'clown-gold');
-const handleClownNormalCheckbox2 = handleCheckboxClick(charGold, 'ksnmg2Chest', 'clown-gold');
-const handleClownNormalCheckbox3 = handleCheckboxClick(charGold, 'ksnmg3Chest', 'clown-gold');
+let clownGoldSelector = [];
+let clownClick = 0;
+const getClownGold = handleGoldClick(charGold, clownGoldSelector, clownClick, 3, 'clownGate', 'clown-gold', 'kakulSaydon');
+const handleClownNormalCheckbox = handleCheckboxClick(charGold, clownGoldSelector, 'ksnmg1Chest', 'clown-gold');
+const handleClownNormalCheckbox2 = handleCheckboxClick(charGold, clownGoldSelector, 'ksnmg2Chest', 'clown-gold');
+const handleClownNormalCheckbox3 = handleCheckboxClick(charGold, clownGoldSelector, 'ksnmg3Chest', 'clown-gold');
 
 document.getElementById('ksnmg1Chest').addEventListener('change', handleClownNormalCheckbox);
 document.getElementById('ksnmg2Chest').addEventListener('change', handleClownNormalCheckbox2);
 document.getElementById('ksnmg3Chest').addEventListener('change', handleClownNormalCheckbox3);
 
-// Brelshaza
-const handleBrelHardCheckBox = handleCheckboxClick(charGold, 'brelhmg1Chest', 'brel-gold');
-const handleBrelHardCheckBox2 = handleCheckboxClick(charGold, 'brelhmg2Chest', 'brel-gold');
-const handleBrelHardCheckBox3 = handleCheckboxClick(charGold, 'brelhmg3Chest', 'brel-gold');
-const handleBrelHardCheckBox4 = handleCheckboxClick(charGold, 'brelhmg4Chest', 'brel-gold');
-const handleBrelNormalCheckBox = handleCheckboxClick(charGold, 'brelnmg1Chest', 'brel-gold');
-const handleBrelNormalCheckBox2 = handleCheckboxClick(charGold, 'brelnmg2Chest', 'brel-gold');
-const handleBrelNormalCheckBox3 = handleCheckboxClick(charGold, 'brelnmg3Chest', 'brel-gold');
-const handleBrelNormalCheckBox4 = handleCheckboxClick(charGold, 'brelnmg4Chest', 'brel-gold');
+let brelGoldSelector = [];
+let brelClick = 0;
+const getBrelGold = handleGoldClick(charGold, brelGoldSelector, brelClick, 4, 'brelGate', 'brel-gold', 'brelshaza');
+const handleBrelNormalCheckBox = handleCheckboxClick(charGold, brelGoldSelector, 'brelnmg1Chest', 'brel-gold');
+const handleBrelNormalCheckBox2 = handleCheckboxClick(charGold, brelGoldSelector, 'brelnmg2Chest', 'brel-gold');
+const handleBrelNormalCheckBox3 = handleCheckboxClick(charGold, brelGoldSelector, 'brelnmg3Chest', 'brel-gold');
+const handleBrelNormalCheckBox4 = handleCheckboxClick(charGold, brelGoldSelector, 'brelnmg4Chest', 'brel-gold');
+const handleBrelHardCheckBox = handleCheckboxClick(charGold, brelGoldSelector, 'brelhmg1Chest', 'brel-gold');
+const handleBrelHardCheckBox2 = handleCheckboxClick(charGold, brelGoldSelector, 'brelhmg2Chest', 'brel-gold');
+const handleBrelHardCheckBox3 = handleCheckboxClick(charGold, brelGoldSelector, 'brelhmg3Chest', 'brel-gold');
+const handleBrelHardCheckBox4 = handleCheckboxClick(charGold, brelGoldSelector, 'brelhmg4Chest', 'brel-gold');
 
-document.getElementById('brelhmg1Chest').addEventListener('change', handleBrelHardCheckBox);
-document.getElementById('brelhmg2Chest').addEventListener('change', handleBrelHardCheckBox2);
-document.getElementById('brelhmg3Chest').addEventListener('change', handleBrelHardCheckBox3);
-document.getElementById('brelhmg4Chest').addEventListener('change', handleBrelHardCheckBox4);
 document.getElementById('brelnmg1Chest').addEventListener('change', handleBrelNormalCheckBox);
 document.getElementById('brelnmg2Chest').addEventListener('change', handleBrelNormalCheckBox2);
 document.getElementById('brelnmg3Chest').addEventListener('change', handleBrelNormalCheckBox3);
 document.getElementById('brelnmg4Chest').addEventListener('change', handleBrelNormalCheckBox4);
+document.getElementById('brelhmg1Chest').addEventListener('change', handleBrelHardCheckBox);
+document.getElementById('brelhmg2Chest').addEventListener('change', handleBrelHardCheckBox2);
+document.getElementById('brelhmg3Chest').addEventListener('change', handleBrelHardCheckBox3);
+document.getElementById('brelhmg4Chest').addEventListener('change', handleBrelHardCheckBox4);
 
-// Kayangel
-const handleKayangelHardCheckbox = handleCheckboxClick(charGold, 'kayahmg1Chest', 'kaya-gold');
-const handleKayangelHardCheckbox2 = handleCheckboxClick(charGold, 'kayahmg2Chest', 'kaya-gold');
-const handleKayangelHardCheckbox3 = handleCheckboxClick(charGold, 'kayahmg3Chest', 'kaya-gold');
-const handleKayangelNormalCheckbox = handleCheckboxClick(charGold, 'kayanmg1Chest', 'kaya-gold');
-const handleKayangelNormalCheckbox2 = handleCheckboxClick(charGold, 'kayanmg2Chest', 'kaya-gold');
-const handleKayangelNormalCheckbox3 = handleCheckboxClick(charGold, 'kayanmg3Chest', 'kaya-gold');
+let kayangelGoldSelector = [];
+let kayaClick = 0;
+const getKayangelGold = handleGoldClick(charGold, kayangelGoldSelector, kayaClick, 3, 'kayaGate', 'kaya-gold', 'kayangel');
+const handleKayangelNormalCheckbox = handleCheckboxClick(charGold, kayangelGoldSelector, 'kayanmg1Chest', 'kaya-gold');
+const handleKayangelNormalCheckbox2 = handleCheckboxClick(charGold, kayangelGoldSelector, 'kayanmg2Chest', 'kaya-gold');
+const handleKayangelNormalCheckbox3 = handleCheckboxClick(charGold, kayangelGoldSelector, 'kayanmg3Chest', 'kaya-gold');
+const handleKayangelHardCheckbox = handleCheckboxClick(charGold, kayangelGoldSelector, 'kayahmg1Chest', 'kaya-gold');
+const handleKayangelHardCheckbox2 = handleCheckboxClick(charGold, kayangelGoldSelector, 'kayahmg2Chest', 'kaya-gold');
+const handleKayangelHardCheckbox3 = handleCheckboxClick(charGold, kayangelGoldSelector, 'kayahmg3Chest', 'kaya-gold');
 
-document.getElementById('kayahmg1Chest').addEventListener('change', handleKayangelHardCheckbox);
-document.getElementById('kayahmg2Chest').addEventListener('change', handleKayangelHardCheckbox2);
-document.getElementById('kayahmg3Chest').addEventListener('change', handleKayangelHardCheckbox3);
 document.getElementById('kayanmg1Chest').addEventListener('change', handleKayangelNormalCheckbox);
 document.getElementById('kayanmg2Chest').addEventListener('change', handleKayangelNormalCheckbox2);
 document.getElementById('kayanmg3Chest').addEventListener('change', handleKayangelNormalCheckbox3);
+document.getElementById('kayahmg1Chest').addEventListener('change', handleKayangelHardCheckbox);
+document.getElementById('kayahmg2Chest').addEventListener('change', handleKayangelHardCheckbox2);
+document.getElementById('kayahmg3Chest').addEventListener('change', handleKayangelHardCheckbox3);
 
-// Akkan
+let akkanGoldSelector = [];
+let akkanClick = 0;
+const getAkkanGold = handleGoldClick(charGold, akkanGoldSelector, akkanClick, 4, 'akkanGate', 'akkan-gold', 'akkan');
 
-const handleAkkanHardCheckbox = handleCheckboxClick(charGold, 'akkanhmg1Chest', 'akkan-gold');
-const handleAkkanHardCheckbox2 = handleCheckboxClick(charGold, 'akkanhmg2Chest', 'akkan-gold');
-const handleAkkanHardCheckbox3 = handleCheckboxClick(charGold, 'akkanhmg3Chest', 'akkan-gold');
-const handleAkkanNormalCheckbox = handleCheckboxClick(charGold, 'akkannmg1Chest', 'akkan-gold');
-const handleAkkanNormalCheckbox2 = handleCheckboxClick(charGold, 'akkannmg2Chest', 'akkan-gold');
-const handleAkkanNormalCheckbox3 = handleCheckboxClick(charGold, 'akkannmg3Chest', 'akkan-gold');
+const handleAkkanNormalCheckbox = handleCheckboxClick(charGold, akkanGoldSelector, 'aknmg1Chest', 'akkan-gold');
+const handleAkkanNormalCheckbox2 = handleCheckboxClick(charGold, akkanGoldSelector, 'aknmg2Chest', 'akkan-gold');
+const handleAkkanNormalCheckbox3 = handleCheckboxClick(charGold, akkanGoldSelector, 'aknmg3Chest', 'akkan-gold');
+const handleAkkanHardCheckbox = handleCheckboxClick(charGold, akkanGoldSelector, 'akhmg1Chest', 'akkan-gold');
+const handleAkkanHardCheckbox2 = handleCheckboxClick(charGold, akkanGoldSelector, 'akhmg2Chest', 'akkan-gold');
+const handleAkkanHardCheckbox3 = handleCheckboxClick(charGold, akkanGoldSelector, 'akhmg3Chest', 'akkan-gold');
 
-document.getElementById('akkanhmg1Chest').addEventListener('change', handleAkkanHardCheckbox);
-document.getElementById('akkanhmg2Chest').addEventListener('change', handleAkkanHardCheckbox2);
-document.getElementById('akkanhmg3Chest').addEventListener('change', handleAkkanHardCheckbox3);
-document.getElementById('akkannmg1Chest').addEventListener('change', handleAkkanNormalCheckbox);
-document.getElementById('akkannmg2Chest').addEventListener('change', handleAkkanNormalCheckbox2);
-document.getElementById('akkannmg3Chest').addEventListener('change', handleAkkanNormalCheckbox3);
+document.getElementById('aknmg1Chest').addEventListener('change', handleAkkanNormalCheckbox);
+document.getElementById('aknmg2Chest').addEventListener('change', handleAkkanNormalCheckbox2);
+document.getElementById('aknmg3Chest').addEventListener('change', handleAkkanNormalCheckbox3);
+document.getElementById('akhmg1Chest').addEventListener('change', handleAkkanHardCheckbox);
+document.getElementById('akhmg2Chest').addEventListener('change', handleAkkanHardCheckbox2);
+document.getElementById('akhmg3Chest').addEventListener('change', handleAkkanHardCheckbox3);
