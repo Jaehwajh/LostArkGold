@@ -825,7 +825,7 @@
                                                             <div class="gate2">
                                                                 <h4 class="gateNum kayaGate" data-target="kayangelmg2Chest" data-value="<%= kayangel.normalKayangel.gold[1] %>" onclick="getKayangelGold(this)"><%= kayangel.normalKayangel.gate[1] %></h4>
                                                                 
-                                                                <div id="kayangelmg2Chest" class="bonus-chest">
+                                                                <div id="kayanngelmg2Chest" class="bonus-chest">
                                                                     <input type="checkbox" id="kayanmg2Chest" name="kayanmg2Chest" data-value="<%= kayangel.normalKayangel.chest[1] %>">
                                                                     <label for="kayanmg2Chest">Chest</label>
                                                                 </div>
@@ -890,12 +890,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="">
-                                                    <h2 id="kaya-gold"></h2>
+                                                    <div class="">
+                                                        <h2 id="kaya-gold"></h2>
+                                                    </div>
+    
                                                 </div>
-
                                                 <!-- <p><%# kayangel.normalKayangel.gold.reduce((a,b) => a + b) %>g</p> -->
                                             </div>
                                         <% } %>
@@ -1033,6 +1033,10 @@
                                                 </div>
 
                                                 <!-- <p><%# akkan.normalAkkan.gold.reduce((a,b) => a + b) %>g</p> -->
+                                            </div>
+                                        <% }else{ %>
+                                            <div id="akkan" class="card">
+
                                             </div>
                                         <% } %>
                                     </div>
