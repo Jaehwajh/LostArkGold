@@ -40,11 +40,11 @@
 .raidList{
     display: flex;
     flex-direction: column;
+    row-gap: 3px;
     width: 100%;    
 }
 
 .raid-card{
-    margin-bottom: 1.5px;
     width: 100%;
     text-align: center;
 }

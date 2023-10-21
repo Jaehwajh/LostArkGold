@@ -36,7 +36,7 @@
                 <!-- roster information -->
                     <div class="dashboard">
                         <% for(let i = 0; i < characters.length; i++){ %>
-                            <div class="container" id="char<%= i %>">
+                            <div class="container" id="char<%= characters[i]._id %>">
                                 <div class="roster-info">
                                     <h3 class="ros"><%= characters[i].characterName %></h3>
                                     <p class="ros"><%= characters[i].loaClass %></p>
@@ -65,9 +65,9 @@
                                 </div>
                             
 
-                                <div id="raid-<%= characters[i]._id %>" class="raidList">
+                                <div class="raidList">
                                      <!-- Valtan -->
-                                    <div id="raid-select<%= i %>" class="raid-card">
+                                    <div id="valtan-select-<%= characters[i]._id %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= valtan.normalValtan.itemLevel && valtan.hardValtan.itemLevel){ %>
                                             <div id="valtan" class="card">
                                                 <div class="raid-title">
@@ -176,7 +176,7 @@
                                     </div>
 
                                     <!-- Vykas -->
-                                    <div id="raid-select<%= i %>" class="raid-card">
+                                    <div id="vykas-select-<%= characters[i]._id %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= vykas.normalVykas.itemLevel && vykas.hardVykas.itemLevel){ %>
                                             <div id="vykas" class="card">
                                                 <div class="raid-title">
@@ -284,7 +284,7 @@
                                     </div>  
 
                                     <!-- Kakul Saydon -->
-                                    <div id="raid-select<%= i %>" class="raid-card">   
+                                    <div id="kakulSaydon-select-<%= characters[i]._id %>" class="raid-card">   
                                         <% if(characters[i].itemLevel >= kakulSaydon.itemLevel){ %>
                                             <div id="kakulSaydon" class="card">
                                                 <div class="raid-title">
@@ -339,7 +339,7 @@
                                     </div>
 
                                     <!-- Brelshaza -->
-                                    <div id="raid-select<%= i %>" class="raid-card">
+                                    <div id="brelshaza-select-<%= characters[i]._id %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= brel.hardBrelshaza.itemLevel[2]) { %>
                                             <div id="brelshaza" class="card">
                                                 <div class="raid-title">
@@ -766,7 +766,7 @@
                                     </div>
 
                                     <!-- Kayangel -->
-                                    <div id="raid-select<%= i %>" class="raid-card">
+                                    <div id="kayangel-select-<%= characters[i]._id %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= kayangel.hardKayangel.itemLevel){ %>
                                             <div id="kayangel" class="card">
                                                 <div class="raid-title">
@@ -902,7 +902,7 @@
                                     </div>
 
                                     <!-- Akkan -->
-                                    <div id="raid-select<%= i %>" class="raid-card">
+                                    <div id="akkan-select-<%= characters[i]._id %>" class="raid-card">
                                         <% if(characters[i].itemLevel >= akkan.hardAkkan.itemLevel){ %>
                                             <div id="akkan" class="card">
                                                 <div class="raid-title">
