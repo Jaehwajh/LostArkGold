@@ -222,21 +222,16 @@ document.getElementById('akhmg2Chest').addEventListener('change', handleAkkanHar
 document.getElementById('akhmg3Chest').addEventListener('change', handleAkkanHardCheckbox3);
 
 
+
+// New Function
 const valtanGold = {};
 const vykasGold = {};
-// const goldArr = {};
 let totalRosterGold = 0
 
 function logCharacterId(element, characterId, idPrefix) {
     const goldValue = parseInt(element.dataset.value);
-
     console.log(`Clicked on Character ID: ${characterId}, Gold Value: ${goldValue}`);
-
     element.disabled = true;
-    // if (!goldArr[characterId]) {
-    //     goldArr[characterId] = [];
-    // }
-
     if (idPrefix === 'valtan-gold-') {
         if (!valtanGold[characterId]) {
             valtanGold[characterId] = [];
@@ -250,20 +245,6 @@ function logCharacterId(element, characterId, idPrefix) {
         vykasGold[characterId].push(parseInt(goldValue));
         console.log(`Character ${characterId} Gold Values:`, vykasGold[characterId]);
     }
-    
-    // Push the gold value into the character's array
-    // goldArr[characterId].push(goldValue);
-    // console.log(`Character ${characterId} Gold Values:`, goldArr[characterId]);
-
-    // const totalGold = goldArr[characterId].reduce((a,b) => a+b, 0);
-
-
-
-    // const characterElement = document.getElementById(`${idPrefix}${characterId}`);
-    // if (characterElement) {
-    //     characterElement.innerHTML = `Total Gold: ${totalGold}g`;
-    // }
-
     const characterElement = document.getElementById(`${idPrefix}${characterId}`);
     if (characterElement) {
         let totalGold;
@@ -279,26 +260,17 @@ function logCharacterId(element, characterId, idPrefix) {
         }
         characterElement.innerHTML = `Total Gold: ${totalGold}g`;
     }
-
     totalRosterGold += parseInt(goldValue);
-    
     // Update the HTML element displaying total earnings
     const totalEarningsElement = document.getElementById("rosterGold");
     if (totalEarningsElement) {
         totalEarningsElement.innerHTML = `${totalRosterGold}g`;
     }
-
     const bonusChest = element.nextElementSibling;
     if (bonusChest) {
         bonusChest.classList.toggle('show');
     }
-
-    // const gateContainer = element.parentElement.parentElement.parentElement.parentElement.parentElement;
-    // if (goldArr[characterId].length > 0) {
-    //     gateContainer.classList.add('highlighted');
-    // }
     const gateContainer = element.parentElement.parentElement.parentElement.parentElement.parentElement;
-
     const goldArrForCharacter = idPrefix === 'valtan-gold-'
         ? valtanGold[characterId]
         : vykasGold[characterId];
@@ -309,26 +281,10 @@ function logCharacterId(element, characterId, idPrefix) {
         gateContainer.classList.remove('highlighted'); // Remove class if there are no gold values
     }
 }
-
-
-
 function subtractValueFromCharacterGold(element, characterId, idPrefix) {
     const goldValue = element.dataset.value;
     console.log(`Subtracting value ${goldValue} from Character ID: ${characterId}`);
-    
     element.disabled = true;
-    // // Check if the character ID already has an array, if not, create one
-    // if (!goldArr[characterId]) {
-    //     goldArr[characterId] = [];
-    // }
-
-    // // Subtract the gold value from the character's array
-    // goldArr[characterId].push(-parseInt(goldValue)); // Note the negative sign
-    // console.log(`Character ${characterId} Gold Values (after subtraction):`, goldArr[characterId]);
-    
-    // // Calculate total gold value for the character
-    // const totalGold = goldArr[characterId].reduce((a, b) => a + b, 0);
-
     switch (idPrefix) {
         case 'valtan-gold-':
             if (valtanGold[characterId]) {
@@ -343,13 +299,6 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
         default:
             // Handle other cases if needed
     }
-    
-    // Update the HTML element with the total gold value
-    // const characterElement = document.getElementById(`${idPrefix}${characterId}`);
-    // if (characterElement) {
-    //     characterElement.innerHTML = `Total Gold: ${totalGold}g`;
-    // }
-
     //  Update HTML element with gold values for the specific character
      const characterElement = document.getElementById(`${idPrefix}${characterId}`);
      if (characterElement) {
@@ -366,7 +315,6 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
          }
          characterElement.innerHTML = `Total Gold: ${totalGold}g`;
      }
-    
     // Update total earnings
     totalRosterGold -= parseInt(goldValue); // Subtract from total earnings
     const totalEarningsElement = document.getElementById("rosterGold");
