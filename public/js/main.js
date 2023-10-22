@@ -226,12 +226,17 @@ document.getElementById('akhmg3Chest').addEventListener('change', handleAkkanHar
 // New Function
 const valtanGold = {};
 const vykasGold = {};
+const kakulSaydonGold = {};
+const brelGold = {};
+const kayangelGold = {};
+const akkanGold = {};
 let totalRosterGold = 0
 
 function logCharacterId(element, characterId, idPrefix) {
     const goldValue = parseInt(element.dataset.value);
     console.log(`Clicked on Character ID: ${characterId}, Gold Value: ${goldValue}`);
     element.disabled = true;
+    element.style.color = "rgb(15, 15, 15)";
     if (idPrefix === 'valtan-gold-') {
         if (!valtanGold[characterId]) {
             valtanGold[characterId] = [];
@@ -244,6 +249,30 @@ function logCharacterId(element, characterId, idPrefix) {
         }
         vykasGold[characterId].push(parseInt(goldValue));
         console.log(`Character ${characterId} Gold Values:`, vykasGold[characterId]);
+    } else if (idPrefix === 'clown-gold-'){
+        if (!kakulSaydonGold[characterId]) {
+            kakulSaydonGold[characterId] = [];
+        }
+        kakulSaydonGold[characterId].push(parseInt(goldValue));
+        console.log(`Character ${characterId} Gold Values:`, kakulSaydonGold[characterId]);
+    } else if (idPrefix === 'brel-gold-'){
+        if (!brelGold[characterId]) {
+            brelGold[characterId] = [];
+        }
+        brelGold[characterId].push(parseInt(goldValue));
+        console.log(`Character ${characterId} Gold Values:`, brelGold[characterId]);
+    } else if (idPrefix === 'kaya-gold-'){
+        if (!kayangelGold[characterId]) {
+            kayangelGold[characterId] = [];
+        }
+        kayangelGold[characterId].push(parseInt(goldValue));
+        console.log(`Character ${characterId} Gold Values:`, kayangelGold[characterId]);
+    } else if (idPrefix === 'akkan-gold-'){
+        if (!akkanGold[characterId]) {
+            akkanGold[characterId] = [];
+        }
+        akkanGold[characterId].push(parseInt(goldValue));
+        console.log(`Character ${characterId} Gold Values:`, akkanGold[characterId]);
     }
     const characterElement = document.getElementById(`${idPrefix}${characterId}`);
     if (characterElement) {
@@ -255,26 +284,58 @@ function logCharacterId(element, characterId, idPrefix) {
             case 'vykas-gold-':
                 totalGold = vykasGold[characterId].reduce((a, b) => a + b, 0);
                 break;
+            case 'clown-gold-':
+                totalGold = kakulSaydonGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'brel-gold-':
+                totalGold = brelGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'kaya-gold-':
+                totalGold = kayangelGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'akkan-gold-':
+                totalGold = akkanGold[characterId].reduce((a, b) => a + b, 0);
+                break;
             default:
                 // Handle other cases if needed
         }
         characterElement.innerHTML = `Total Gold: ${totalGold}g`;
     }
-    totalRosterGold += parseInt(goldValue);
+    totalRosterGold += parseInt(goldValue);  
     // Update the HTML element displaying total earnings
     const totalEarningsElement = document.getElementById("rosterGold");
     if (totalEarningsElement) {
         totalEarningsElement.innerHTML = `${totalRosterGold}g`;
     }
+
     const bonusChest = element.nextElementSibling;
     if (bonusChest) {
         bonusChest.classList.toggle('show');
     }
     const gateContainer = element.parentElement.parentElement.parentElement.parentElement.parentElement;
-    const goldArrForCharacter = idPrefix === 'valtan-gold-'
-        ? valtanGold[characterId]
-        : vykasGold[characterId];
-    
+    let goldArrForCharacter;
+    switch (idPrefix) {
+        case 'valtan-gold-':
+            goldArrForCharacter = valtanGold[characterId];
+            break;
+        case 'vykas-gold-':
+            goldArrForCharacter = vykasGold[characterId];
+            break;
+        case 'clown-gold-':
+            goldArrForCharacter = kakulSaydonGold[characterId];
+            break;
+        case 'brel-gold-':
+            goldArrForCharacter = brelGold[characterId];
+            break;
+        case 'kaya-gold-':
+            goldArrForCharacter = kayangelGold[characterId];
+            break;
+        case 'akkan-gold-':
+            goldArrForCharacter = akkanGold[characterId];
+            break;
+        default:
+            // Handle other cases if needed
+    }
     if (goldArrForCharacter.length > 0) {
         gateContainer.classList.add('highlighted');
     } else {
@@ -283,7 +344,7 @@ function logCharacterId(element, characterId, idPrefix) {
 }
 function subtractValueFromCharacterGold(element, characterId, idPrefix) {
     const goldValue = element.dataset.value;
-    console.log(`Subtracting value ${goldValue} from Character ID: ${characterId}`);
+    console.log(`Subtracting value ${goldValue} from Character ID: ${characterId}`);   
     element.disabled = true;
     switch (idPrefix) {
         case 'valtan-gold-':
@@ -294,6 +355,26 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
         case 'vykas-gold-':
             if (vykasGold[characterId]) {
                 vykasGold[characterId].push(-goldValue); // Negative value to represent subtraction
+            }
+            break;
+        case 'clown-gold-':
+            if (kakulSaydonGold[characterId]) {
+                kakulSaydonGold[characterId].push(-goldValue); // Negative value to represent subtraction
+            }
+            break;
+        case 'brel-gold-':
+            if (brelGold[characterId]) {
+                brelGold[characterId].push(-goldValue); // Negative value to represent subtraction
+            }
+            break;
+        case 'kaya-gold-':
+            if (kayangelGold[characterId]) {
+                kayangelGold[characterId].push(-goldValue); // Negative value to represent subtraction
+            }
+            break;
+        case 'akkan-gold-':
+            if (akkanGold[characterId]) {
+                akkanGold[characterId].push(-goldValue); // Negative value to represent subtraction
             }
             break;
         default:
@@ -310,11 +391,23 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
              case 'vykas-gold-':
                  totalGold = vykasGold[characterId].reduce((a, b) => a + b, 0);
                  break;
+            case 'clown-gold-':
+                 totalGold = kakulSaydonGold[characterId].reduce((a, b) => a + b, 0);
+                 break;
+            case 'brel-gold-':
+                totalGold = brelGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'kaya-gold-':
+                totalGold = kayangelGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'akkan-gold-':
+                totalGold = akkanGold[characterId].reduce((a, b) => a + b, 0);
+                break;
              default:
                  // Handle other cases if needed
          }
          characterElement.innerHTML = `Total Gold: ${totalGold}g`;
-     }
+     }   
     // Update total earnings
     totalRosterGold -= parseInt(goldValue); // Subtract from total earnings
     const totalEarningsElement = document.getElementById("rosterGold");
