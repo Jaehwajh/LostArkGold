@@ -129,10 +129,19 @@
     justify-content: center;
 }
 
-.gateNum:hover{
+.gateNum{
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    color: #393939;
+    font-weight: 600;
+    font-family: 'Sofia Sans Condensed', Arial, Helvetica, sans-serif;
+    margin: 1em 0 1em 0;
 }
+
+
 
 /* Stylize */
 
@@ -203,4 +212,8 @@
     position: absolute;
     display: flex;
     gap: 1em;
+}
+
+.highlighted {
+    border: 1px solid rgb(255, 255, 255); /* Customize the border style as needed */
 }
