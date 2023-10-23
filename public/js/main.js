@@ -9,11 +9,11 @@
       button.addEventListener('click', (event) => {
         const raidInfo = event.target.nextElementSibling;
         
-        document.querySelectorAll('.raid-info').forEach((info) => {
-            if (info !== raidInfo && info.classList.contains('show')) {
-              info.classList.remove('show');
-            }
-          });
+        // document.querySelectorAll('.raid-info').forEach((info) => {
+        //     if (info !== raidInfo && info.classList.contains('show')) {
+        //       info.classList.remove('show');
+        //     }
+        //   });
 
           raidInfo.classList.toggle('show');
       });
@@ -71,7 +71,7 @@ function logCharacterId(element, characterId, idPrefix) {
     const goldValue = parseInt(element.dataset.value);
     console.log(`Clicked on Character ID: ${characterId}, Gold Value: ${goldValue}`);
     element.disabled = true;
-    element.style.color = "transparent";
+    element.style.color = "red";
     if (idPrefix === 'valtan-gold-') {
         if (!valtanGold[characterId]) {
             valtanGold[characterId] = [];

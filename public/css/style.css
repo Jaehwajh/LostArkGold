@@ -1,6 +1,6 @@
 .body{
     margin: 0;
-    background-color: rgb(26, 26, 26);
+    background-color:rgb(28, 28, 28); 
 }
 
 .main-container{
@@ -55,6 +55,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 23rem;
+    margin-top: 5em;
 }
 
 .show{
@@ -289,3 +290,5 @@
     margin-top: .5em;
     margin-right: 1em;
 }
+
+/* Background image */
