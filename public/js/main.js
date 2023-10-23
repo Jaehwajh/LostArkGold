@@ -62,12 +62,16 @@ const brelGold = {};
 const kayangelGold = {};
 const akkanGold = {};
 let totalRosterGold = 0
+const goldImg = new Image(20, 20);
+goldImg.src = "/images/icon/gold-icon.webp";
+goldImg.style.verticalAlign = "middle";
+goldImg.style.marginLeft = "5px";
 
 function logCharacterId(element, characterId, idPrefix) {
     const goldValue = parseInt(element.dataset.value);
     console.log(`Clicked on Character ID: ${characterId}, Gold Value: ${goldValue}`);
     element.disabled = true;
-    element.style.color = "rgb(15, 15, 15)";
+    element.style.color = "transparent";
     if (idPrefix === 'valtan-gold-') {
         if (!valtanGold[characterId]) {
             valtanGold[characterId] = [];
@@ -130,13 +134,20 @@ function logCharacterId(element, characterId, idPrefix) {
             default:
                 // Handle other cases if needed
         }
-        characterElement.innerHTML = `Total Gold: ${totalGold}g`;
+        const goldImg = new Image(16, 16);
+        goldImg.src = "/images/icon/gold-icon.webp";
+        goldImg.style.verticalAlign = "middle";
+        goldImg.style.marginLeft = "5px";
+
+        characterElement.innerHTML = `${totalGold}`;
+        characterElement.appendChild(goldImg);
     }
     totalRosterGold += parseInt(goldValue);  
     // Update the HTML element displaying total earnings
     const totalEarningsElement = document.getElementById("rosterGold");
-    if (totalEarningsElement) {
-        totalEarningsElement.innerHTML = `${totalRosterGold}g`;
+    if (totalEarningsElement) {       
+        totalEarningsElement.innerHTML = `${totalRosterGold}`;
+        totalEarningsElement.appendChild(goldImg);
     }
 
     const bonusChest = element.nextElementSibling;
@@ -237,12 +248,20 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
              default:
                  // Handle other cases if needed
          }
-         characterElement.innerHTML = `Total Gold: ${totalGold}g`;
+         const goldImg = new Image(16, 16);
+         goldImg.src = "/images/icon/gold-icon.webp";
+         goldImg.style.verticalAlign = "middle";
+         goldImg.style.marginLeft = "5px";
+ 
+         characterElement.innerHTML = `${totalGold}`;
+         characterElement.appendChild(goldImg);
      }   
     // Update total earnings
     totalRosterGold -= parseInt(goldValue); // Subtract from total earnings
     const totalEarningsElement = document.getElementById("rosterGold");
     if (totalEarningsElement) {
-        totalEarningsElement.innerHTML = `${totalRosterGold}g`;
+        totalEarningsElement.innerHTML = `${totalRosterGold}`;
+        totalEarningsElement.appendChild(goldImg);
     }
 }
+
