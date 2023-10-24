@@ -60,11 +60,12 @@
 
 .show{
     display: flex !important;
-}  
+}
 
 .hm, .nm{
     display: flex;
     flex-direction: column;
+    padding-top: 2em;
 }
 
 .difficulty{
@@ -228,6 +229,16 @@
     padding-right: .5em;
 }
 
+.frosted {
+    backdrop-filter: blur(10px);
+  }
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .frosted {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}   
 
 /* Modal */
 
