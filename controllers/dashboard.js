@@ -2,8 +2,6 @@ const character = require("../model/characterData");
 
 // Lost Ark Class Config
 const loaClass = require("../config/class");
-const classImg = require("../config/classimg");
-
 // Legion Raids Config
 const {normalValtan, hardValtan} = require("../config/legion/valtan");
 const {normalVykas, hardVykas} = require("../config/legion/vykas");

@@ -9,11 +9,11 @@
       button.addEventListener('click', (event) => {
         const raidInfo = event.target.nextElementSibling;
         
-        // document.querySelectorAll('.raid-info').forEach((info) => {
-        //     if (info !== raidInfo && info.classList.contains('show')) {
-        //       info.classList.remove('show');
-        //     }
-        //   });
+        document.querySelectorAll('.raid-info').forEach((info) => {
+            if (info !== raidInfo && info.classList.contains('show')) {
+              info.classList.remove('show');
+            }
+          });
 
           raidInfo.classList.toggle('show');
       });
@@ -53,7 +53,6 @@ function fadeIn(el, display) {
         }
     })();
 }
-
 
 const valtanGold = {};
 const vykasGold = {};
