@@ -231,6 +231,8 @@
 
 .frosted {
     backdrop-filter: blur(10px);
+    margin: 0 2em 0 2em;
+    border-radius: 10px;
   }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -303,3 +305,4 @@
 }
 
 /* Background image */
+

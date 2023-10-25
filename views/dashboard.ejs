@@ -104,11 +104,11 @@
                                                 <div class="raid-info more-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('valtan', '<%= characters[i]._id %>', 2, 'HM')">Hard</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum valGate" data-target="valtanhmg1Chest" data-value="<%= valtan.hardValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.hardValtan.gate[0] %></button>
+                                                                    <button id="valtan-g1HMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtanhmg1Chest" data-value="<%= valtan.hardValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.hardValtan.gate[0] %></button>
                                                                     
                                                                     <div id="valtanhmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="valhmg1Chest-<%= characters[i]._id %>" name="valhmg1Chest" data-value="<%= valtan.hardValtan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
@@ -117,7 +117,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum valGate" data-target="valtanhmg2Chest" data-value="<%= valtan.hardValtan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.hardValtan.gate[1] %></button>
+                                                                    <button id="valtan-g2HMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtanhmg2Chest" data-value="<%= valtan.hardValtan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.hardValtan.gate[1] %></button>
                                                                     
                                                                     <div id="valtanhmg2Chest-<%= characters[i]._id %>" class="bonus-chest ">
                                                                         <input type="checkbox" id="valhmg2Chest-<%= characters[i]._id %>" name="valhmg2Chest" data-value="<%= valtan.hardValtan.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
@@ -128,11 +128,11 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('valtan', '<%= characters[i]._id %>', 2, 'NM')">Normal</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum valGate" data-target="valtannmg1Chest" data-value="<%= valtan.normalValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[0] %></button>
+                                                                    <button id="valtan-g1NMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtannmg1Chest" data-value="<%= valtan.normalValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[0] %></button>
                                                                     
                                                                     <div id="valtannmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="valnmg1Chest-<%= characters[i]._id %>-<%= characters[i]._id %>" name="valnmg1Chest" data-value="<%= valtan.normalValtan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
@@ -141,7 +141,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum valGate" data-target="valtannmg2Chest" data-value="<%= valtan.normalValtan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[1] %></button>
+                                                                    <button id="valtan-g2NMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtannmg2Chest" data-value="<%= valtan.normalValtan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[1] %></button>
                                                                     
                                                                     <div id="valtannmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="valnmg2Chest-<%= characters[i]._id %>-<%= characters[i]._id %>" name="valnmg2Chest" data-value="<%= valtan.normalValtan.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
@@ -169,12 +169,12 @@
     
                                                 <div class="raid-info">
                                                     <div class="nm">
-                                                        <h1 class="difficulty">Normal</h1>
+                                                        <h1 class="difficulty" onclick="triggerGateClick('valtan', '<%= characters[i]._id %>', 2, 'NM')">Normal</h1>
     
                                                         <div class="frosted">
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum valGate" data-target="valtannmg1Chest" data-value="<%= valtan.normalValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[0] %></button>
+                                                                    <button id="valtan-g1NMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtannmg1Chest" data-value="<%= valtan.normalValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[0] %></button>
                                                                     
                                                                     <div id="valtannmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="valnmg1Chest-<%= characters[i]._id %>" name="valnmg1Chest" data-value="<%= valtan.normalValtan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
@@ -183,7 +183,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum valGate" data-target="valtannmg2Chest" data-value="<%= valtan.normalValtan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[1] %></button>
+                                                                    <button id="valtan-g2NMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtannmg2Chest" data-value="<%= valtan.normalValtan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.normalValtan.gate[1] %></button>
                                                                     
                                                                     <div id="valtannmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="valnmg2Chest-<%= characters[i]._id %>" name="valnmg2Chest" data-value="<%= valtan.normalValtan.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
@@ -216,11 +216,11 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('vykas', '<%= characters[i]._id %>', 2, 'HM')">Hard</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum vyGate" data-target="vykashmg1Chest" data-value="<%= vykas.hardVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.hardVykas.gate[0] %></button>
+                                                                    <button id="vykas-g1HMButton-<%= characters[i]._id %>" class="gateNum vyGate" data-target="vykashmg1Chest" data-value="<%= vykas.hardVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.hardVykas.gate[0] %></button>
         
                                                                     <div id="vykashmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="vyhmg1Chest-<%= characters[i]._id %>" name="vyhmg1Chest" data-value="<%= vykas.hardVykas.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'vykas-gold-')">
@@ -229,7 +229,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum vyGate" data-target="vykashmg2Chest" data-value="<%= vykas.hardVykas.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.hardVykas.gate[1] %></button>
+                                                                    <button id="vykas-g2HMButton-<%= characters[i]._id %>" class="gateNum vyGate" data-target="vykashmg2Chest" data-value="<%= vykas.hardVykas.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.hardVykas.gate[1] %></button>
                                                                     
                                                                     <div id="vykashmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="vyhmg2Chest-<%= characters[i]._id %>" name="vyhmg2Chest" data-value="<%= vykas.hardVykas.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'vykas-gold-')">
@@ -240,11 +240,11 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('vykas', '<%= characters[i]._id %>', 2, 'NM')">Normal</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum vyGate" data-target="vykasnmg1Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[0] %></button>
+                                                                    <button id="vykas-g1NMButton-<%= characters[i]._id %>" class="gateNum vyGate" data-target="vykasnmg1Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[0] %></button>
                                                                     
                                                                     <div id="vykasnmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="vynmg1Chest-<%= characters[i]._id %>" name="vynmg1Chest" data-value="<%= vykas.normalVykas.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'vykas-gold-')">
@@ -253,7 +253,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum vyGate" data-target="vykasnmg2Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[1] %></button>
+                                                                    <button id="vykas-g2NMButton-<%= characters[i]._id %>" class="gateNum vyGate" data-target="vykasnmg2Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[1] %></button>
                                                                     
                                                                     <div id="vykasnmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="vynmg2Chest-<%= characters[i]._id %>" name="vynmg2Chest" data-value="<%= vykas.normalVykas.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'vykas-gold-')">
@@ -281,11 +281,11 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('vykas', '<%= characters[i]._id %>', 2, 'NM')">Normal</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum vyGate" data-target="vykasnmg1Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[0] %></button>
+                                                                    <button id="vykas-g1NMButton-<%= characters[i]._id %>" class="gateNum vyGate" data-target="vykasnmg1Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[0] %></button>
                                                                     
                                                                     <div id="vykasnmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="vynmg1Chest-<%= characters[i]._id %>" name="vynmg1Chest" data-value="<%= vykas.normalVykas.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'vykas-gold-')">
@@ -294,7 +294,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum vyGate" data-target="vykasnmg2Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[1] %></button>
+                                                                    <button id="vykas-g2NMButton-<%= characters[i]._id %>" class="gateNum vyGate" data-target="vykasnmg2Chest" data-value="<%= vykas.normalVykas.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'vykas-gold-')">G<%= vykas.normalVykas.gate[1] %></button>
                                                                     
                                                                     <div id="vykasnmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="vynmg2Chest-<%= characters[i]._id %>" name="vynmg2Chest" data-value="<%= vykas.normalVykas.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'vykas-gold-')">
@@ -328,11 +328,11 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('clown', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum clownGate" data-target="clownnmg1Chest" data-value="<%= kakulSaydon.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'clown-gold-')">G<%= kakulSaydon.gate[0] %></button>
+                                                                    <button id="clown-g1NMButton-<%= characters[i]._id %>" class="gateNum clownGate" data-target="clownnmg1Chest" data-value="<%= kakulSaydon.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'clown-gold-')">G<%= kakulSaydon.gate[0] %></button>
                                                                     
                                                                     <div id="clownnmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="ksnmg1Chest-<%= characters[i]._id %>" name="ksnmg1Chest" data-value="<%= kakulSaydon.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'clown-gold-')">
@@ -341,7 +341,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum clownGate" data-target="clownnmg2Chest" data-value="<%= kakulSaydon.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'clown-gold-')">G<%= kakulSaydon.gate[1] %></button>
+                                                                    <button id="clown-g2NMButton-<%= characters[i]._id %>" class="gateNum clownGate" data-target="clownnmg2Chest" data-value="<%= kakulSaydon.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'clown-gold-')">G<%= kakulSaydon.gate[1] %></button>
                                                                     
                                                                     <div id="clownnmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="ksnmg2Chest-<%= characters[i]._id %>" name="ksnmg2Chest" data-value="<%= kakulSaydon.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'clown-gold-')">
@@ -350,7 +350,7 @@
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button class="gateNum clownGate" data-target="clownnmg3Chest" data-value="<%= kakulSaydon.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'clown-gold-')">G<%= kakulSaydon.gate[2] %></button>
+                                                                    <button id="clown-g3NMButton-<%= characters[i]._id %>" class="gateNum clownGate" data-target="clownnmg3Chest" data-value="<%= kakulSaydon.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'clown-gold-')">G<%= kakulSaydon.gate[2] %></button>
                                                                     
                                                                     <div id="clownnmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="ksnmg3Chest-<%= characters[i]._id %>" name="ksnmg3Chest" data-value="<%= kakulSaydon.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'clown-gold-')">
@@ -384,11 +384,11 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h2 class="difficulty">Hard</h2>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 4, 'HM')">Hard</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg1Chest" data-value="<%= brel.hardBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[0] %></button>
+                                                                    <button id="brel-g1HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg1Chest" data-value="<%= brel.hardBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[0] %></button>
                                                                     
                                                                     <div id="brelshazahmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg1Chest" name="brelhmg1Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -397,7 +397,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg2Chest" data-value="<%= brel.hardBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[1] %></button>
+                                                                    <button id="brel-g2HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg2Chest" data-value="<%= brel.hardBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[1] %></button>
                                                                     
                                                                     <div id="brelshazahmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg2Chest" name="brelhmg2Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -406,7 +406,7 @@
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg3Chest" data-value="<%= brel.hardBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[2] %></button>
+                                                                    <button id="brel-g3HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg3Chest" data-value="<%= brel.hardBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[2] %></button>
                                                                 
                                                                     <div id="brelshazahmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg3Chest" name="brelhmg3Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -415,7 +415,7 @@
                                                                 </div>
             
                                                                 <div class="gate4">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg4Chest" data-value="<%= brel.hardBrelshaza.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[3] %></button>
+                                                                    <button id="brel-g4HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg4Chest" data-value="<%= brel.hardBrelshaza.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[3] %></button>
                                                                     
                                                                     <div id="brelshazahmg4Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg4Chest" name="brelhmg4Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[3] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -426,11 +426,11 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 4, 'NM')">Normal</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg1Chest" data-value="<%= brel.normalBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[0] %></button>
+                                                                    <button id="brel-g1NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg1Chest" data-value="<%= brel.normalBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[0] %></button>
                                                                     
                                                                     <div id="brelshazanmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg1Chest" name="brelnmg1Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -439,7 +439,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg2Chest" data-value="<%= brel.normalBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[1] %></button>
+                                                                    <button id="brel-g2NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg2Chest" data-value="<%= brel.normalBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[1] %></button>
                                                                     
                                                                     <div id="brelshazanmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg2Chest" name="brelnmg2Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -448,7 +448,7 @@
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg3Chest" data-value="<%= brel.normalBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[2] %></button>
+                                                                    <button id="brel-g3NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg3Chest" data-value="<%= brel.normalBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[2] %></button>
                                                                     
                                                                     <div id="brelshazanmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg3Chest" name="brelnmg3Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -457,7 +457,7 @@
                                                                 </div>
             
                                                                 <div class="gate4">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg4Chest" data-value="<%= brel.normalBrelshaza.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[3] %></button>
+                                                                    <button id="brel-g4NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg4Chest" data-value="<%= brel.normalBrelshaza.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[3] %></button>
                                                                     
                                                                     <div id="brelshazanmg4Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg4Chest" name="brelnmg4Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[3] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -487,11 +487,11 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 3, 'HM')">Hard</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg1Chest" data-value="<%= brel.hardBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[0] %></button>
+                                                                    <button id="brel-g1HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg1Chest" data-value="<%= brel.hardBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[0] %></button>
                                                                     
                                                                     <div id="brelshazahmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg1Chest" name="brelhmg1Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -500,7 +500,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg2Chest" data-value="<%= brel.hardBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[1] %></button>
+                                                                    <button id="brel-g2HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg2Chest" data-value="<%= brel.hardBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[1] %></button>
                                                                     
                                                                     <div id="brelshazahmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg2Chest" name="brelhmg2Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -509,7 +509,7 @@
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg3Chest" data-value="<%= brel.hardBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[2] %></button>
+                                                                    <button id="brel-g3HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg3Chest" data-value="<%= brel.hardBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[2] %></button>
                                                                 
                                                                     <div id="brelshazahmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg3Chest" name="brelhmg3Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -520,11 +520,11 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 4, 'NM')">Normal</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg1Chest" data-value="<%= brel.normalBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[0] %></button>
+                                                                    <button id="brel-g1NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg1Chest" data-value="<%= brel.normalBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[0] %></button>
                                                                     
                                                                     <div id="brelshazanmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg1Chest" name="brelnmg1Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -533,7 +533,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg2Chest" data-value="<%= brel.normalBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[1] %></button>
+                                                                    <button id="brel-g2NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg2Chest" data-value="<%= brel.normalBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[1] %></button>
                                                                     
                                                                     <div id="brelshazanmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg2Chest" name="brelnmg2Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -542,7 +542,7 @@
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg3Chest" data-value="<%= brel.normalBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[2] %></button>
+                                                                    <button id="brel-g3NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg3Chest" data-value="<%= brel.normalBrelshaza.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[2] %></button>
                                                                     
                                                                     <div id="brelshazanmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg3Chest" name="brelnmg3Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -551,7 +551,7 @@
                                                                 </div>
             
                                                                 <div class="gate4">
-                                                                    <button class="gateNum brelGate" data-target="brelshazanmg4Chest" data-value="<%= brel.normalBrelshaza.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[3] %></button>
+                                                                    <button id="brel-g4NMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazanmg4Chest" data-value="<%= brel.normalBrelshaza.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.normalBrelshaza.gate[3] %></button>
                                                                     
                                                                     <div id="brelshazanmg4Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelnmg4Chest" name="brelnmg4Chest-<%= characters[i]._id %>" data-value="<%= brel.normalBrelshaza.chest[3] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -580,11 +580,11 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 2, 'HM')">Hard</h1>
         
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg1Chest" data-value="<%= brel.hardBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[0] %></button>
+                                                                    <button id="brel-g1HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg1Chest" data-value="<%= brel.hardBrelshaza.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[0] %></button>
                                                                     
                                                                     <div id="brelshazahmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg1Chest" name="brelhmg1Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -593,7 +593,7 @@
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button class="gateNum brelGate" data-target="brelshazahmg2Chest" data-value="<%= brel.hardBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[1] %></button>
+                                                                    <button id="brel-g2HMButton-<%= characters[i]._id %>" class="gateNum brelGate" data-target="brelshazahmg2Chest" data-value="<%= brel.hardBrelshaza.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'brel-gold-')"><%= brel.hardBrelshaza.gate[1] %></button>
                                                                     
                                                                     <div id="brelshazahmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="brelhmg2Chest" name="brelhmg2Chest-<%= characters[i]._id %>" data-value="<%= brel.hardBrelshaza.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'brel-gold-')">
@@ -604,7 +604,7 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 4, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -664,7 +664,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 4, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -724,7 +724,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -775,7 +775,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('brel', '<%= characters[i]._id %>', 2, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -821,7 +821,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('kaya', '<%= characters[i]._id %>', 3, 'HM')">Hard</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -854,7 +854,7 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('kaya', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -905,7 +905,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('kaya', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -960,7 +960,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('akkan', '<%= characters[i]._id %>', 3, 'HM')">Hard</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -993,7 +993,7 @@
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('akkan', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
@@ -1044,7 +1044,7 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h2 class="difficulty">Normal</h2>
+                                                            <h1 class="difficulty" onclick="triggerGateClick('akkan', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">

@@ -153,7 +153,7 @@ function logCharacterId(element, characterId, idPrefix) {
     if (bonusChest) {
         bonusChest.classList.toggle('show');
     }
-    const gateContainer = element.parentElement.parentElement.parentElement.parentElement.parentElement;
+    const gateContainer = element.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
     let goldArrForCharacter;
     switch (idPrefix) {
         case 'valtan-gold-':
@@ -263,4 +263,15 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
         totalEarningsElement.appendChild(goldImg);
     }
 }
+function triggerGateClick(raid, id, gateNum, type) {
+    let buttons = [];
 
+    for (let i = 1; i <= 4; i++) {
+        let button = document.getElementById(`${raid}-g${i}${type}Button-${id}`);
+        if (button) buttons.push(button);
+    }
+
+    for (let i = 0; i < gateNum; i++) {
+        buttons[i].click();
+    }
+}
