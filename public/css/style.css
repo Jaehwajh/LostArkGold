@@ -84,6 +84,10 @@
     height: 10em;
 }
 
+.flex-column{
+    padding-top: .2rem;
+}
+
 .char-info{
     height: 3rem;
     font-size: 1.8em;
@@ -361,4 +365,6 @@
     border-radius: 5px;
     outline: none;
     font-family: 'Sofia Sans Condensed', Arial, Helvetica, sans-serif;
+    border: 1px solid rgb(15, 15, 15);
 }
+
