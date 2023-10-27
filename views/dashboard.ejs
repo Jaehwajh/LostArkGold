@@ -11,34 +11,36 @@
         <div>
                     <div class="char-info">
                         <form class="char-form" action="/dashboard/createCharacter" method="POST">
-                            <div>
+                            <div class="flex-column">
                                 <label for="characterName">Character Name</label>
-                                <input type="text" name="characterName" id="characterName" placeholder="Character Name">
+                                <input class="input" type="text" name="characterName" id="characterName" placeholder="">
                             </div>
                     
-                            <div>
+                            <div class="flex-column">
                                 <label for="loaClass">Class</label>
-                                <select name="loaClass" id="loaClass">
-                                <% loaClass.forEach(element => { %>
-                                    <option value="<%- element.class %>"><%- element.class %></option>
-                                <% }); %>
-                            </select>
+                                <select name="loaClass" id="loaClass" class="select class-select">
+                                    <% loaClass.forEach(element => { %>
+                                        <option value="<%- element.class %>"><%- element.class %></option>
+                                    <% }); %>
+                                </select>
                             </div>
                     
-                            <div>
+                            <div class="flex-column">
                                 <label for="itemLevel">Item Level</label>
-                                <input type="text" name="itemLevel" id="itemLevel" placeholder="Item Level">
+                                <input class="input" type="text" name="itemLevel" id="itemLevel" placeholder="">
                             </div>
     
-                            <div>
+                            <div class="flex-column">
                                 <label for="roster">Roster</label>
-                                <select name="roster" id="roster">
+                                <select class="select roster-select" name="roster" id="roster">
                                     <option value="Main">Main</option>
                                     <option value="Alt">Alt</option>
                                 </select>
                             </div>
                     
-                            <button type="submit">Add</button>
+                            <div>
+                                <button class="custom-btn" type="submit">Add</button>
+                            </div>
                         </form>
                     </div>
     
