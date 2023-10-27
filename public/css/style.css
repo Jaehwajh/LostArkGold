@@ -73,6 +73,11 @@
     width: 50%;
 }
 
+.difficulty:hover{
+    color: rgb(15, 15, 15);
+    cursor: pointer;
+}
+
 .flex-row{
     display: flex;
     justify-content: space-evenly;
