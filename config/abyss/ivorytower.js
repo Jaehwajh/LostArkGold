@@ -1,15 +1,15 @@
-const normalVoldice = {
+const normalVoldis = {
     itemLevel: 1600,
     gate: [1,2,3],
     gold: [],
     chest: [],
 };
 
-const hardVoldice = {
+const hardVoldis = {
     itemLevel : 1620,
     gate: [1,2,3],
     gold: [],
     chest: [],
 };
 
-module.exports  = {normalVoldice, hardVoldice};
+module.exports  = {normalVoldis, hardVoldis};

@@ -107,7 +107,7 @@
                                                     <div class="frosted">
                                                         <div class="hm">
                                                             <h1 class="difficulty" onclick="triggerGateClick(this, 'valtan', '<%= characters[i]._id %>', 2, 'HM')">Hard</h1>
-        
+                                                            
                                                             <div class="flex-row">
                                                                 <div class="gate1">
                                                                     <button id="valtan-g1HMButton-<%= characters[i]._id %>" class="gateNum valGate" data-target="valtanhmg1Chest" data-value="<%= valtan.hardValtan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'valtan-gold-')">G<%= valtan.hardValtan.gate[0] %></button>
@@ -115,7 +115,7 @@
                                                                     <div id="valtanhmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
                                                                         <input type="checkbox" id="valhmg1Chest-<%= characters[i]._id %>" name="valhmg1Chest" data-value="<%= valtan.hardValtan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'valtan-gold-')">
                                                                         <label for="valhmg1Chest">Chest</label>
-                                                                    </div>
+                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate2">
