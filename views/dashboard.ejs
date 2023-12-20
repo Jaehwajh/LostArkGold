@@ -1110,66 +1110,84 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="hm">
-                                                            <h1 class="difficulty" onclick="triggerGateClick(this, 'akkan', '<%= characters[i]._id %>', 3, 'HM')">Hard</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick(this, 'ivoryTower', '<%= characters[i]._id %>', 3, 'HM')">Hard</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button id="akkan-g1HMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkanhmg1Chest" data-value="<%= akkan.hardAkkan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.hardAkkan.gate[0] %></button>
+                                                                    <button id="ivoryTower-g1HMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldishmg1Chest" data-value="<%= ivoryTower.hardVoldis.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.hardVoldis.gate[0] %></button>
                                                                     
-                                                                    <div id="akkanhmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="akhmg1Chest-<%= characters[i]._id %>" name="akhmg1Chest" data-value="<%= akkan.hardAkkan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="akhmg1Chest">Chest</label>
+                                                                    <div id="voldishmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldhmg1Chest-<%= characters[i]._id %>" name="voldhmg1Chest" data-value="<%= ivoryTower.hardVoldis.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldhmg1Chest">Chest</label>
                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button id="akkan-g2HMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkanhmg2Chest" data-value="<%= akkan.hardAkkan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.hardAkkan.gate[1] %></button>
+                                                                    <button id="ivoryTower-g2HMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldishmg2Chest" data-value="<%= ivoryTower.hardVoldis.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.hardVoldis.gate[1] %></button>
                                                                     
-                                                                    <div id="akkanhmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="akhmg2Chest-<%= characters[i]._id %>" name="akhmg2Chest" data-value="<%= akkan.hardAkkan.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="akhmg2Chestt">Chest</label>
+                                                                    <div id="voldishmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldhmg2Chest-<%= characters[i]._id %>" name="voldhmg2Chest" data-value="<%= ivoryTower.hardVoldis.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldhmg2Chestt">Chest</label>
                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button id="akkan-g3HMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkanhmg3Chest" data-value="<%= akkan.hardAkkan.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.hardAkkan.gate[2] %></button>
+                                                                    <button id="ivoryTower-g3HMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldishmg3Chest" data-value="<%= ivoryTower.hardVoldis.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.hardVoldis.gate[2] %></button>
                                                                     
-                                                                    <div id="akkanhmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="akhmg3Chest-<%= characters[i]._id %>" name="akhmg3Chest" data-value="<%= akkan.hardAkkan.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="akhmg3Chest">Chest</label>
+                                                                    <div id="voldishmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldhmg3Chest-<%= characters[i]._id %>" name="voldhmg3Chest" data-value="<%= ivoryTower.hardVoldis.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldhmg3Chest">Chest</label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="gate4">
+                                                                    <button id="ivoryTower-g4HMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldishmg4Chest" data-value="<%= ivoryTower.hardVoldis.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.hardVoldis.gate[3] %></button>
+                                                                    
+                                                                    <div id="voldishmg4Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldhmg4Chest-<%= characters[i]._id %>" name="voldhmg4Chest" data-value="<%= ivoryTower.hardVoldis.chest[3] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldhmg3Chest">Chest</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
         
                                                         <div class="nm">
-                                                            <h1 class="difficulty" onclick="triggerGateClick(this, 'akkan', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick(this, 'ivoryTower', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button id="akkan-g1NMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkannmg1Chest" data-value="<%= akkan.normalAkkan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.normalAkkan.gate[0] %></button>
+                                                                    <button id="ivoryTower-g1NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldisnmg1Chest" data-value="<%= ivoryTower.normalVoldis.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[0] %></button>
                                                                     
-                                                                    <div id="akkannmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="aknmg1Chest-<%= characters[i]._id %>" name="aknmg1Chest" data-value="<%= akkan.normalAkkan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="aknmg1Chest">Chest</label>
+                                                                    <div id="voldisnmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg1Chest-<%= characters[i]._id %>" name="voldnmg1Chest" data-value="<%= ivoryTower.normalVoldis.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg1Chest">Chest</label>
                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button id="akkan-g2NMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkannmg2Chest" data-value="<%= akkan.normalAkkan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.normalAkkan.gate[1] %></button>
+                                                                    <button id="ivoryTower-g2NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldisnmg2Chest" data-value="<%= ivoryTower.normalVoldis.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[1] %></button>
                                                                     
-                                                                    <div id="akkannmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="aknmg2Chest-<%= characters[i]._id %>" name="aknmg2Chest" data-value="<%= akkan.normalAkkan.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="aknmg2Chest">Chest</label>
+                                                                    <div id="voldisnmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg2Chest-<%= characters[i]._id %>" name="voldnmg2Chest" data-value="<%= ivoryTower.normalVoldis.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg2Chest">Chest</label>
                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button id="akkan-g3NMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkannmg3Chest" data-value="<%= akkan.normalAkkan.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.normalAkkan.gate[2] %></button>
+                                                                    <button id="ivoryTower-g3NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldisnmg3Chest" data-value="<%= ivoryTower.normalVoldis.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[2] %></button>
                                                                     
-                                                                    <div id="akkannmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="aknmg3Chest-<%= characters[i]._id %>" name="aknmg3Chest" data-value="<%= akkan.normalAkkan.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="aknmg3Chest">Chest</label>
+                                                                    <div id="voldisnmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg3Chest-<%= characters[i]._id %>" name="voldnmg3Chest" data-value="<%= ivoryTower.normalVoldis.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg3Chest">Chest</label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="gate4">
+                                                                    <button id="ivoryTower-g4NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldishmg4Chest" data-value="<%= ivoryTower.normalVoldis.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[3] %></button>
+                                                                    
+                                                                    <div id="voldisnmg4Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg4Chest-<%= characters[i]._id %>" name="voldnmg4Chest" data-value="<%= ivoryTower.normalVoldis.chest[3] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg3Chest">Chest</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1177,7 +1195,7 @@
                                                     </div>
     
                                                     <div class="">
-                                                        <h2 id="akkan-gold-<%= characters[i]._id %>"></h2>
+                                                        <h2 id="ivoryTower-gold-<%= characters[i]._id %>"></h2>
                                                     </div>
                                                 </div>
     
@@ -1194,37 +1212,46 @@
                                                 <div class="raid-info">
                                                     <div class="frosted">
                                                         <div class="nm">
-                                                            <h1 class="difficulty" onclick="triggerGateClick(this, 'akkan', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
+                                                            <h1 class="difficulty" onclick="triggerGateClick(this, 'ivoryTower', '<%= characters[i]._id %>', 3, 'NM')">Normal</h1>
                                                             
                                                             <div class="flex-row">
                                                                 <div class="gate1">
-                                                                    <button id="akkan-g1NMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkannmg1Chest" data-value="<%= akkan.normalAkkan.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.normalAkkan.gate[0] %></button>
+                                                                    <button id="ivoryTower-g1NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldisnmg1Chest" data-value="<%= ivoryTower.normalVoldis.gold[0] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[0] %></button>
                                                                     
-                                                                    <div id="akkannmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="aknmg1Chest-<%= characters[i]._id %>" name="aknmg1Chest" data-value="<%= akkan.normalAkkan.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="aknmg1Chest">Chest</label>
+                                                                    <div id="voldisnmg1Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg1Chest-<%= characters[i]._id %>" name="voldnmg1Chest" data-value="<%= ivoryTower.normalVoldis.chest[0] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg1Chest">Chest</label>
                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate2">
-                                                                    <button id="akkan-g2NMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkannmg2Chest" data-value="<%= akkan.normalAkkan.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.normalAkkan.gate[1] %></button>
+                                                                    <button id="ivoryTower-g2NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldisnmg2Chest" data-value="<%= ivoryTower.normalVoldis.gold[1] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[1] %></button>
                                                                     
-                                                                    <div id="akkannmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="aknmg2Chest-<%= characters[i]._id %>" name="aknmg2Chest" data-value="<%= akkan.normalAkkan.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="aknmg2Chest">Chest</label>
+                                                                    <div id="voldisnmg2Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg2Chest-<%= characters[i]._id %>" name="voldnmg2Chest" data-value="<%= ivoryTower.normalVoldis.chest[1] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg2Chest">Chest</label>
                                                                     </div>
                                                                 </div>
             
                                                                 <div class="gate3">
-                                                                    <button id="akkan-g3NMButton-<%= characters[i]._id %>" class="gateNum akkanGate" data-target="akkannmg3Chest" data-value="<%= akkan.normalAkkan.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'akkan-gold-')"><%= akkan.normalAkkan.gate[2] %></button>
+                                                                    <button id="ivoryTower-g3NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldisnmg3Chest" data-value="<%= ivoryTower.normalVoldis.gold[2] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[2] %></button>
                                                                     
-                                                                    <div id="akkannmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
-                                                                        <input type="checkbox" id="aknmg3Chest-<%= characters[i]._id %>" name="aknmg3Chest" data-value="<%= akkan.normalAkkan.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'akkan-gold-')">
-                                                                        <label for="aknmg3Chest">Chest</label>
+                                                                    <div id="voldisnmg3Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg3Chest-<%= characters[i]._id %>" name="voldnmg3Chest" data-value="<%= ivoryTower.normalVoldis.chest[2] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg3Chest">Chest</label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="gate4">
+                                                                    <button id="ivoryTower-g4NMButton-<%= characters[i]._id %>" class="gateNum ivoryTowerGate" data-target="voldishmg4Chest" data-value="<%= ivoryTower.normalVoldis.gold[3] %>" onclick="logCharacterId(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')"><%= ivoryTower.normalVoldis.gate[3] %></button>
+                                                                    
+                                                                    <div id="voldisnmg4Chest-<%= characters[i]._id %>" class="bonus-chest">
+                                                                        <input type="checkbox" id="voldnmg4Chest-<%= characters[i]._id %>" name="voldnmg4Chest" data-value="<%= ivoryTower.normalVoldis.chest[3] %>" onclick="subtractValueFromCharacterGold(this, '<%= characters[i]._id %>', 'ivoryTower-gold-')">
+                                                                        <label for="voldnmg3Chest">Chest</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>  
+                                                        </div>
                                                     </div>
     
                                                     <div class="">
