@@ -10,6 +10,7 @@ const {normalBrelshaza, hardBrelshaza, brelGold} = require("../config/legion/bre
 const {normalAkkan, hardAkkan} = require("../config/legion/akkan");
 const {normalKayangel, hardKayangel} = require("../config/abyss/kayangel");
 const {normalVoldis, hardVoldis} = require("../config/abyss/ivorytower");
+const {normalThaemine, hardThaemine} = require("../config/legion/thaemine");
 
 module.exports = {
     getDashboard: async(req, res) => {
@@ -20,9 +21,10 @@ module.exports = {
             const akkan = { normalAkkan, hardAkkan };
             const kayangel = { normalKayangel, hardKayangel };
             const ivoryTower = {normalVoldis, hardVoldis};
+            const thaemine = {normalThaemine, hardThaemine}
 
             const characters = await character.find();
-            res.render("dashboard.ejs", {loaClass, valtan, vykas, kakulSaydon, brel, kayangel, akkan, characters, brelGold, ivoryTower});
+            res.render("dashboard.ejs", {loaClass, valtan, vykas, kakulSaydon, brel, kayangel, akkan, characters, brelGold, ivoryTower, thaemine});
         }catch(err){
             console.log(err);
         }
