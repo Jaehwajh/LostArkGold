@@ -2503,7 +2503,7 @@
                         </div>
 
                         <!-- Thaemine -->
-                        <div id="thaemine-select-<%= characters[i]._id %>" class="raid-card">
+                        <div id="thaemine-select-<%= characters[i]._id %>" class="raid-card hidden">
                             <% if(characters[i].itemLevel >= thaemine.hardThaemine.itemLevel){ %>
                                 <div id="thaeminer" class="card">
                                     <div class="raid-title">
@@ -2586,7 +2586,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- <p><%# akkan.hardAkkan.gold.reduce((a,b) => a + b) %>g</p> -->
                                 </div>
                             <% }else if(characters[i].itemLevel < thaemine.hardThaemine.itemLevel && characters[i].itemLevel >= thaemine.normalThaemine.itemLevel){ %>
                                 <div id="thaemine" class="card">
@@ -2637,7 +2636,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- <p><%# akkan.normalAkkan.gold.reduce((a,b) => a + b) %>g</p> -->
                                 </div>
                             <% }else{ %>
                                 <div id="thaemine" class="card">
