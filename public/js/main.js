@@ -61,6 +61,7 @@ const brelGold = {};
 const kayangelGold = {};
 const akkanGold = {};
 const voldisGold = {};
+const thaemineGold = {};
 let totalRosterGold = 0
 const goldImg = new Image(20, 20);
 goldImg.src = "/images/icon/gold-icon.webp";
@@ -116,6 +117,13 @@ function logCharacterId(element, characterId, idPrefix) {
         voldisGold[characterId].push(parseInt(goldValue));
         console.log(`Character ${characterId} Gold Values:`, voldisGold[characterId]);
     }
+    else if (idPrefix === 'thaemine-gold-'){
+        if (!thaemineGold[characterId]) {
+            thaemineGold[characterId] = [];
+        }
+        thaemineGold[characterId].push(parseInt(goldValue));
+        console.log(`Character ${characterId} Gold Values:`, thaemineGold[characterId]);
+    }
     const characterElement = document.getElementById(`${idPrefix}${characterId}`);
     if (characterElement) {
         let totalGold;
@@ -140,6 +148,9 @@ function logCharacterId(element, characterId, idPrefix) {
                 break;
             case 'ivoryTower-gold-':
                 totalGold = voldisGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'thaemine-gold-':
+                totalGold = thaemineGold[characterId].reduce((a, b) => a + b, 0);
                 break;
             default:
                 // Handle other cases if needed
@@ -187,6 +198,9 @@ function logCharacterId(element, characterId, idPrefix) {
             break;
         case 'ivoryTower-gold-':
             goldArrForCharacter = voldisGold[characterId];
+            break;
+        case 'thaemine-gold-':
+            goldArrForCharacter = thaemineGold[characterId];
             break;
         default:
             // Handle other cases if needed
@@ -237,6 +251,11 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
                 voldisGold[characterId].push(-goldValue); // Negative value to represent subtraction
             }
             break;
+        case 'ivoryTower-gold-':
+            if (thaemineGold[characterId]) {
+                thaemineGold[characterId].push(-goldValue); // Negative value to represent subtraction
+            }
+            break;
         default:
             // Handle other cases if needed
     }
@@ -265,6 +284,9 @@ function subtractValueFromCharacterGold(element, characterId, idPrefix) {
                 break;
             case 'ivoryTower-gold-':
                 totalGold = voldisGold[characterId].reduce((a, b) => a + b, 0);
+                break;
+            case 'thaemine-gold-':
+                totalGold = thaemineGold[characterId].reduce((a, b) => a + b, 0);
                 break;
              default:
                  // Handle other cases if needed
