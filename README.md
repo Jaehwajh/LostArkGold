@@ -37,7 +37,7 @@ There are a lot of things I would've loved to have done differently with this ap
 1. Load times and data usage:
    - From my short testing, the load times were okay, but maybe the data usage was on the higher side. Definitely changing up my code base, reducing file size, compressing code, and getting rid of redundant code would be the first thing I would change given the chance.
 
-3. Appearance:
+2. Appearance:
    - On a biased look, I thought the appearance and UI were alright as an MVP. However, getting some feedback from players who play Lost Ark, they have given me some insight and possible areas of improvement as to where changes could be applied.
 </p>
 
